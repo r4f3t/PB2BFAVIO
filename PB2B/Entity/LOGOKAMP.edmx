@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LKSDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LKSDB.dbo.A_MNTL_STOK_2018' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="A_MNTL_STOK_2018">
+          <Key>
+            <PropertyRef Name="LOGICALREF" />
+            <PropertyRef Name="BAKIYE" />
+            <PropertyRef Name="BAKIYE2" />
+            <PropertyRef Name="ListeFiyati" />
+            <PropertyRef Name="PARABIRIMI" />
+            <PropertyRef Name="OEM" />
+            <PropertyRef Name="TEDARIKCI" />
+            <PropertyRef Name="SizeOzelTL" />
+            <PropertyRef Name="INDIRIM" />
+            <PropertyRef Name="CURRSYMB" />
+          </Key>
+          <Property Name="MARKA" Type="varchar" MaxLength="25" />
+          <Property Name="LOGICALREF" Type="int" Nullable="false" />
+          <Property Name="URUNKODU" Type="varchar" MaxLength="25" />
+          <Property Name="URETICI_KODU" Type="varchar" MaxLength="25" />
+          <Property Name="MODEL" Type="varchar" MaxLength="11" />
+          <Property Name="KDV" Type="float" />
+          <Property Name="BAKIYE" Type="int" Nullable="false" />
+          <Property Name="BAKIYE2" Type="int" Nullable="false" />
+          <Property Name="ListeFiyati" Type="int" Nullable="false" />
+          <Property Name="PARABIRIMI" Type="int" Nullable="false" />
+          <Property Name="OEM" Type="int" Nullable="false" />
+          <Property Name="URUNADI" Type="varchar" MaxLength="51" />
+          <Property Name="ARAC" Type="varchar" MaxLength="25" />
+          <Property Name="ANABIRIMI" Type="int" />
+          <Property Name="TEDARIKCI" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="B2B" Type="varchar" MaxLength="25" />
+          <Property Name="SizeOzelTL" Type="int" Nullable="false" />
+          <Property Name="INDIRIM" Type="int" Nullable="false" />
+          <Property Name="CURRSYMB" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="MSIRANO" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LKSDB.dbo.C_INT_CARIONEKRAN_006' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="C_INT_CARIONEKRAN_006">
+          <Key>
+            <PropertyRef Name="GECIKEN" />
+            <PropertyRef Name="GecikenDurum" />
+            <PropertyRef Name="Durum" />
+            <PropertyRef Name="Bakiye" />
+            <PropertyRef Name="alacak" />
+            <PropertyRef Name="borc" />
+            <PropertyRef Name="LOGREF" />
+            <PropertyRef Name="RiskLimiti" />
+          </Key>
+          <Property Name="GECIKEN" Type="float" Nullable="false" />
+          <Property Name="GecikenDurum" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="Firma_Bilgisi" Type="varchar" MaxLength="40" />
+          <Property Name="Durum" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="KODU" Type="varchar" MaxLength="17" />
+          <Property Name="Sehir" Type="varchar" MaxLength="21" />
+          <Property Name="Ilce" Type="varchar" MaxLength="51" />
+          <Property Name="Bakiye" Type="float" Nullable="false" />
+          <Property Name="alacak" Type="float" Nullable="false" />
+          <Property Name="borc" Type="float" Nullable="false" />
+          <Property Name="LOGREF" Type="int" Nullable="false" />
+          <Property Name="RiskLimiti" Type="float" Nullable="false" />
+          <Property Name="OKoD" Type="varchar" MaxLength="11" />
+          <Property Name="LOGOID" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LKSDB.dbo.ISRG_FaturaDetaY_006' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ISRG_FaturaDetaY_006">
+          <Key>
+            <PropertyRef Name="LOGICALREF" />
+          </Key>
+          <Property Name="LOGICALREF" Type="int" Nullable="false" />
+          <Property Name="URUNKODU" Type="varchar" MaxLength="25" />
+          <Property Name="URUNADI" Type="varchar" MaxLength="51" />
+          <Property Name="URUNMIKTARI" Type="float" />
+          <Property Name="BIRIMFIYAT" Type="float" />
+          <Property Name="SATIRTUTARI" Type="float" />
+          <Property Name="DISTDISC" Type="float" />
+          <Property Name="VATAMNT" Type="float" />
+          <Property Name="VATMATRAH" Type="float" />
+          <Property Name="INVOICEREF" Type="int" />
+          <Property Name="STOCKREF" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LKSDB.dbo.ISRG_Faturalar_006' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ISRG_Faturalar_006">
+          <Key>
+            <PropertyRef Name="LOGICALREF" />
+            <PropertyRef Name="drmX" />
+            <PropertyRef Name="CariRef" />
+          </Key>
+          <Property Name="LOGICALREF" Type="int" Nullable="false" />
+          <Property Name="CODE" Type="varchar" MaxLength="17" />
+          <Property Name="DEFINITION_" Type="varchar" MaxLength="51" />
+          <Property Name="TRCODE" Type="smallint" />
+          <Property Name="FICHENO" Type="varchar" MaxLength="17" />
+          <Property Name="DATE_" Type="datetime" />
+          <Property Name="NETTOTAL" Type="float" />
+          <Property Name="drmX" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="CariRef" Type="int" Nullable="false" />
+          <Property Name="MASRAF" Type="float" />
+          <Property Name="INDIRIM" Type="float" />
+          <Property Name="YEKUN" Type="float" />
+          <Property Name="CAPIBLOCK_CREADEDDATE" Type="datetime" />
+          <Property Name="CAPIBLOCK_MODIFIEDDATE" Type="datetime" />
+          <Property Name="SPECODE" Type="varchar" MaxLength="11" />
+          <Property Name="CYPHCODE" Type="varchar" MaxLength="11" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LKSDB.dbo.ISRG_Hesap_Extresi_006_04' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ISRG_Hesap_Extresi_006_04">
+          <Key>
+            <PropertyRef Name="LOGICALREF" />
+          </Key>
+          <Property Name="rank" Type="bigint" />
+          <Property Name="LOGICALREF" Type="int" Nullable="false" />
+          <Property Name="ISLEMTARIHI" Type="datetime" />
+          <Property Name="ISLEMACIKLAMASI" Type="varchar" MaxLength="30" />
+          <Property Name="BORC_ALACAK" Type="int" />
+          <Property Name="TUTAR" Type="decimal" Precision="26" Scale="6" />
+          <Property Name="VADE" Type="datetime" />
+          <Property Name="CLIENTREF" Type="int" />
+          <Property Name="ISLEMTURU" Type="varchar" MaxLength="29" />
+          <Property Name="TRANNO" Type="varchar" MaxLength="9" />
+          <Property Name="TTUTAR" Type="decimal" Precision="28" Scale="6" />
+          <Property Name="CAPIBLOCK_CREADEDDATE" Type="datetime" />
+          <Property Name="CAPIBLOCK_MODIFIEDDATE" Type="datetime" />
+          <Property Name="SOURCEFREF" Type="int" />
+        </EntityType>
+        <EntityContainer Name="LKSDBModelStoreContainer">
+          <EntitySet Name="A_MNTL_STOK_2018" EntityType="Self.A_MNTL_STOK_2018" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [A_MNTL_STOK_2018].[MARKA] AS [MARKA], 
+    [A_MNTL_STOK_2018].[LOGICALREF] AS [LOGICALREF], 
+    [A_MNTL_STOK_2018].[URUNKODU] AS [URUNKODU], 
+    [A_MNTL_STOK_2018].[URETICI_KODU] AS [URETICI_KODU], 
+    [A_MNTL_STOK_2018].[MODEL] AS [MODEL], 
+    [A_MNTL_STOK_2018].[KDV] AS [KDV], 
+    [A_MNTL_STOK_2018].[BAKIYE] AS [BAKIYE], 
+    [A_MNTL_STOK_2018].[BAKIYE2] AS [BAKIYE2], 
+    [A_MNTL_STOK_2018].[ListeFiyati] AS [ListeFiyati], 
+    [A_MNTL_STOK_2018].[PARABIRIMI] AS [PARABIRIMI], 
+    [A_MNTL_STOK_2018].[OEM] AS [OEM], 
+    [A_MNTL_STOK_2018].[URUNADI] AS [URUNADI], 
+    [A_MNTL_STOK_2018].[ARAC] AS [ARAC], 
+    [A_MNTL_STOK_2018].[ANABIRIMI] AS [ANABIRIMI], 
+    [A_MNTL_STOK_2018].[TEDARIKCI] AS [TEDARIKCI], 
+    [A_MNTL_STOK_2018].[B2B] AS [B2B], 
+    [A_MNTL_STOK_2018].[SizeOzelTL] AS [SizeOzelTL], 
+    [A_MNTL_STOK_2018].[INDIRIM] AS [INDIRIM], 
+    [A_MNTL_STOK_2018].[CURRSYMB] AS [CURRSYMB], 
+    [A_MNTL_STOK_2018].[MSIRANO] AS [MSIRANO]
+    FROM [dbo].[A_MNTL_STOK_2018] AS [A_MNTL_STOK_2018]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="C_INT_CARIONEKRAN_006" EntityType="Self.C_INT_CARIONEKRAN_006" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [C_INT_CARIONEKRAN_006].[GECIKEN] AS [GECIKEN], 
+    [C_INT_CARIONEKRAN_006].[GecikenDurum] AS [GecikenDurum], 
+    [C_INT_CARIONEKRAN_006].[Firma_Bilgisi] AS [Firma_Bilgisi], 
+    [C_INT_CARIONEKRAN_006].[Durum] AS [Durum], 
+    [C_INT_CARIONEKRAN_006].[KODU] AS [KODU], 
+    [C_INT_CARIONEKRAN_006].[Sehir] AS [Sehir], 
+    [C_INT_CARIONEKRAN_006].[Ilce] AS [Ilce], 
+    [C_INT_CARIONEKRAN_006].[Bakiye] AS [Bakiye], 
+    [C_INT_CARIONEKRAN_006].[alacak] AS [alacak], 
+    [C_INT_CARIONEKRAN_006].[borc] AS [borc], 
+    [C_INT_CARIONEKRAN_006].[LOGREF] AS [LOGREF], 
+    [C_INT_CARIONEKRAN_006].[RiskLimiti] AS [RiskLimiti], 
+    [C_INT_CARIONEKRAN_006].[OKoD] AS [OKoD], 
+    [C_INT_CARIONEKRAN_006].[LOGOID] AS [LOGOID]
+    FROM [dbo].[C_INT_CARIONEKRAN_006] AS [C_INT_CARIONEKRAN_006]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ISRG_FaturaDetaY_006" EntityType="Self.ISRG_FaturaDetaY_006" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ISRG_FaturaDetaY_006].[LOGICALREF] AS [LOGICALREF], 
+    [ISRG_FaturaDetaY_006].[URUNKODU] AS [URUNKODU], 
+    [ISRG_FaturaDetaY_006].[URUNADI] AS [URUNADI], 
+    [ISRG_FaturaDetaY_006].[URUNMIKTARI] AS [URUNMIKTARI], 
+    [ISRG_FaturaDetaY_006].[BIRIMFIYAT] AS [BIRIMFIYAT], 
+    [ISRG_FaturaDetaY_006].[SATIRTUTARI] AS [SATIRTUTARI], 
+    [ISRG_FaturaDetaY_006].[DISTDISC] AS [DISTDISC], 
+    [ISRG_FaturaDetaY_006].[VATAMNT] AS [VATAMNT], 
+    [ISRG_FaturaDetaY_006].[VATMATRAH] AS [VATMATRAH], 
+    [ISRG_FaturaDetaY_006].[INVOICEREF] AS [INVOICEREF], 
+    [ISRG_FaturaDetaY_006].[STOCKREF] AS [STOCKREF]
+    FROM [dbo].[ISRG_FaturaDetaY_006] AS [ISRG_FaturaDetaY_006]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ISRG_Faturalar_006" EntityType="Self.ISRG_Faturalar_006" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ISRG_Faturalar_006].[LOGICALREF] AS [LOGICALREF], 
+    [ISRG_Faturalar_006].[CODE] AS [CODE], 
+    [ISRG_Faturalar_006].[DEFINITION_] AS [DEFINITION_], 
+    [ISRG_Faturalar_006].[TRCODE] AS [TRCODE], 
+    [ISRG_Faturalar_006].[FICHENO] AS [FICHENO], 
+    [ISRG_Faturalar_006].[DATE_] AS [DATE_], 
+    [ISRG_Faturalar_006].[NETTOTAL] AS [NETTOTAL], 
+    [ISRG_Faturalar_006].[drmX] AS [drmX], 
+    [ISRG_Faturalar_006].[CariRef] AS [CariRef], 
+    [ISRG_Faturalar_006].[MASRAF] AS [MASRAF], 
+    [ISRG_Faturalar_006].[INDIRIM] AS [INDIRIM], 
+    [ISRG_Faturalar_006].[YEKUN] AS [YEKUN], 
+    [ISRG_Faturalar_006].[CAPIBLOCK_CREADEDDATE] AS [CAPIBLOCK_CREADEDDATE], 
+    [ISRG_Faturalar_006].[CAPIBLOCK_MODIFIEDDATE] AS [CAPIBLOCK_MODIFIEDDATE], 
+    [ISRG_Faturalar_006].[SPECODE] AS [SPECODE], 
+    [ISRG_Faturalar_006].[CYPHCODE] AS [CYPHCODE]
+    FROM [dbo].[ISRG_Faturalar_006] AS [ISRG_Faturalar_006]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ISRG_Hesap_Extresi_006_04" EntityType="Self.ISRG_Hesap_Extresi_006_04" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ISRG_Hesap_Extresi_006_04].[rank] AS [rank], 
+    [ISRG_Hesap_Extresi_006_04].[LOGICALREF] AS [LOGICALREF], 
+    [ISRG_Hesap_Extresi_006_04].[ISLEMTARIHI] AS [ISLEMTARIHI], 
+    [ISRG_Hesap_Extresi_006_04].[ISLEMACIKLAMASI] AS [ISLEMACIKLAMASI], 
+    [ISRG_Hesap_Extresi_006_04].[BORC_ALACAK] AS [BORC_ALACAK], 
+    [ISRG_Hesap_Extresi_006_04].[TUTAR] AS [TUTAR], 
+    [ISRG_Hesap_Extresi_006_04].[VADE] AS [VADE], 
+    [ISRG_Hesap_Extresi_006_04].[CLIENTREF] AS [CLIENTREF], 
+    [ISRG_Hesap_Extresi_006_04].[ISLEMTURU] AS [ISLEMTURU], 
+    [ISRG_Hesap_Extresi_006_04].[TRANNO] AS [TRANNO], 
+    [ISRG_Hesap_Extresi_006_04].[TTUTAR] AS [TTUTAR], 
+    [ISRG_Hesap_Extresi_006_04].[CAPIBLOCK_CREADEDDATE] AS [CAPIBLOCK_CREADEDDATE], 
+    [ISRG_Hesap_Extresi_006_04].[CAPIBLOCK_MODIFIEDDATE] AS [CAPIBLOCK_MODIFIEDDATE], 
+    [ISRG_Hesap_Extresi_006_04].[SOURCEFREF] AS [SOURCEFREF]
+    FROM [dbo].[ISRG_Hesap_Extresi_006_04] AS [ISRG_Hesap_Extresi_006_04]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LKSDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="A_MNTL_STOK_2018">
+          <Key>
+            <PropertyRef Name="LOGICALREF" />
+            <PropertyRef Name="BAKIYE" />
+            <PropertyRef Name="BAKIYE2" />
+            <PropertyRef Name="ListeFiyati" />
+            <PropertyRef Name="PARABIRIMI" />
+            <PropertyRef Name="OEM" />
+            <PropertyRef Name="TEDARIKCI" />
+            <PropertyRef Name="SizeOzelTL" />
+            <PropertyRef Name="INDIRIM" />
+            <PropertyRef Name="CURRSYMB" />
+          </Key>
+          <Property Name="MARKA" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="LOGICALREF" Type="Int32" Nullable="false" />
+          <Property Name="URUNKODU" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="URETICI_KODU" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="MODEL" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="KDV" Type="Double" />
+          <Property Name="BAKIYE" Type="Int32" Nullable="false" />
+          <Property Name="BAKIYE2" Type="Int32" Nullable="false" />
+          <Property Name="ListeFiyati" Type="Int32" Nullable="false" />
+          <Property Name="PARABIRIMI" Type="Int32" Nullable="false" />
+          <Property Name="OEM" Type="Int32" Nullable="false" />
+          <Property Name="URUNADI" Type="String" MaxLength="51" FixedLength="false" Unicode="false" />
+          <Property Name="ARAC" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="ANABIRIMI" Type="Int32" />
+          <Property Name="TEDARIKCI" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="B2B" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="SizeOzelTL" Type="Int32" Nullable="false" />
+          <Property Name="INDIRIM" Type="Int32" Nullable="false" />
+          <Property Name="CURRSYMB" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MSIRANO" Type="Int32" />
+        </EntityType>
+        <EntityType Name="C_INT_CARIONEKRAN_006">
+          <Key>
+            <PropertyRef Name="GECIKEN" />
+            <PropertyRef Name="GecikenDurum" />
+            <PropertyRef Name="Durum" />
+            <PropertyRef Name="Bakiye" />
+            <PropertyRef Name="alacak" />
+            <PropertyRef Name="borc" />
+            <PropertyRef Name="LOGREF" />
+            <PropertyRef Name="RiskLimiti" />
+          </Key>
+          <Property Name="GECIKEN" Type="Double" Nullable="false" />
+          <Property Name="GecikenDurum" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Firma_Bilgisi" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Durum" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="KODU" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="Sehir" Type="String" MaxLength="21" FixedLength="false" Unicode="false" />
+          <Property Name="Ilce" Type="String" MaxLength="51" FixedLength="false" Unicode="false" />
+          <Property Name="Bakiye" Type="Double" Nullable="false" />
+          <Property Name="alacak" Type="Double" Nullable="false" />
+          <Property Name="borc" Type="Double" Nullable="false" />
+          <Property Name="LOGREF" Type="Int32" Nullable="false" />
+          <Property Name="RiskLimiti" Type="Double" Nullable="false" />
+          <Property Name="OKoD" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="LOGOID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ISRG_FaturaDetaY_006">
+          <Key>
+            <PropertyRef Name="LOGICALREF" />
+          </Key>
+          <Property Name="LOGICALREF" Type="Int32" Nullable="false" />
+          <Property Name="URUNKODU" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="URUNADI" Type="String" MaxLength="51" FixedLength="false" Unicode="false" />
+          <Property Name="URUNMIKTARI" Type="Double" />
+          <Property Name="BIRIMFIYAT" Type="Double" />
+          <Property Name="SATIRTUTARI" Type="Double" />
+          <Property Name="DISTDISC" Type="Double" />
+          <Property Name="VATAMNT" Type="Double" />
+          <Property Name="VATMATRAH" Type="Double" />
+          <Property Name="INVOICEREF" Type="Int32" />
+          <Property Name="STOCKREF" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ISRG_Faturalar_006">
+          <Key>
+            <PropertyRef Name="LOGICALREF" />
+            <PropertyRef Name="drmX" />
+            <PropertyRef Name="CariRef" />
+          </Key>
+          <Property Name="LOGICALREF" Type="Int32" Nullable="false" />
+          <Property Name="CODE" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="DEFINITION_" Type="String" MaxLength="51" FixedLength="false" Unicode="false" />
+          <Property Name="TRCODE" Type="Int16" />
+          <Property Name="FICHENO" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="DATE_" Type="DateTime" Precision="3" />
+          <Property Name="NETTOTAL" Type="Double" />
+          <Property Name="drmX" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CariRef" Type="Int32" Nullable="false" />
+          <Property Name="MASRAF" Type="Double" />
+          <Property Name="INDIRIM" Type="Double" />
+          <Property Name="YEKUN" Type="Double" />
+          <Property Name="CAPIBLOCK_CREADEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CAPIBLOCK_MODIFIEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="SPECODE" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="CYPHCODE" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ISRG_Hesap_Extresi_006_04">
+          <Key>
+            <PropertyRef Name="LOGICALREF" />
+          </Key>
+          <Property Name="rank" Type="Int64" />
+          <Property Name="LOGICALREF" Type="Int32" Nullable="false" />
+          <Property Name="ISLEMTARIHI" Type="DateTime" Precision="3" />
+          <Property Name="ISLEMACIKLAMASI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BORC_ALACAK" Type="Int32" />
+          <Property Name="TUTAR" Type="Decimal" Precision="26" Scale="6" />
+          <Property Name="VADE" Type="DateTime" Precision="3" />
+          <Property Name="CLIENTREF" Type="Int32" />
+          <Property Name="ISLEMTURU" Type="String" MaxLength="29" FixedLength="false" Unicode="false" />
+          <Property Name="TRANNO" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="TTUTAR" Type="Decimal" Precision="28" Scale="6" />
+          <Property Name="CAPIBLOCK_CREADEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CAPIBLOCK_MODIFIEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="SOURCEFREF" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="LKSDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="A_MNTL_STOK_2018" EntityType="Self.A_MNTL_STOK_2018" />
+          <EntitySet Name="C_INT_CARIONEKRAN_006" EntityType="Self.C_INT_CARIONEKRAN_006" />
+          <EntitySet Name="ISRG_FaturaDetaY_006" EntityType="Self.ISRG_FaturaDetaY_006" />
+          <EntitySet Name="ISRG_Faturalar_006" EntityType="Self.ISRG_Faturalar_006" />
+          <EntitySet Name="ISRG_Hesap_Extresi_006_04" EntityType="Self.ISRG_Hesap_Extresi_006_04" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LKSDBModelStoreContainer" CdmEntityContainer="LKSDBEntities">
+          <EntitySetMapping Name="A_MNTL_STOK_2018">
+            <EntityTypeMapping TypeName="LKSDBModel.A_MNTL_STOK_2018">
+              <MappingFragment StoreEntitySet="A_MNTL_STOK_2018">
+                <ScalarProperty Name="MARKA" ColumnName="MARKA" />
+                <ScalarProperty Name="LOGICALREF" ColumnName="LOGICALREF" />
+                <ScalarProperty Name="URUNKODU" ColumnName="URUNKODU" />
+                <ScalarProperty Name="URETICI_KODU" ColumnName="URETICI_KODU" />
+                <ScalarProperty Name="MODEL" ColumnName="MODEL" />
+                <ScalarProperty Name="KDV" ColumnName="KDV" />
+                <ScalarProperty Name="BAKIYE" ColumnName="BAKIYE" />
+                <ScalarProperty Name="BAKIYE2" ColumnName="BAKIYE2" />
+                <ScalarProperty Name="ListeFiyati" ColumnName="ListeFiyati" />
+                <ScalarProperty Name="PARABIRIMI" ColumnName="PARABIRIMI" />
+                <ScalarProperty Name="OEM" ColumnName="OEM" />
+                <ScalarProperty Name="URUNADI" ColumnName="URUNADI" />
+                <ScalarProperty Name="ARAC" ColumnName="ARAC" />
+                <ScalarProperty Name="ANABIRIMI" ColumnName="ANABIRIMI" />
+                <ScalarProperty Name="TEDARIKCI" ColumnName="TEDARIKCI" />
+                <ScalarProperty Name="B2B" ColumnName="B2B" />
+                <ScalarProperty Name="SizeOzelTL" ColumnName="SizeOzelTL" />
+                <ScalarProperty Name="INDIRIM" ColumnName="INDIRIM" />
+                <ScalarProperty Name="CURRSYMB" ColumnName="CURRSYMB" />
+                <ScalarProperty Name="MSIRANO" ColumnName="MSIRANO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="C_INT_CARIONEKRAN_006">
+            <EntityTypeMapping TypeName="LKSDBModel.C_INT_CARIONEKRAN_006">
+              <MappingFragment StoreEntitySet="C_INT_CARIONEKRAN_006">
+                <ScalarProperty Name="GECIKEN" ColumnName="GECIKEN" />
+                <ScalarProperty Name="GecikenDurum" ColumnName="GecikenDurum" />
+                <ScalarProperty Name="Firma_Bilgisi" ColumnName="Firma_Bilgisi" />
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
+                <ScalarProperty Name="KODU" ColumnName="KODU" />
+                <ScalarProperty Name="Sehir" ColumnName="Sehir" />
+                <ScalarProperty Name="Ilce" ColumnName="Ilce" />
+                <ScalarProperty Name="Bakiye" ColumnName="Bakiye" />
+                <ScalarProperty Name="alacak" ColumnName="alacak" />
+                <ScalarProperty Name="borc" ColumnName="borc" />
+                <ScalarProperty Name="LOGREF" ColumnName="LOGREF" />
+                <ScalarProperty Name="RiskLimiti" ColumnName="RiskLimiti" />
+                <ScalarProperty Name="OKoD" ColumnName="OKoD" />
+                <ScalarProperty Name="LOGOID" ColumnName="LOGOID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ISRG_FaturaDetaY_006">
+            <EntityTypeMapping TypeName="LKSDBModel.ISRG_FaturaDetaY_006">
+              <MappingFragment StoreEntitySet="ISRG_FaturaDetaY_006">
+                <ScalarProperty Name="LOGICALREF" ColumnName="LOGICALREF" />
+                <ScalarProperty Name="URUNKODU" ColumnName="URUNKODU" />
+                <ScalarProperty Name="URUNADI" ColumnName="URUNADI" />
+                <ScalarProperty Name="URUNMIKTARI" ColumnName="URUNMIKTARI" />
+                <ScalarProperty Name="BIRIMFIYAT" ColumnName="BIRIMFIYAT" />
+                <ScalarProperty Name="SATIRTUTARI" ColumnName="SATIRTUTARI" />
+                <ScalarProperty Name="DISTDISC" ColumnName="DISTDISC" />
+                <ScalarProperty Name="VATAMNT" ColumnName="VATAMNT" />
+                <ScalarProperty Name="VATMATRAH" ColumnName="VATMATRAH" />
+                <ScalarProperty Name="INVOICEREF" ColumnName="INVOICEREF" />
+                <ScalarProperty Name="STOCKREF" ColumnName="STOCKREF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ISRG_Faturalar_006">
+            <EntityTypeMapping TypeName="LKSDBModel.ISRG_Faturalar_006">
+              <MappingFragment StoreEntitySet="ISRG_Faturalar_006">
+                <ScalarProperty Name="LOGICALREF" ColumnName="LOGICALREF" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="DEFINITION_" ColumnName="DEFINITION_" />
+                <ScalarProperty Name="TRCODE" ColumnName="TRCODE" />
+                <ScalarProperty Name="FICHENO" ColumnName="FICHENO" />
+                <ScalarProperty Name="DATE_" ColumnName="DATE_" />
+                <ScalarProperty Name="NETTOTAL" ColumnName="NETTOTAL" />
+                <ScalarProperty Name="drmX" ColumnName="drmX" />
+                <ScalarProperty Name="CariRef" ColumnName="CariRef" />
+                <ScalarProperty Name="MASRAF" ColumnName="MASRAF" />
+                <ScalarProperty Name="INDIRIM" ColumnName="INDIRIM" />
+                <ScalarProperty Name="YEKUN" ColumnName="YEKUN" />
+                <ScalarProperty Name="CAPIBLOCK_CREADEDDATE" ColumnName="CAPIBLOCK_CREADEDDATE" />
+                <ScalarProperty Name="CAPIBLOCK_MODIFIEDDATE" ColumnName="CAPIBLOCK_MODIFIEDDATE" />
+                <ScalarProperty Name="SPECODE" ColumnName="SPECODE" />
+                <ScalarProperty Name="CYPHCODE" ColumnName="CYPHCODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ISRG_Hesap_Extresi_006_04">
+            <EntityTypeMapping TypeName="LKSDBModel.ISRG_Hesap_Extresi_006_04">
+              <MappingFragment StoreEntitySet="ISRG_Hesap_Extresi_006_04">
+                <ScalarProperty Name="rank" ColumnName="rank" />
+                <ScalarProperty Name="LOGICALREF" ColumnName="LOGICALREF" />
+                <ScalarProperty Name="ISLEMTARIHI" ColumnName="ISLEMTARIHI" />
+                <ScalarProperty Name="ISLEMACIKLAMASI" ColumnName="ISLEMACIKLAMASI" />
+                <ScalarProperty Name="BORC_ALACAK" ColumnName="BORC_ALACAK" />
+                <ScalarProperty Name="TUTAR" ColumnName="TUTAR" />
+                <ScalarProperty Name="VADE" ColumnName="VADE" />
+                <ScalarProperty Name="CLIENTREF" ColumnName="CLIENTREF" />
+                <ScalarProperty Name="ISLEMTURU" ColumnName="ISLEMTURU" />
+                <ScalarProperty Name="TRANNO" ColumnName="TRANNO" />
+                <ScalarProperty Name="TTUTAR" ColumnName="TTUTAR" />
+                <ScalarProperty Name="CAPIBLOCK_CREADEDDATE" ColumnName="CAPIBLOCK_CREADEDDATE" />
+                <ScalarProperty Name="CAPIBLOCK_MODIFIEDDATE" ColumnName="CAPIBLOCK_MODIFIEDDATE" />
+                <ScalarProperty Name="SOURCEFREF" ColumnName="SOURCEFREF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
