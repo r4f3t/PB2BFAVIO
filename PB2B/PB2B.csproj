@@ -170,19 +170,34 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Entity\A_MNTL_STOK_2018.cs">
-      <DependentUpon>LOGOKAMP.tt</DependentUpon>
+      <DependentUpon>LKSDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\C_INT_CARIONEKRAN_006.cs">
-      <DependentUpon>LOGOKAMP.tt</DependentUpon>
+      <DependentUpon>LKSDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\ISRG_FaturaDetaY_006.cs">
-      <DependentUpon>LOGOKAMP.tt</DependentUpon>
+      <DependentUpon>LKSDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\ISRG_Faturalar_006.cs">
-      <DependentUpon>LOGOKAMP.tt</DependentUpon>
+      <DependentUpon>LKSDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\ISRG_Hesap_Extresi_006_04.cs">
-      <DependentUpon>LOGOKAMP.tt</DependentUpon>
+      <DependentUpon>LKSDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\LKSDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LKSDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\LKSDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LKSDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\LKSDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LKSDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Entity\LOGOKAMP.Context.cs">
       <AutoGen>True</AutoGen>
@@ -199,6 +214,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LOGOKAMP.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Entity\ZTbLUseR.cs">
+      <DependentUpon>LOGOKAMP.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -209,10 +227,20 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Entity\LKSDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LKSDB.edmx</DependentUpon>
+      <LastGenOutput>LKSDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entity\LKSDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LKSDB.edmx</DependentUpon>
+      <LastGenOutput>LKSDB.cs</LastGenOutput>
+    </Content>
     <Content Include="Entity\LOGOKAMP.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>LOGOKAMP.Context.cs</LastGenOutput>
       <DependentUpon>LOGOKAMP.edmx</DependentUpon>
+      <LastGenOutput>LOGOKAMP.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Entity\LOGOKAMP.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -227,6 +255,13 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="Entity\LKSDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LKSDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Entity\LKSDB.edmx.diagram">
+      <DependentUpon>LKSDB.edmx</DependentUpon>
     </Content>
     <EntityDeploy Include="Entity\LOGOKAMP.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -257,8 +292,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

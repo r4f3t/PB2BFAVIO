@@ -4,12 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="95314400221c4d9bbb81107478f5237d" Name="Diagram1">
-        <EntityTypeShape EntityType="LKSDBModel.A_MNTL_STOK_2018" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LKSDBModel.C_INT_CARIONEKRAN_006" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LKSDBModel.ISRG_FaturaDetaY_006" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LKSDBModel.ISRG_Faturalar_006" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LKSDBModel.ISRG_Hesap_Extresi_006_04" Width="1.5" PointX="7.25" PointY="0.625" IsExpanded="true" />
+      <Diagram DiagramId="5b862be9915f4eafba82a5140d534ad4" Name="Diagram1">
+        <EntityTypeShape EntityType="LOGOKAMPModel.ZTbLUseR" Width="1.5" PointX="1" PointY="0.5" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
