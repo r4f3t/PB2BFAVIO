@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -168,7 +171,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="classes\baglanti.cs" />
+    <Compile Include="classes\GLOBALS.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Musteri\MusteriController.cs" />
+    <Compile Include="Controllers\Plasiyer\PlasiyerController.cs" />
     <Compile Include="Entity\A_MNTL_STOK_2018.cs">
       <DependentUpon>LKSDB.tt</DependentUpon>
     </Compile>
@@ -220,6 +227,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CARIEXTRE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -256,6 +264,89 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="web\404.html" />
+    <Content Include="web\blank-page.html" />
+    <Content Include="web\buttons.html" />
+    <Content Include="web\charts.html" />
+    <Content Include="web\compose.html" />
+    <Content Include="web\css\AjaxLoader.html" />
+    <Content Include="web\css\bootstrap.css" />
+    <Content Include="web\css\custom.css" />
+    <Content Include="web\css\export.css" />
+    <Content Include="web\css\font-awesome.css" />
+    <Content Include="web\css\grabbing.html" />
+    <Content Include="web\css\graph.css" />
+    <Content Include="web\css\jqcandlestick.css" />
+    <Content Include="web\css\monthly.css" />
+    <Content Include="web\css\owl.carousel.css" />
+    <Content Include="web\css\SidebarNav.min.css" />
+    <Content Include="web\css\style.css" />
+    <Content Include="web\fonts\fontawesome-webfont5b62.svg" />
+    <Content Include="web\fonts\glyphicons-halflings-regular.html" />
+    <Content Include="web\forms.html" />
+    <Content Include="web\gsip.html" />
+    <Content Include="web\icons.html" />
+    <Content Include="web\images\1.html" />
+    <Content Include="web\images\1.jpg" />
+    <Content Include="web\images\2.html" />
+    <Content Include="web\images\2.jpg" />
+    <Content Include="web\images\3.html" />
+    <Content Include="web\images\3.jpg" />
+    <Content Include="web\images\4.jpg" />
+    <Content Include="web\images\divice-pagenations.html" />
+    <Content Include="web\images\i1.png" />
+    <Content Include="web\images\i2.png" />
+    <Content Include="web\images\i3.png" />
+    <Content Include="web\images\i4.png" />
+    <Content Include="web\images\img1.png" />
+    <Content Include="web\images\lock.png" />
+    <Content Include="web\images\logo.jpg" />
+    <Content Include="web\images\mail.png" />
+    <Content Include="web\images\search-icon.png" />
+    <Content Include="web\images\tick.png" />
+    <Content Include="web\images\user.png" />
+    <Content Include="web\images\weather.jpg" />
+    <Content Include="web\inbox.html" />
+    <Content Include="web\index.html" />
+    <Content Include="web\js\amcharts.js" />
+    <Content Include="web\js\bootstrap.js" />
+    <Content Include="web\js\Chart.bundle.js" />
+    <Content Include="web\js\Chart.js" />
+    <Content Include="web\js\chartinator.js" />
+    <Content Include="web\js\classie.js" />
+    <Content Include="web\js\custom.js" />
+    <Content Include="web\js\export.min.js" />
+    <Content Include="web\js\index.js" />
+    <Content Include="web\js\index1.js" />
+    <Content Include="web\js\index2.js" />
+    <Content Include="web\js\jquery-1.11.1.min.js" />
+    <Content Include="web\js\jquery.flot.js" />
+    <Content Include="web\js\jquery.jqcandlestick.min.js" />
+    <Content Include="web\js\jquery.nicescroll.js" />
+    <Content Include="web\js\light.js" />
+    <Content Include="web\js\metisMenu.min.js" />
+    <Content Include="web\js\modernizr.custom.js" />
+    <Content Include="web\js\monthly.js" />
+    <Content Include="web\js\owl.carousel.js" />
+    <Content Include="web\js\pie-chart.js" />
+    <Content Include="web\js\scripts.js" />
+    <Content Include="web\js\serial.js" />
+    <Content Include="web\js\SidebarNav.min.js" />
+    <Content Include="web\js\SimpleChart.js" />
+    <Content Include="web\js\utils.js" />
+    <Content Include="web\js\validator.min.js" />
+    <Content Include="web\lib\modernizr\modernizr-custom.html" />
+    <Content Include="web\login.html" />
+    <Content Include="web\media.html" />
+    <Content Include="web\sfa.html" />
+    <Content Include="web\signup.html" />
+    <Content Include="web\tables.html" />
+    <Content Include="web\typography.html" />
+    <Content Include="web\validation.html" />
+    <Content Include="web\widgets.html" />
+    <Content Include="web\Yeni Metin Belgesi.txt" />
+    <Content Include="web\zzcariextre.html" />
+    <Content Include="web\zzsepet.html" />
     <EntityDeploy Include="Entity\LKSDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>LKSDB.Designer.cs</LastGenOutput>
@@ -292,11 +383,24 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="web\fonts\fontawesome-webfont5b62.eot" />
+    <Content Include="web\fonts\fontawesome-webfont5b62.ttf" />
+    <Content Include="web\fonts\fontawesome-webfont5b62.woff" />
+    <Content Include="web\fonts\fontawesome-webfont5b62.woff2" />
+    <Content Include="web\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="web\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="web\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="web\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="web\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="web\fonts\glyphicons-halflings-regulard41d.eot" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\LTEMASTER.cshtml" />
+    <Content Include="Views\Plasiyer\PlasiyerIndex.cshtml" />
+    <Content Include="Views\Shared\LTEMusteriMaster.cshtml" />
+    <Content Include="Views\Musteri\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -5553,13 +5553,13 @@ a.list-group-item-danger.active:focus {
   border-bottom-color: #ddd;
 }
 .panel-primary {
-  border-color: #337ab7;
+  border-color: #e80c0c;
 }
-.panel-primary > .panel-heading {
-  color: #fff;
-  background-color: #337ab7;
-  border-color: #337ab7;
-}
+    .panel-primary > .panel-heading {
+        color: #fff;
+        background-color: #e80c0c;
+        border-color: #337ab7;
+    }
 .panel-primary > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #337ab7;
 }

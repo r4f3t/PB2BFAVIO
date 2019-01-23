@@ -1,0 +1,198 @@
+﻿
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <title>Favio - Elektrikli Ev Aletleri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="~/web/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/web/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="~/web/css/font-awesome.css" rel="stylesheet">
+    <link href='~/web/css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css' />
+    <script src="~/web/js/jquery-1.11.1.min.js"></script>
+    <script src="~/web/js/modernizr.custom.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+    <script src="~/web/js/Chart.js"></script>
+    <script src="~/web/js/metisMenu.min.js"></script>
+    <script src="~/web/js/custom.js"></script>
+    <link href="~/web/css/custom.css" rel="stylesheet">
+    <!--//Metis Menu -->
+    <style>
+        #chartdiv {
+            width: 100%;
+            height: 295px;
+        }
+    </style>
+
+</head>
+<body class="cbp-spmenu-push">
+
+    <body>
+        <div class="main-content">
+            <div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+                <!--left-fixed -navigation-->
+                <aside class="sidebar-left" style="background-color:#E80405;">
+                    <nav class="navbar navbar-inverse">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".collapse" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <img src="~/web/images/logo.jpg" width="228">
+                        </div>
+
+                        <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+                            <ul class="sidebar-menu">
+                                <li class="treeview">
+                                    <a href="~/Views/Plasiyer/PlasiyerIndex.cshtml">
+                                        <font color="white"><i class="fa fa-backward"></i> <span> Carilere Dön</span></font>
+                                    </a>
+                                </li>
+
+                                <li class="treeview">
+                                    <a href="zzcariextre.html">
+                                        <font color="white"><i class="fa fa-product-hunt"></i> <span>Sipariş Ver</span></font>
+                                    </a>
+                                </li>
+
+                                <li class="treeview">
+                                    <a href="zzcariextre.html">
+                                        <font color="white"><i class="fa fa-pie-chart"></i> <span>Siparişlerim</span></font>
+                                    </a>
+                                </li>
+
+                                <li class="treeview">
+                                    <a href="zzcariextre.html">
+                                        <font color="white"><i class="fa fa-pie-chart"></i> <span>Cari Hesap Extresi</span></font>
+                                    </a>
+                                </li>
+
+                                <li class="treeview">
+                                    <a href="zzcariextre.html">
+                                        <font color="white"><i class="fa fa-pie-chart"></i> <span>Faturalarım</span></font>
+                                    </a>
+                                </li>
+
+
+
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </nav>
+                </aside>
+            </div>
+            <!--left-fixed -navigation-->
+            <!---728x90--->
+            <!-- header-starts -->
+            <div class="sticky-header header-section ">
+                <div class="header-left">
+                    <!--toggle button start-->
+                    <button id="showLeftPush"><i class="fa fa-bars"></i></button>
+                    <!--toggle button end-->
+                    <div class="profile_details_left">
+                        <!--notifications of menu start -->
+                        <ul class="nofitications-dropdown"></ul>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <!--notification menu end -->
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="header-right">
+
+
+                    <!--search-box-->
+                    <!--//end-search-box-->
+
+                    <div class="profile_details">
+                        <ul>
+                            <li class="dropdown profile_details_drop">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <div class="profile_img">
+
+                                        <div class="user-name">
+                                            <p>@TempData["adi"]</p>
+                                            <span>
+                                                @TempData["userTip"]
+
+                                            </span>
+                                        </div>
+                                        <i class="fa fa-angle-down lnr"></i>
+                                        <i class="fa fa-angle-up lnr"></i>
+                                        <div class="clearfix"></div>	<br>
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu drp-mnu">
+                                    <li> <a href="#"><i class="fa fa-cog"></i> Ayarlar</a> </li>
+                                    <li> <a href="#"><i class="fa fa-user"></i> Hesabım</a> </li>
+                                    <li> <a href="#"><i class="fa fa-suitcase"></i> Profil</a> </li>
+                                    <li> <a href="#"><i class="fa fa-sign-out"></i> Çıkış Yap</a> </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <!-- //header-ends -->
+            <!---728x90--->
+            <!-- main content start-->
+            <div id="page-wrapper">
+                <h4>@Session["Firma_Bilgisi"].ToString() <small>@Session["CODE"].ToString()</small></h4>
+                <div class="row" style="height:10px;"></div>
+                @RenderBody()
+
+                <script src="~/web/js/index1.js"></script>
+            </div>
+        </div>
+        <!--footer-->
+        <div class="footer">
+            <p>COPYRIGHT © <a href="http://www.mentalsoft.net" target="_blank">Mentalsoft</a></p>
+        </div>
+        <!--//footer-->
+        </div>
+
+
+        <!-- Classie --><!-- for toggle left push menu script -->
+        <script src="~/web/js/classie.js"></script>
+        <script>
+            var menuLeft = document.getElementById('cbp-spmenu-s1'),
+                showLeftPush = document.getElementById('showLeftPush'),
+                body = document.body;
+
+            showLeftPush.onclick = function () {
+                classie.toggle(this, 'active');
+                classie.toggle(body, 'cbp-spmenu-push-toright');
+                classie.toggle(menuLeft, 'cbp-spmenu-open');
+                disableOther('showLeftPush');
+            };
+
+
+            function disableOther(button) {
+                if (button !== 'showLeftPush') {
+                    classie.toggle(showLeftPush, 'disabled');
+                }
+            }
+        </script>
+        <!-- //Classie --><!-- //for toggle left push menu script -->
+        <!--scrolling js-->
+        <script src="~/web/js/jquery.nicescroll.js"></script>
+        <script src="~/web/js/scripts.js"></script>
+        <!--//scrolling js-->
+        <!-- side nav js -->
+        <script src='~/web/js/SidebarNav.min.js' type='text/javascript'></script>
+        <script>
+            $('.sidebar-menu').SidebarNav()
+        </script>
+        <!-- //side nav js -->
+        <!-- Bootstrap Core JavaScript -->
+        <script src="~/web/js/bootstrap.js"></script>
+        <!-- //Bootstrap Core JavaScript -->
+
+    </body>
+</html>

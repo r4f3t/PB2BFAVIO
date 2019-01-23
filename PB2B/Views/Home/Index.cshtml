@@ -1,31 +1,47 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    Layout = null;
 }
+<!DOCTYPE HTML>
+<html>
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <title>FAVio Sipariş Modülü Giriş Ekranı</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Glance Design Dashboard Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="~/web/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/web/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="~/web/css/font-awesome.css" rel="stylesheet">
+    <link href='~/web/css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css' />
+    <script src="~/web/js/jquery-1.11.1.min.js"></script>
+    <script src="~/web/js/modernizr.custom.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+    <script src="~/web/js/metisMenu.min.js"></script>
+    <script src="~/web/js/custom.js"></script>
+    <link href="~/web/css/custom.css" rel="stylesheet">
+</head>
+<body>
+    <div id="page">
+        <div class="main-page login-page " style="width:500px;">
+            <div style="background-color:#E80405;" class="text-center"><img src="~/web/images/logo.jpg" width="228"></div>
+            <div class="widget-shadow">
+                <div class="login-body">
+                    <form action="/" method="post" novalidate>
+                        <input type="email" class="user" name="Adi" placeholder="Kullancı Adı">
+                        <input type="password" name="Sifresi" class="lock" placeholder="Şifre" >
+                        <div class="forgot-grid">
+                            <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Beni Hatırla</label>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <input type="submit" name="Sign In" style="background:#E80405" value="Giriş Yap">
+                    </form>
+                </div>
+            </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+</body>
+</html>
