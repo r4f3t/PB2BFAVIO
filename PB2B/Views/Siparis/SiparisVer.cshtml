@@ -1,0 +1,106 @@
+﻿@model IEnumerable<PB2B.Entity.A_MNTL_STOK_2018>
+@{
+    ViewBag.Title = "SiparisVer";
+    Layout = "~/Views/Shared/LTEMusteriMaster.cshtml";
+}
+
+
+<div class="row">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Ürün Arama Ekranı
+        </div>
+        <div class="panel-body">
+
+            @using (Html.BeginForm())
+            {
+                <div class="row">
+                    <div class="col-lg-3" style="padding:0px;">
+                        <div class="search-box" style="width:100%;">
+
+                            <input class="sb-search-input" name="searchParam" placeholder="Ürün Adı/Kodu...." />
+                            <label class="input__label" for="input-31">
+                                <svg class="graphic" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
+                                    <path d="m0,0l404,0l0,77l-404,0l0,-77z" />
+                                </svg>
+                            </label>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-1">
+                        <input id="Ara" class="btn btn-danger" type="submit" style="width:100%;margin-top:10px;" value="Ara" />
+                    </div>
+                    <br>
+                    <div class="col-lg-2"><input type="checkbox"> Tükenmişleri Gizle</div>
+
+                </div>
+            }
+
+            <table class="table table-hover table-responsive">
+                <thead>
+                    <tr style="background-color:red;">
+                        <th><font color="white">Ürün Kodu</font></th>
+                        <th><font color="white">Açıklama</font></th>
+                        <th><font color="white">Marka</font></th>
+                        <th><font color="white">Model</font></th>
+                        <th><font color="white">Stok</font></th>
+                        <th><font color="white">Sepet</font></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @if (Model != null)
+                    {
+                        foreach (var item in Model)
+                        {
+
+                            <tr>
+                                <td>@item.URUNKODU</td>
+                                <td>@item.URUNADI</td>
+                                <td>@item.MARKA</td>
+                                <td>@item.MODEL</td>
+                                <td>@Convert.ToDecimal(item.BAKIYE).ToString("N")</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal">
+                                        +
+                                    </button>
+                                </td>
+
+                            </tr>
+
+                        }
+                    }
+                </tbody>
+            </table>
+
+
+          
+        </div>
+    </div>
+
+
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    @{Html.RenderAction("SiparisURunGec", "Siparis");}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+

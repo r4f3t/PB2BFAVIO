@@ -10,16 +10,25 @@ namespace PB2B.classes
     {
         protected override bool AuthorizeCore(HttpContextBase httpContext)
         {
-            if (httpContext.Request.Cookies["osmankurtnet"] != null)
+            try
             {
-                return true;
+
+                if (httpContext.Session["CLIENTREF"].ToString() != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    httpContext.Response.Redirect("/Home/Index");
+                    return false;
+                }
+
             }
-            else
+            catch (Exception)
             {
-                httpContext.Response.Redirect("/Yonetim/Login/Index");
+                httpContext.Response.Redirect("/Home/Index");
                 return false;
             }
-
         }
     }
 }

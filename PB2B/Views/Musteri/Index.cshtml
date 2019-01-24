@@ -1,4 +1,4 @@
-﻿
+﻿@model  PB2B.Entity.XX_SRG_Cari_HDurum_006
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/LTEMusteriMaster.cshtml";
@@ -16,7 +16,7 @@
                     <div class="r3_counter_box" style="background-color:red; border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white; ">
                         <i class="pull-left fa fa-turkish-lira icon-rounded" style="background-color:darkred;"></i>
                         <div class="stats">
-                            <h5><strong class="text-white">452 Tl</strong></h5>
+                            <h5><strong class="text-white">@Convert.ToDecimal(Model.Bakiye).ToString("N") TL</strong></h5>
                             <span class="text-white">Bakiye</span>
                         </div>
                     </div>
@@ -27,7 +27,7 @@
                     <div class="r3_counter_box" style="background-color:red; border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
                         <i class="pull-left fa fa-bullhorn icon-rounded" style="background-color:darkred;"></i>
                         <div class="stats">
-                            <h5><strong class="text-white">452 Tl</strong></h5>
+                            <h5><strong class="text-white">@Convert.ToDecimal(Model.GecikenTutar).ToString("N") TL</strong></h5>
                             <span class="text-white">Geciken</span>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                     <div class="r3_counter_box" style="background-color:red; border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
                         <i class="pull-left fa fa-calendar icon-rounded" style="background-color:darkred;"></i>
                         <div class="stats">
-                            <h5><strong class="text-white">452 Tl</strong></h5>
+                            <h5><strong class="text-white">@Model.GecikmeGünü</strong></h5>
                             <span class="text-white">Gecikme Günü</span>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                     <div class="r3_counter_box" style="background-color:red; border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
                         <i class="pull-left fa fa-warning icon-rounded" style="background-color:darkred;"></i>
                         <div class="stats">
-                            <h5><strong class="text-white">452 Tl</strong></h5>
+                            <h5><strong class="text-white">@Convert.ToDecimal(Model.Bekleyen).ToString("N") TL</strong></h5>
                             <span class="text-white">Bekleyen</span>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                     <div class="r3_counter_box" style="background-color:red; border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
                         <i class="pull-left fa fa-bell icon-rounded" style="background-color:darkred;"></i>
                         <div class="stats">
-                            <h5><strong class="text-white">452 Tl</strong></h5>
+                            <h5><strong class="text-white">@Convert.ToDateTime(Model.Vade_Gunu).ToString("yyyy-MM-dd")</strong></h5>
                             <span class="text-white">Vade Günü</span>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                     <div class="r3_counter_box" style="background-color:red; border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
                         <i class="pull-left fa fa-briefcase icon-rounded" style="background-color:darkred;"></i>
                         <div class="stats">
-                            <h5><strong class="text-white">452 Tl</strong></h5>
+                            <h5><strong class="text-white">@Model.ORTVade</strong></h5>
                             <span class="text-white">Ortalama Vade</span>
                         </div>
                     </div>
@@ -85,8 +85,8 @@
                     <div class="r3_counter_box" style="background-color:red; border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
                         <i class="pull-left fa fa-bullseye icon-rounded" style="background-color:darkred;"></i>
                         <div class="stats">
-                            <h5><strong class="text-white">452 Tl</strong></h5>
-                            <span class="text-white">Ortalama Vade</span>
+                            <h5><strong class="text-white">@Convert.ToDecimal(Model.HaftalikTahsilat).ToString("N") TL</strong></h5>
+                            <span class="text-white">Haftalık Tahsilat</span>
                         </div>
                     </div>
                 </div>
@@ -96,8 +96,8 @@
                     <div class="r3_counter_box" style="background-color:red; border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
                         <i class="pull-left fa fa-star icon-rounded" style="background-color:darkred;"></i>
                         <div class="stats">
-                            <h5><strong class="text-white">452 Tl</strong></h5>
-                            <span class="text-white">Ortalama Vade</span>
+                            <h5><strong class="text-white">@Convert.ToDecimal(Model.AyTahsilatı).ToString("N") TL</strong></h5>
+                            <span class="text-white">Ay Tahsilatı</span>
                         </div>
                     </div>
                 </div>

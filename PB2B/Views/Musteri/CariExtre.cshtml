@@ -1,0 +1,87 @@
+﻿@model IEnumerable<PB2B.Models.CARIEXTRE>
+
+@{
+    ViewBag.Title = "CariExtre";
+    Layout = "~/Views/Shared/LTEMusteriMaster.cshtml";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Cari Hesap Extre
+    </div>
+    <div class="panel-body ">
+        <div class="col-md-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr style="background-color:red;">
+                        <th>
+                            <font color="white">İşlem Tarihi</font>
+                        </th>
+                        <th>
+                            <font color="white">İşlem Açıklama</font>
+                        </th>
+                        <th>
+                            <font color="white">Tutar</font>
+                        </th>
+                        <th>
+                            <font color="white">İşlemTürü</font>
+                        </th>
+                        <th>
+                            <font color="white">Tranno</font>
+                        </th>
+                        <th>
+                            <font color="white">Alacak</font>
+                        </th>
+                        <th>
+                            <font color="white">Borç</font>
+                        </th>
+                        <th>
+                            <font color="white">Bakiye</font>
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr onclick="yonlendir('@item.TRANNO','@item.ISLEMTURU')">
+                        <td>
+                            @Convert.ToDateTime(item.ISLEMTARIHI).ToString("yyyy-MM-dd")
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ISLEMACIKLAMA)
+                        </td>
+                        <td >
+                            @Convert.ToDecimal(item.TUTAR).ToString("N")
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ISLEMTURU)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TRANNO)
+                        </td>
+                        <td style="text-align:right;">
+                            @Convert.ToDecimal(item.ALACAK).ToString("N")
+                        </td>
+                        <td style="text-align:right;">
+                            @Convert.ToDecimal(item.BORC).ToString("N")
+                        </td>
+                        <td style="text-align:right;">
+                            @Convert.ToDecimal(item.Bakiye).ToString("N")
+                        </td>
+                        <td></td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    function yonlendir(tranno, dmx) {
+        if (dmx == 'Toptan satış fat') {
+            window.location.href = "/Musteri/FaturaDetay/" + tranno;
+        }
+
+    }
+</script>

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<PB2B.Entity.ISRG_Faturalar_006>
+
+@{
+    ViewBag.Title = "Faturalarim";
+    Layout = "~/Views/Shared/LTEMusteriMaster.cshtml";
+}
+
+
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Faturalarim
+    </div>
+    <div class="panel-body ">
+        <div class="col-md-12">
+            <table class="table">
+                <tr style="background-color:red;">
+
+                    <th>
+                        <font color="white"> Fatura No</font>
+                    </th>
+                    <th>
+                        <font color="white"> Tarih</font>
+                    </th>
+                    <th>
+                        <font color="white"> Net Toplam</font>
+                    </th>
+                    <th>
+                        <font color="white">   Drmx</font>
+                    </th>
+                    <th>
+                        <font color="white"> Masraf</font>
+                    </th>
+                    <th>
+                        <font color="white">  İndirim</font>
+                    </th>
+                    <th>
+                        <font color="white">  Yekün</font>
+                    </th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr onclick="window.location.href='/Musteri/FaturaDetay/@item.FICHENO'">
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FICHENO)
+                        </td>
+                        <td>
+                            @Convert.ToDateTime(item.DATE_).ToString("yyyy-MM-dd")
+                        </td>
+                        <td>
+                            @Convert.ToDecimal(item.NETTOTAL).ToString("N")
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.drmX)
+                        </td>
+                        <td>
+                            @Convert.ToDecimal(item.MASRAF).ToString("N")
+                        </td>
+                        <td>
+                            @Convert.ToDecimal(item.INDIRIM).ToString("N")
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.YEKUN)
+                        </td>
+
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>

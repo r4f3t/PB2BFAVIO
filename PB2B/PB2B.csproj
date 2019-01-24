@@ -179,6 +179,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Musteri\MusteriController.cs" />
     <Compile Include="Controllers\Plasiyer\PlasiyerController.cs" />
+    <Compile Include="Controllers\Siparis\SiparisController.cs" />
     <Compile Include="Entity\A_MNTL_STOK_2018.cs">
       <DependentUpon>LKSDB.tt</DependentUpon>
     </Compile>
@@ -223,6 +224,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LOGOKAMP.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\XX_SRG_Cari_HDurum_006.cs">
+      <DependentUpon>LKSDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\ZTbLUseR.cs">
       <DependentUpon>LOGOKAMP.tt</DependentUpon>
@@ -402,6 +406,11 @@
     <Content Include="Views\Shared\LTEMusteriMaster.cshtml" />
     <Content Include="Views\Musteri\Index.cshtml" />
     <Content Include="Views\Deneme\Index.cshtml" />
+    <Content Include="Views\Siparis\SiparisVer.cshtml" />
+    <Content Include="Views\Musteri\CariExtre.cshtml" />
+    <Content Include="Views\Musteri\Faturalarim.cshtml" />
+    <Content Include="Views\Musteri\FaturaDetay.cshtml" />
+    <Content Include="Views\Siparis\SiparisUrunGec.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

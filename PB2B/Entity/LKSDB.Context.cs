@@ -30,5 +30,6 @@ namespace PB2B.Entity
         public virtual DbSet<ISRG_FaturaDetaY_006> ISRG_FaturaDetaY_006 { get; set; }
         public virtual DbSet<ISRG_Faturalar_006> ISRG_Faturalar_006 { get; set; }
         public virtual DbSet<ISRG_Hesap_Extresi_006_04> ISRG_Hesap_Extresi_006_04 { get; set; }
+        public virtual DbSet<XX_SRG_Cari_HDurum_006> XX_SRG_Cari_HDurum_006 { get; set; }
     }
 }

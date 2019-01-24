@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LKSDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LKSDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'LKSDB.dbo.A_MNTL_STOK_2018' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="A_MNTL_STOK_2018">
@@ -26,7 +26,7 @@ warning 6002: The table/view 'LKSDB.dbo.A_MNTL_STOK_2018' does not have a primar
           <Property Name="URETICI_KODU" Type="varchar" MaxLength="25" />
           <Property Name="MODEL" Type="varchar" MaxLength="11" />
           <Property Name="KDV" Type="float" />
-          <Property Name="BAKIYE" Type="int" Nullable="false" />
+          <Property Name="BAKIYE" Type="float" Nullable="false" />
           <Property Name="BAKIYE2" Type="int" Nullable="false" />
           <Property Name="ListeFiyati" Type="int" Nullable="false" />
           <Property Name="PARABIRIMI" Type="int" Nullable="false" />
@@ -133,6 +133,37 @@ warning 6002: The table/view 'LKSDB.dbo.ISRG_Hesap_Extresi_006_04' does not have
           <Property Name="CAPIBLOCK_MODIFIEDDATE" Type="datetime" />
           <Property Name="SOURCEFREF" Type="int" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LKSDB.dbo.XX_SRG_Cari_HDurum_006' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="XX_SRG_Cari_HDurum_006">
+          <Key>
+            <PropertyRef Name="LOGICALREF" />
+            <PropertyRef Name="Bakiye" />
+            <PropertyRef Name="GecikenTutar" />
+            <PropertyRef Name="Bekleyen" />
+            <PropertyRef Name="HaftalikTahsilat" />
+            <PropertyRef Name="AyTahsilatı" />
+            <PropertyRef Name="SonrakiAy" />
+            <PropertyRef Name="DigerAylar" />
+            <PropertyRef Name="ORTVade" />
+          </Key>
+          <Property Name="LOGICALREF" Type="int" Nullable="false" />
+          <Property Name="M.Kodu" Type="varchar" MaxLength="17" />
+          <Property Name="Müşteri Adı" Type="varchar" MaxLength="51" />
+          <Property Name="Şehiri" Type="varchar" MaxLength="21" />
+          <Property Name="Ilce" Type="varchar" MaxLength="51" />
+          <Property Name="Plasiyer" Type="varchar" MaxLength="11" />
+          <Property Name="Bakiye" Type="float" Nullable="false" />
+          <Property Name="GecikenTutar" Type="float" Nullable="false" />
+          <Property Name="GecikmeGünü" Type="float" />
+          <Property Name="Bekleyen" Type="float" Nullable="false" />
+          <Property Name="HaftalikTahsilat" Type="float" Nullable="false" />
+          <Property Name="AyTahsilatı" Type="float" Nullable="false" />
+          <Property Name="SonrakiAy" Type="float" Nullable="false" />
+          <Property Name="DigerAylar" Type="float" Nullable="false" />
+          <Property Name="ORTVade" Type="float" Nullable="false" />
+          <Property Name="Vade_Gunu" Type="datetime" />
+        </EntityType>
         <EntityContainer Name="LKSDBModelStoreContainer">
           <EntitySet Name="A_MNTL_STOK_2018" EntityType="Self.A_MNTL_STOK_2018" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -229,9 +260,28 @@ warning 6002: The table/view 'LKSDB.dbo.ISRG_Hesap_Extresi_006_04' does not have
     [ISRG_Hesap_Extresi_006_04].[SOURCEFREF] AS [SOURCEFREF]
     FROM [dbo].[ISRG_Hesap_Extresi_006_04] AS [ISRG_Hesap_Extresi_006_04]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="XX_SRG_Cari_HDurum_006" EntityType="Self.XX_SRG_Cari_HDurum_006" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [XX_SRG_Cari_HDurum_006].[LOGICALREF] AS [LOGICALREF], 
+    [XX_SRG_Cari_HDurum_006].[M.Kodu] AS [M.Kodu], 
+    [XX_SRG_Cari_HDurum_006].[Müşteri Adı] AS [Müşteri Adı], 
+    [XX_SRG_Cari_HDurum_006].[Şehiri] AS [Şehiri], 
+    [XX_SRG_Cari_HDurum_006].[Ilce] AS [Ilce], 
+    [XX_SRG_Cari_HDurum_006].[Plasiyer] AS [Plasiyer], 
+    [XX_SRG_Cari_HDurum_006].[Bakiye] AS [Bakiye], 
+    [XX_SRG_Cari_HDurum_006].[GecikenTutar] AS [GecikenTutar], 
+    [XX_SRG_Cari_HDurum_006].[GecikmeGünü] AS [GecikmeGünü], 
+    [XX_SRG_Cari_HDurum_006].[Bekleyen] AS [Bekleyen], 
+    [XX_SRG_Cari_HDurum_006].[HaftalikTahsilat] AS [HaftalikTahsilat], 
+    [XX_SRG_Cari_HDurum_006].[AyTahsilatı] AS [AyTahsilatı], 
+    [XX_SRG_Cari_HDurum_006].[SonrakiAy] AS [SonrakiAy], 
+    [XX_SRG_Cari_HDurum_006].[DigerAylar] AS [DigerAylar], 
+    [XX_SRG_Cari_HDurum_006].[ORTVade] AS [ORTVade], 
+    [XX_SRG_Cari_HDurum_006].[Vade_Gunu] AS [Vade_Gunu]
+    FROM [dbo].[XX_SRG_Cari_HDurum_006] AS [XX_SRG_Cari_HDurum_006]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LKSDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -359,7 +409,37 @@ warning 6002: The table/view 'LKSDB.dbo.ISRG_Hesap_Extresi_006_04' does not have
           <EntitySet Name="ISRG_FaturaDetaY_006" EntityType="Self.ISRG_FaturaDetaY_006" />
           <EntitySet Name="ISRG_Faturalar_006" EntityType="Self.ISRG_Faturalar_006" />
           <EntitySet Name="ISRG_Hesap_Extresi_006_04" EntityType="Self.ISRG_Hesap_Extresi_006_04" />
+          <EntitySet Name="XX_SRG_Cari_HDurum_006" EntityType="LKSDBModel.XX_SRG_Cari_HDurum_006" />
         </EntityContainer>
+        <EntityType Name="XX_SRG_Cari_HDurum_006">
+          <Key>
+            <PropertyRef Name="LOGICALREF" />
+            <PropertyRef Name="Bakiye" />
+            <PropertyRef Name="GecikenTutar" />
+            <PropertyRef Name="Bekleyen" />
+            <PropertyRef Name="HaftalikTahsilat" />
+            <PropertyRef Name="AyTahsilatı" />
+            <PropertyRef Name="SonrakiAy" />
+            <PropertyRef Name="DigerAylar" />
+            <PropertyRef Name="ORTVade" />
+          </Key>
+          <Property Name="LOGICALREF" Type="Int32" Nullable="false" />
+          <Property Name="M_Kodu" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="Müşteri_Adı" Type="String" MaxLength="51" FixedLength="false" Unicode="false" />
+          <Property Name="Şehiri" Type="String" MaxLength="21" FixedLength="false" Unicode="false" />
+          <Property Name="Ilce" Type="String" MaxLength="51" FixedLength="false" Unicode="false" />
+          <Property Name="Plasiyer" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="Bakiye" Type="Double" Nullable="false" />
+          <Property Name="GecikenTutar" Type="Double" Nullable="false" />
+          <Property Name="GecikmeGünü" Type="Double" />
+          <Property Name="Bekleyen" Type="Double" Nullable="false" />
+          <Property Name="HaftalikTahsilat" Type="Double" Nullable="false" />
+          <Property Name="AyTahsilatı" Type="Double" Nullable="false" />
+          <Property Name="SonrakiAy" Type="Double" Nullable="false" />
+          <Property Name="DigerAylar" Type="Double" Nullable="false" />
+          <Property Name="ORTVade" Type="Double" Nullable="false" />
+          <Property Name="Vade_Gunu" Type="DateTime" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -468,6 +548,28 @@ warning 6002: The table/view 'LKSDB.dbo.ISRG_Hesap_Extresi_006_04' does not have
                 <ScalarProperty Name="CAPIBLOCK_CREADEDDATE" ColumnName="CAPIBLOCK_CREADEDDATE" />
                 <ScalarProperty Name="CAPIBLOCK_MODIFIEDDATE" ColumnName="CAPIBLOCK_MODIFIEDDATE" />
                 <ScalarProperty Name="SOURCEFREF" ColumnName="SOURCEFREF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="XX_SRG_Cari_HDurum_006">
+            <EntityTypeMapping TypeName="LKSDBModel.XX_SRG_Cari_HDurum_006">
+              <MappingFragment StoreEntitySet="XX_SRG_Cari_HDurum_006">
+                <ScalarProperty Name="Vade_Gunu" ColumnName="Vade_Gunu" />
+                <ScalarProperty Name="ORTVade" ColumnName="ORTVade" />
+                <ScalarProperty Name="DigerAylar" ColumnName="DigerAylar" />
+                <ScalarProperty Name="SonrakiAy" ColumnName="SonrakiAy" />
+                <ScalarProperty Name="AyTahsilatı" ColumnName="AyTahsilatı" />
+                <ScalarProperty Name="HaftalikTahsilat" ColumnName="HaftalikTahsilat" />
+                <ScalarProperty Name="Bekleyen" ColumnName="Bekleyen" />
+                <ScalarProperty Name="GecikmeGünü" ColumnName="GecikmeGünü" />
+                <ScalarProperty Name="GecikenTutar" ColumnName="GecikenTutar" />
+                <ScalarProperty Name="Bakiye" ColumnName="Bakiye" />
+                <ScalarProperty Name="Plasiyer" ColumnName="Plasiyer" />
+                <ScalarProperty Name="Ilce" ColumnName="Ilce" />
+                <ScalarProperty Name="Şehiri" ColumnName="Şehiri" />
+                <ScalarProperty Name="Müşteri_Adı" ColumnName="Müşteri Adı" />
+                <ScalarProperty Name="M_Kodu" ColumnName="M.Kodu" />
+                <ScalarProperty Name="LOGICALREF" ColumnName="LOGICALREF" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
