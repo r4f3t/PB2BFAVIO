@@ -9,9 +9,11 @@ using System.Web.Mvc;
 using Dapper;
 using PB2B.Models;
 using PB2B.Entity;
+using PB2B.classes;
+
 namespace PB2B.Controllers.Musteri
 {
-    
+    [LoginAuthorize]
     public class MusteriController : Controller
     {
         LKSDBEntities1 lDb = new LKSDBEntities1();

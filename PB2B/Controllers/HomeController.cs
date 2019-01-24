@@ -35,6 +35,7 @@ namespace PB2B.Controllers
                     giris["yetki"] = model.Yetkisi.ToString();
                     Session["userTip"] = (model.Yetkisi==1)?"Plasiyer":"";
                     Session["adi"] = model.Adi;
+                    Session["giris"] = "1";
 
                     giris.Expires = DateTime.Now.AddDays(1);
                     Response.Cookies.Add(giris);

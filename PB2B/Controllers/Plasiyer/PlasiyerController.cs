@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PB2B.classes;
 using PB2B.Entity;
 namespace PB2B.Controllers.Plasiyer
 {
+    [LoginAuthorize]
     public class PlasiyerController : Controller
     {
         LKSDBEntities1 tDb = new LKSDBEntities1();
-
         // GET: Plasiyer
         public ActionResult Index()
         {

@@ -173,6 +173,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="classes\baglanti.cs" />
     <Compile Include="classes\GLOBALS.cs" />
+    <Compile Include="classes\LoginAuthorize.cs" />
+    <Compile Include="classes\UserAuthorize.cs" />
+    <Compile Include="Controllers\DenemeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Musteri\MusteriController.cs" />
     <Compile Include="Controllers\Plasiyer\PlasiyerController.cs" />
@@ -398,6 +401,7 @@
     <Content Include="Views\Plasiyer\PlasiyerIndex.cshtml" />
     <Content Include="Views\Shared\LTEMusteriMaster.cshtml" />
     <Content Include="Views\Musteri\Index.cshtml" />
+    <Content Include="Views\Deneme\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
