@@ -27,7 +27,7 @@
                         <font color="white"> Net Toplam</font>
                     </th>
                     <th>
-                        <font color="white">   Drmx</font>
+                        <font color="white">   Tip</font>
                     </th>
                     <th>
                         <font color="white"> Masraf</font>
@@ -48,22 +48,22 @@
                             @Html.DisplayFor(modelItem => item.FICHENO)
                         </td>
                         <td>
-                            @Convert.ToDateTime(item.DATE_).ToString("yyyy-MM-dd")
+                            @Convert.ToDateTime(item.DATE_).ToString("dd/MM/yyyy")
                         </td>
-                        <td>
+                        <td  style="text-align:right;">
                             @Convert.ToDecimal(item.NETTOTAL).ToString("N")
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.drmX)
                         </td>
-                        <td>
+                        <td  style="text-align:right;">
                             @Convert.ToDecimal(item.MASRAF).ToString("N")
                         </td>
-                        <td>
+                        <td style="text-align:right;">
                             @Convert.ToDecimal(item.INDIRIM).ToString("N")
                         </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.YEKUN)
+                        <td  style="text-align:right;">
+                            @Convert.ToDecimal(item.YEKUN).ToString("N")
                         </td>
 
                     </tr>

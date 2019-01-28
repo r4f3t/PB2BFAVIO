@@ -1,0 +1,63 @@
+﻿Unable to generate the model because of the following exception: 'System.Data.Entity.Core.EntityCommandExecutionException: An error occurred while executing the command definition. See the inner exception for details. ---> System.Data.SqlClient.SqlException: A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at System.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.Execute(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.EntityCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Entity.Design.VersioningFacade.ReverseEngineerDb.SchemaDiscovery.EntityStoreSchemaGeneratorDatabaseSchemaLoader.LoadDataTable[T](String sql, Func`2 orderByFunc, DataTable table, EntityStoreSchemaFilterObjectTypes queryTypes, IEnumerable`1 filters, String[] filterAliases)
+   at Microsoft.Data.Entity.Design.VersioningFacade.ReverseEngineerDb.SchemaDiscovery.EntityStoreSchemaGeneratorDatabaseSchemaLoader.LoadTableDetails(IEnumerable`1 filters)
+   at Microsoft.Data.Entity.Design.VersioningFacade.ReverseEngineerDb.SchemaDiscovery.EntityStoreSchemaGeneratorDatabaseSchemaLoader.LoadStoreSchemaDetails(IList`1 filters)
+   at Microsoft.Data.Entity.Design.VisualStudio.ModelWizard.Engine.ModelGenerator.GetStoreSchemaDetails(StoreSchemaConnectionFactory connectionFactory)
+   at Microsoft.Data.Entity.Design.VisualStudio.ModelWizard.Engine.ModelGenerator.CreateStoreModel()
+   at Microsoft.Data.Entity.Design.VisualStudio.ModelWizard.Engine.ModelGenerator.GenerateModel(List`1 errors)
+   at Microsoft.Data.Entity.Design.VisualStudio.ModelWizard.Engine.ModelBuilderEngine.GenerateModels(String storeModelNamespace, ModelBuilderSettings settings, List`1 errors)
+   at Microsoft.Data.Entity.Design.VisualStudio.ModelWizard.Engine.ModelBuilderEngine.GenerateModel(ModelBuilderSettings settings, IVsUtils vsUtils, ModelBuilderEngineHostContext hostContext)'.
+Loading metadata from the database took 00:00:21.7720969.
+Generating the model took 00:13:38.3989873.
+The model was generated with warnings or errors.LKSDB.edmxPlease see the Error List for more details. These issues must be fixed before running your application.
+Loading metadata from the database took 00:00:17.4724636.
+Generating the model took 00:00:40.1524072.
+The model was generated with warnings or errors.LKSDB.edmxPlease see the Error List for more details. These issues must be fixed before running your application.
+Loading metadata from the database took 00:00:17.1021810.
+Generating the model took 00:00:32.1610248.
+The model was generated with warnings or errors.LKSDB.edmxPlease see the Error List for more details. These issues must be fixed before running your application.
+Loading metadata from the database took 00:00:16.7580504.
+Generating the model took 00:00:29.2426930.
+The model was generated with warnings or errors.LKSDB.edmxPlease see the Error List for more details. These issues must be fixed before running your application.
+Loading metadata from the database took 00:00:16.5340971.
+Generating the model took 00:00:29.9146733.
+Generated model file: LOGOKAMP.edmx.
+Loading metadata from the database took 00:00:00.7832544.
+Generating the model took 00:00:07.0528128.
+The model was generated with warnings or errors.LOGOKAMP.edmxPlease see the Error List for more details. These issues must be fixed before running your application.
+Loading metadata from the database took 00:00:00.6922228.
+Generating the model took 00:00:01.7894961.
+The model was generated with warnings or errors.LKSDB.edmxPlease see the Error List for more details. These issues must be fixed before running your application.
+Loading metadata from the database took 00:00:18.1257760.
+Generating the model took 00:00:33.0150507.
+The model was generated with warnings or errors.LKSDB.edmxPlease see the Error List for more details. These issues must be fixed before running your application.
+Loading metadata from the database took 00:00:16.7447658.
+Generating the model took 00:00:29.4578676.

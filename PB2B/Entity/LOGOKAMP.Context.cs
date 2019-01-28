@@ -26,5 +26,7 @@ namespace PB2B.Entity
         }
     
         public virtual DbSet<ZTbLUseR> ZTbLUseR { get; set; }
+        public virtual DbSet<Z_SipLine> Z_SipLine { get; set; }
+        public virtual DbSet<SRG_SipLine> SRG_SipLine { get; set; }
     }
 }

@@ -72,17 +72,15 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.URUNADI)
                         </td>
-                        <td>
+                        <td style="text-align:right;">
                             @Html.DisplayFor(modelItem => item.URUNMIKTARI)
                         </td>
-                        <td>
+                        <td style="text-align:right;">
                             @Convert.ToDecimal(item.BIRIMFIYAT).ToString("N")
                         </td>
-                        <td>
+                        <td style="text-align:right;">
                             @Convert.ToDecimal(item.SATIRTUTARI).ToString("N")
                         </td>
-
-
                     </tr>
 
                     netToplam += item.SATIRTUTARI;

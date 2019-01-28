@@ -53,5 +53,12 @@ namespace PB2B.Controllers.Musteri
             }
             return View(model);
         }
+
+        public ActionResult Siparisler()
+        {
+            string clientref = Session["CLIENTREF"].ToString();
+            var sipModel = lDb.I_SRG_EKSIKSIPARISLER_006_04.Where(x => x.CLIENTREF.ToString()==clientref).ToList();
+            return View(sipModel);
+        }
     }
 }

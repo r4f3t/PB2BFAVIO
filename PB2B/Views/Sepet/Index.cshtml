@@ -1,0 +1,61 @@
+﻿@model IEnumerable<PB2B.Entity.SRG_SipLine>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LTEMusteriMaster.cshtml";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Sepetim
+    </div>
+    <div class="panel-body">
+        <table class="table table-hover">
+            <thead>
+                <tr style="background-color:red;">
+                    <th><font color="white">Ürün Kodu</font></th>
+                    <th><font color="white">Ürün Adı</font></th>
+                    <th><font color="white">Miktarı</font></th>
+                    <th><font color="white">Birim</font></th>
+                    <th><font color="white">Br.Fiyat</font></th>
+                    <th><font color="white">Toplam Fiyat</font></th>
+                    <th><font color="white">#</font></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+
+                    <tr>
+
+                        <td>@item.STOCKCODE</td>
+                        <td>@item.STOCKNAME</td>
+                        <td style="text-align:right;">@Convert.ToDecimal(item.AMOUNT).ToString("N")</td>
+                        <td>Adet</td>
+                        <td style="text-align:right;">@Convert.ToDecimal(item.PRICE).ToString("N")</td>
+                        <td style="text-align:right;">@Convert.ToDecimal(item.SATIRTUTARI).ToString("N")</td>
+                        <td>
+                            <a href="~/Sepet/SatirSil/@item.LOGICALREF" class="btn btn-primary">Çıkart</a>
+                        </td>
+                    </tr>
+
+
+                }
+            </tbody>
+
+        </table>
+        <div class="col-md-6">
+
+            <textarea placeholder="Açıklama Giriniz..." style="width:100%;"></textarea>
+        </div>
+        <div class="col-lg-4"></div>
+        
+        <div class="col-md-2"><button type="button" class="btn btn-success btn-flat btn-pri"><i class="fa fa-check" aria-hidden="true"></i> Kaydet</button></div>
+
+
+    </div>
+</div>
+
+
+
+
+

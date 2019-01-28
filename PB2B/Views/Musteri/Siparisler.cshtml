@@ -1,0 +1,60 @@
+﻿@model IEnumerable<PB2B.Entity.I_SRG_EKSIKSIPARISLER_006_04>
+@{
+    ViewBag.Title = "Siparisler";
+    Layout = "~/Views/Shared/LTEMusteriMaster.cshtml";
+}
+
+<div class="row">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+         Siparişlerim
+        </div>
+        <div class="panel-body">
+
+        
+
+            <table class="table table-hover">
+                <thead>
+                    <tr style="background-color:red;">
+                        <th><font color="white">Sipariş No</font></th>
+                        <th><font color="white">Tarih</font></th>
+                        <th><font color="white">Ürün Kodu</font></th>
+                        <th><font color="white">Ürün Adı</font></th>
+                        <th><font color="white">Miktar</font></th>
+                        <th><font color="white">Sevk Edilmeyen</font></th>
+                        <th><font color="white">Fiyat</font></th>
+                        <th><font color="white">Toplam</font></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+
+                    <tr>
+                        <td>@item.FICHENO</td>
+                        <td>@item.DATE_</td>
+                        <td>@item.CODE</td>
+                        <td>@item.NAME</td>
+                        <td style="text-align:right;">@Convert.ToDecimal(item.AMOUNT).ToString("N")</td>
+                        <td style="text-align:right;">@Convert.ToDecimal(item.Kalan).ToString("N")</td>
+                        <td style="text-align:right;">@Convert.ToDecimal(item.PRICE).ToString("N")</td>
+                        <td style="text-align:right;">@Convert.ToDecimal(item.TOTAL).ToString("N")</td>
+                        
+                    </tr>
+
+                    }
+
+                </tbody>
+            </table>
+
+
+            <script>
+                function yonlendir(id) {
+                    window.location.href = "PlasiyerYonlendir/" + id;
+                }
+            </script>
+        </div>
+    </div>
+
+</div>
+

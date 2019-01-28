@@ -45,7 +45,7 @@
                 {
                     <tr onclick="yonlendir('@item.TRANNO','@item.ISLEMTURU')">
                         <td>
-                            @Convert.ToDateTime(item.ISLEMTARIHI).ToString("yyyy-MM-dd")
+                            @Convert.ToDateTime(item.ISLEMTARIHI).ToString("dd/MM/yyyy")
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.ISLEMACIKLAMA)

@@ -4,7 +4,61 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LOGOKAMPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LOGOKAMPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Z_SipLine">
+          <Key>
+            <PropertyRef Name="LOGICALREF" />
+          </Key>
+          <Property Name="LOGICALREF" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SIPID" Type="int" />
+          <Property Name="FICHENO" Type="nvarchar" MaxLength="13" />
+          <Property Name="DATE_" Type="smalldatetime" />
+          <Property Name="CLIENTREF" Type="nvarchar(max)" />
+          <Property Name="STOCKREF" Type="nvarchar(max)" />
+          <Property Name="STOCKCODE" Type="nvarchar(max)" />
+          <Property Name="STOCKNAME" Type="nvarchar(max)" />
+          <Property Name="ACIKLAMA" Type="nvarchar(max)" />
+          <Property Name="AMOUNT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="BIRIM" Type="nvarchar" MaxLength="150" />
+          <Property Name="PRICE" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="KDVPRICE" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="VINDORAN" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="KAMPBRFiyat" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="KAMPKDVBrFiyat" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SATIRTUTARI" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SATIRKDVTUTARI" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="LINEEXP" Type="nvarchar(max)" />
+          <Property Name="Durum" Type="int" />
+          <Property Name="ADDDATE" Type="smalldatetime" />
+          <Property Name="EDITDATE" Type="smalldatetime" />
+          <Property Name="AKTARIM" Type="int" />
+          <Property Name="CURRID" Type="int" />
+          <Property Name="CURRRATE" Type="decimal" Precision="18" Scale="5" />
+          <Property Name="LISTFIYAT" Type="decimal" Precision="18" Scale="5" />
+          <Property Name="LISTTLFIYAT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="VAT" Type="int" />
+          <Property Name="TOPTLFIYAT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TRADINGGRP" Type="nvarchar" MaxLength="30" />
+          <Property Name="DIVISION" Type="int" />
+          <Property Name="VATINC" Type="int" />
+          <Property Name="KIMDEN" Type="int" />
+          <Property Name="Flag" Type="int" />
+          <Property Name="TeklifFlag" Type="int" />
+          <Property Name="OdemeSekli" Type="nvarchar" MaxLength="200" />
+          <Property Name="MIKINDORAN" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ADRESREF" Type="int" />
+          <Property Name="TeslimDurumu" Type="nvarchar" MaxLength="150" />
+          <Property Name="SEVKMIKTARI" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DOSYA" Type="nvarchar" MaxLength="250" />
+          <Property Name="NakliyeTipi" Type="nvarchar" MaxLength="250" />
+          <Property Name="Adres" Type="nvarchar" MaxLength="250" />
+          <Property Name="Vade" Type="int" />
+          <Property Name="ISEDIT" Type="int" />
+          <Property Name="USERID" Type="int" />
+          <Property Name="USERAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="SAPKODU" Type="nvarchar" MaxLength="150" />
+          <Property Name="MUSTERISIPARIS" Type="nvarchar" MaxLength="150" />
+        </EntityType>
         <EntityType Name="ZTbLUseR">
           <Key>
             <PropertyRef Name="UserId" />
@@ -34,11 +88,120 @@
           <Property Name="TUYETKI" Type="int" />
           <Property Name="ISKONTOTABLOYETKI" Type="int" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LOGOKAMP.dbo.SRG_SipLine' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SRG_SipLine">
+          <Key>
+            <PropertyRef Name="LOGICALREF" />
+          </Key>
+          <Property Name="LOGICALREF" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SIPID" Type="int" />
+          <Property Name="FICHENO" Type="nvarchar" MaxLength="13" />
+          <Property Name="DATE_" Type="smalldatetime" />
+          <Property Name="CLIENTREF" Type="nvarchar(max)" />
+          <Property Name="STOCKREF" Type="nvarchar(max)" />
+          <Property Name="STOCKCODE" Type="nvarchar(max)" />
+          <Property Name="STOCKNAME" Type="nvarchar(max)" />
+          <Property Name="ACIKLAMA" Type="nvarchar(max)" />
+          <Property Name="AMOUNT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="BIRIM" Type="nvarchar" MaxLength="150" />
+          <Property Name="PRICE" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="KDVPRICE" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="VINDORAN" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="KAMPBRFiyat" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="KAMPKDVBrFiyat" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SATIRTUTARI" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SATIRKDVTUTARI" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="LINEEXP" Type="nvarchar(max)" />
+          <Property Name="Durum" Type="int" />
+          <Property Name="ADDDATE" Type="smalldatetime" />
+          <Property Name="EDITDATE" Type="smalldatetime" />
+          <Property Name="AKTARIM" Type="int" />
+          <Property Name="CURRID" Type="int" />
+          <Property Name="CURRRATE" Type="decimal" Precision="18" Scale="5" />
+          <Property Name="LISTFIYAT" Type="decimal" Precision="18" Scale="5" />
+          <Property Name="LISTTLFIYAT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="VAT" Type="int" />
+          <Property Name="TOPTLFIYAT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TRADINGGRP" Type="nvarchar" MaxLength="30" />
+          <Property Name="DIVISION" Type="int" />
+          <Property Name="VATINC" Type="int" />
+          <Property Name="KIMDEN" Type="int" />
+          <Property Name="Flag" Type="int" />
+          <Property Name="TeklifFlag" Type="int" />
+          <Property Name="OdemeSekli" Type="nvarchar" MaxLength="200" />
+          <Property Name="MIKINDORAN" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ADRESREF" Type="int" />
+          <Property Name="TeslimDurumu" Type="nvarchar" MaxLength="150" />
+          <Property Name="SEVKMIKTARI" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DOSYA" Type="nvarchar" MaxLength="250" />
+          <Property Name="NakliyeTipi" Type="nvarchar" MaxLength="250" />
+          <Property Name="Adres" Type="nvarchar" MaxLength="250" />
+          <Property Name="Vade" Type="int" />
+          <Property Name="ISEDIT" Type="int" />
+          <Property Name="USERID" Type="int" />
+          <Property Name="USERAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="SAPKODU" Type="nvarchar" MaxLength="150" />
+          <Property Name="MUSTERISIPARIS" Type="nvarchar" MaxLength="150" />
+        </EntityType>
         <EntityContainer Name="LOGOKAMPModelStoreContainer">
+          <EntitySet Name="Z_SipLine" EntityType="Self.Z_SipLine" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ZTbLUseR" EntityType="Self.ZTbLUseR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SRG_SipLine" EntityType="Self.SRG_SipLine" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SRG_SipLine].[LOGICALREF] AS [LOGICALREF], 
+    [SRG_SipLine].[SIPID] AS [SIPID], 
+    [SRG_SipLine].[FICHENO] AS [FICHENO], 
+    [SRG_SipLine].[DATE_] AS [DATE_], 
+    [SRG_SipLine].[CLIENTREF] AS [CLIENTREF], 
+    [SRG_SipLine].[STOCKREF] AS [STOCKREF], 
+    [SRG_SipLine].[STOCKCODE] AS [STOCKCODE], 
+    [SRG_SipLine].[STOCKNAME] AS [STOCKNAME], 
+    [SRG_SipLine].[ACIKLAMA] AS [ACIKLAMA], 
+    [SRG_SipLine].[AMOUNT] AS [AMOUNT], 
+    [SRG_SipLine].[BIRIM] AS [BIRIM], 
+    [SRG_SipLine].[PRICE] AS [PRICE], 
+    [SRG_SipLine].[KDVPRICE] AS [KDVPRICE], 
+    [SRG_SipLine].[VINDORAN] AS [VINDORAN], 
+    [SRG_SipLine].[KAMPBRFiyat] AS [KAMPBRFiyat], 
+    [SRG_SipLine].[KAMPKDVBrFiyat] AS [KAMPKDVBrFiyat], 
+    [SRG_SipLine].[SATIRTUTARI] AS [SATIRTUTARI], 
+    [SRG_SipLine].[SATIRKDVTUTARI] AS [SATIRKDVTUTARI], 
+    [SRG_SipLine].[LINEEXP] AS [LINEEXP], 
+    [SRG_SipLine].[Durum] AS [Durum], 
+    [SRG_SipLine].[ADDDATE] AS [ADDDATE], 
+    [SRG_SipLine].[EDITDATE] AS [EDITDATE], 
+    [SRG_SipLine].[AKTARIM] AS [AKTARIM], 
+    [SRG_SipLine].[CURRID] AS [CURRID], 
+    [SRG_SipLine].[CURRRATE] AS [CURRRATE], 
+    [SRG_SipLine].[LISTFIYAT] AS [LISTFIYAT], 
+    [SRG_SipLine].[LISTTLFIYAT] AS [LISTTLFIYAT], 
+    [SRG_SipLine].[VAT] AS [VAT], 
+    [SRG_SipLine].[TOPTLFIYAT] AS [TOPTLFIYAT], 
+    [SRG_SipLine].[TRADINGGRP] AS [TRADINGGRP], 
+    [SRG_SipLine].[DIVISION] AS [DIVISION], 
+    [SRG_SipLine].[VATINC] AS [VATINC], 
+    [SRG_SipLine].[KIMDEN] AS [KIMDEN], 
+    [SRG_SipLine].[Flag] AS [Flag], 
+    [SRG_SipLine].[TeklifFlag] AS [TeklifFlag], 
+    [SRG_SipLine].[OdemeSekli] AS [OdemeSekli], 
+    [SRG_SipLine].[MIKINDORAN] AS [MIKINDORAN], 
+    [SRG_SipLine].[ADRESREF] AS [ADRESREF], 
+    [SRG_SipLine].[TeslimDurumu] AS [TeslimDurumu], 
+    [SRG_SipLine].[SEVKMIKTARI] AS [SEVKMIKTARI], 
+    [SRG_SipLine].[DOSYA] AS [DOSYA], 
+    [SRG_SipLine].[NakliyeTipi] AS [NakliyeTipi], 
+    [SRG_SipLine].[Adres] AS [Adres], 
+    [SRG_SipLine].[Vade] AS [Vade], 
+    [SRG_SipLine].[ISEDIT] AS [ISEDIT], 
+    [SRG_SipLine].[USERID] AS [USERID], 
+    [SRG_SipLine].[USERAdi] AS [USERAdi], 
+    [SRG_SipLine].[SAPKODU] AS [SAPKODU], 
+    [SRG_SipLine].[MUSTERISIPARIS] AS [MUSTERISIPARIS]
+    FROM [dbo].[SRG_SipLine] AS [SRG_SipLine]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LOGOKAMPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -73,7 +236,117 @@
         </EntityType>
         <EntityContainer Name="LOGOKAMPEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ZTbLUseR" EntityType="Self.ZTbLUseR" />
+          <EntitySet Name="Z_SipLine" EntityType="LOGOKAMPModel.Z_SipLine" />
+          <EntitySet Name="SRG_SipLine" EntityType="LOGOKAMPModel.SRG_SipLine" />
         </EntityContainer>
+        <EntityType Name="Z_SipLine">
+          <Key>
+            <PropertyRef Name="LOGICALREF" />
+          </Key>
+          <Property Name="LOGICALREF" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SIPID" Type="Int32" />
+          <Property Name="FICHENO" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="DATE_" Type="DateTime" Precision="0" />
+          <Property Name="CLIENTREF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="STOCKREF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="STOCKCODE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="STOCKNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ACIKLAMA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AMOUNT" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="BIRIM" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PRICE" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="KDVPRICE" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="VINDORAN" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="KAMPBRFiyat" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="KAMPKDVBrFiyat" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SATIRTUTARI" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SATIRKDVTUTARI" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="LINEEXP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Durum" Type="Int32" />
+          <Property Name="ADDDATE" Type="DateTime" Precision="0" />
+          <Property Name="EDITDATE" Type="DateTime" Precision="0" />
+          <Property Name="AKTARIM" Type="Int32" />
+          <Property Name="CURRID" Type="Int32" />
+          <Property Name="CURRRATE" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="LISTFIYAT" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="LISTTLFIYAT" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="VAT" Type="Int32" />
+          <Property Name="TOPTLFIYAT" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TRADINGGRP" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DIVISION" Type="Int32" />
+          <Property Name="VATINC" Type="Int32" />
+          <Property Name="KIMDEN" Type="Int32" />
+          <Property Name="Flag" Type="Int32" />
+          <Property Name="TeklifFlag" Type="Int32" />
+          <Property Name="OdemeSekli" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MIKINDORAN" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ADRESREF" Type="Int32" />
+          <Property Name="TeslimDurumu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="SEVKMIKTARI" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DOSYA" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NakliyeTipi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Adres" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Vade" Type="Int32" />
+          <Property Name="ISEDIT" Type="Int32" />
+          <Property Name="USERID" Type="Int32" />
+          <Property Name="USERAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SAPKODU" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MUSTERISIPARIS" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SRG_SipLine">
+          <Key>
+            <PropertyRef Name="LOGICALREF" />
+          </Key>
+          <Property Name="LOGICALREF" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SIPID" Type="Int32" />
+          <Property Name="FICHENO" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="DATE_" Type="DateTime" Precision="0" />
+          <Property Name="CLIENTREF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="STOCKREF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="STOCKCODE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="STOCKNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ACIKLAMA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AMOUNT" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="BIRIM" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PRICE" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="KDVPRICE" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="VINDORAN" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="KAMPBRFiyat" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="KAMPKDVBrFiyat" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SATIRTUTARI" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SATIRKDVTUTARI" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="LINEEXP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Durum" Type="Int32" />
+          <Property Name="ADDDATE" Type="DateTime" Precision="0" />
+          <Property Name="EDITDATE" Type="DateTime" Precision="0" />
+          <Property Name="AKTARIM" Type="Int32" />
+          <Property Name="CURRID" Type="Int32" />
+          <Property Name="CURRRATE" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="LISTFIYAT" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="LISTTLFIYAT" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="VAT" Type="Int32" />
+          <Property Name="TOPTLFIYAT" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TRADINGGRP" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DIVISION" Type="Int32" />
+          <Property Name="VATINC" Type="Int32" />
+          <Property Name="KIMDEN" Type="Int32" />
+          <Property Name="Flag" Type="Int32" />
+          <Property Name="TeklifFlag" Type="Int32" />
+          <Property Name="OdemeSekli" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MIKINDORAN" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ADRESREF" Type="Int32" />
+          <Property Name="TeslimDurumu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="SEVKMIKTARI" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DOSYA" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NakliyeTipi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Adres" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Vade" Type="Int32" />
+          <Property Name="ISEDIT" Type="Int32" />
+          <Property Name="USERID" Type="Int32" />
+          <Property Name="USERAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SAPKODU" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MUSTERISIPARIS" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -107,6 +380,116 @@
                 <ScalarProperty Name="FCYETKI" ColumnName="FCYETKI" />
                 <ScalarProperty Name="TUYETKI" ColumnName="TUYETKI" />
                 <ScalarProperty Name="ISKONTOTABLOYETKI" ColumnName="ISKONTOTABLOYETKI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Z_SipLine">
+            <EntityTypeMapping TypeName="LOGOKAMPModel.Z_SipLine">
+              <MappingFragment StoreEntitySet="Z_SipLine">
+                <ScalarProperty Name="MUSTERISIPARIS" ColumnName="MUSTERISIPARIS" />
+                <ScalarProperty Name="SAPKODU" ColumnName="SAPKODU" />
+                <ScalarProperty Name="USERAdi" ColumnName="USERAdi" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="ISEDIT" ColumnName="ISEDIT" />
+                <ScalarProperty Name="Vade" ColumnName="Vade" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="NakliyeTipi" ColumnName="NakliyeTipi" />
+                <ScalarProperty Name="DOSYA" ColumnName="DOSYA" />
+                <ScalarProperty Name="SEVKMIKTARI" ColumnName="SEVKMIKTARI" />
+                <ScalarProperty Name="TeslimDurumu" ColumnName="TeslimDurumu" />
+                <ScalarProperty Name="ADRESREF" ColumnName="ADRESREF" />
+                <ScalarProperty Name="MIKINDORAN" ColumnName="MIKINDORAN" />
+                <ScalarProperty Name="OdemeSekli" ColumnName="OdemeSekli" />
+                <ScalarProperty Name="TeklifFlag" ColumnName="TeklifFlag" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="KIMDEN" ColumnName="KIMDEN" />
+                <ScalarProperty Name="VATINC" ColumnName="VATINC" />
+                <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
+                <ScalarProperty Name="TRADINGGRP" ColumnName="TRADINGGRP" />
+                <ScalarProperty Name="TOPTLFIYAT" ColumnName="TOPTLFIYAT" />
+                <ScalarProperty Name="VAT" ColumnName="VAT" />
+                <ScalarProperty Name="LISTTLFIYAT" ColumnName="LISTTLFIYAT" />
+                <ScalarProperty Name="LISTFIYAT" ColumnName="LISTFIYAT" />
+                <ScalarProperty Name="CURRRATE" ColumnName="CURRRATE" />
+                <ScalarProperty Name="CURRID" ColumnName="CURRID" />
+                <ScalarProperty Name="AKTARIM" ColumnName="AKTARIM" />
+                <ScalarProperty Name="EDITDATE" ColumnName="EDITDATE" />
+                <ScalarProperty Name="ADDDATE" ColumnName="ADDDATE" />
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
+                <ScalarProperty Name="LINEEXP" ColumnName="LINEEXP" />
+                <ScalarProperty Name="SATIRKDVTUTARI" ColumnName="SATIRKDVTUTARI" />
+                <ScalarProperty Name="SATIRTUTARI" ColumnName="SATIRTUTARI" />
+                <ScalarProperty Name="KAMPKDVBrFiyat" ColumnName="KAMPKDVBrFiyat" />
+                <ScalarProperty Name="KAMPBRFiyat" ColumnName="KAMPBRFiyat" />
+                <ScalarProperty Name="VINDORAN" ColumnName="VINDORAN" />
+                <ScalarProperty Name="KDVPRICE" ColumnName="KDVPRICE" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="BIRIM" ColumnName="BIRIM" />
+                <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+                <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+                <ScalarProperty Name="STOCKNAME" ColumnName="STOCKNAME" />
+                <ScalarProperty Name="STOCKCODE" ColumnName="STOCKCODE" />
+                <ScalarProperty Name="STOCKREF" ColumnName="STOCKREF" />
+                <ScalarProperty Name="CLIENTREF" ColumnName="CLIENTREF" />
+                <ScalarProperty Name="DATE_" ColumnName="DATE_" />
+                <ScalarProperty Name="FICHENO" ColumnName="FICHENO" />
+                <ScalarProperty Name="SIPID" ColumnName="SIPID" />
+                <ScalarProperty Name="LOGICALREF" ColumnName="LOGICALREF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SRG_SipLine">
+            <EntityTypeMapping TypeName="LOGOKAMPModel.SRG_SipLine">
+              <MappingFragment StoreEntitySet="SRG_SipLine">
+                <ScalarProperty Name="MUSTERISIPARIS" ColumnName="MUSTERISIPARIS" />
+                <ScalarProperty Name="SAPKODU" ColumnName="SAPKODU" />
+                <ScalarProperty Name="USERAdi" ColumnName="USERAdi" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="ISEDIT" ColumnName="ISEDIT" />
+                <ScalarProperty Name="Vade" ColumnName="Vade" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="NakliyeTipi" ColumnName="NakliyeTipi" />
+                <ScalarProperty Name="DOSYA" ColumnName="DOSYA" />
+                <ScalarProperty Name="SEVKMIKTARI" ColumnName="SEVKMIKTARI" />
+                <ScalarProperty Name="TeslimDurumu" ColumnName="TeslimDurumu" />
+                <ScalarProperty Name="ADRESREF" ColumnName="ADRESREF" />
+                <ScalarProperty Name="MIKINDORAN" ColumnName="MIKINDORAN" />
+                <ScalarProperty Name="OdemeSekli" ColumnName="OdemeSekli" />
+                <ScalarProperty Name="TeklifFlag" ColumnName="TeklifFlag" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="KIMDEN" ColumnName="KIMDEN" />
+                <ScalarProperty Name="VATINC" ColumnName="VATINC" />
+                <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
+                <ScalarProperty Name="TRADINGGRP" ColumnName="TRADINGGRP" />
+                <ScalarProperty Name="TOPTLFIYAT" ColumnName="TOPTLFIYAT" />
+                <ScalarProperty Name="VAT" ColumnName="VAT" />
+                <ScalarProperty Name="LISTTLFIYAT" ColumnName="LISTTLFIYAT" />
+                <ScalarProperty Name="LISTFIYAT" ColumnName="LISTFIYAT" />
+                <ScalarProperty Name="CURRRATE" ColumnName="CURRRATE" />
+                <ScalarProperty Name="CURRID" ColumnName="CURRID" />
+                <ScalarProperty Name="AKTARIM" ColumnName="AKTARIM" />
+                <ScalarProperty Name="EDITDATE" ColumnName="EDITDATE" />
+                <ScalarProperty Name="ADDDATE" ColumnName="ADDDATE" />
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
+                <ScalarProperty Name="LINEEXP" ColumnName="LINEEXP" />
+                <ScalarProperty Name="SATIRKDVTUTARI" ColumnName="SATIRKDVTUTARI" />
+                <ScalarProperty Name="SATIRTUTARI" ColumnName="SATIRTUTARI" />
+                <ScalarProperty Name="KAMPKDVBrFiyat" ColumnName="KAMPKDVBrFiyat" />
+                <ScalarProperty Name="KAMPBRFiyat" ColumnName="KAMPBRFiyat" />
+                <ScalarProperty Name="VINDORAN" ColumnName="VINDORAN" />
+                <ScalarProperty Name="KDVPRICE" ColumnName="KDVPRICE" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="BIRIM" ColumnName="BIRIM" />
+                <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+                <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+                <ScalarProperty Name="STOCKNAME" ColumnName="STOCKNAME" />
+                <ScalarProperty Name="STOCKCODE" ColumnName="STOCKCODE" />
+                <ScalarProperty Name="STOCKREF" ColumnName="STOCKREF" />
+                <ScalarProperty Name="CLIENTREF" ColumnName="CLIENTREF" />
+                <ScalarProperty Name="DATE_" ColumnName="DATE_" />
+                <ScalarProperty Name="FICHENO" ColumnName="FICHENO" />
+                <ScalarProperty Name="SIPID" ColumnName="SIPID" />
+                <ScalarProperty Name="LOGICALREF" ColumnName="LOGICALREF" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

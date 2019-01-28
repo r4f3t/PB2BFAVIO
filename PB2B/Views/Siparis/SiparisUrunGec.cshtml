@@ -1,11 +1,114 @@
-﻿@{ 
+﻿@model PB2B.Models.URUNGEC
 
-}
-<div class="row">
-    <div class="col-lg-3">
-        <div class="form-group">
-            <label>Miktar</label>
-            <input type="number" name="miktar" class="form-control" />
+
+<form action="~/Siparis/SiparisUrungec" method="post" novalidate>
+
+    <div class="row" style="">
+        <h4>@Model.NAME <small>@Model.CODE</small></h4>
+        <input type="hidden" name="NAME" value="@Model.NAME" />
+        <input type="hidden" name="CODE" value="@Model.CODE" />
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label>Liste Fiyati</label>
+                <input type="text" readonly id="txtListFiyat" name="ListeFiyati" value='@Model.ListeFiyati' class="form-control" />
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label>Önerilen Fiyat</label>
+                <input type="text" readonly id="txtiskFiyat" name="OnerilenFiyat" value='@Model.OnerilenFiyat' class="form-control" />
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <div class="form-group">
+                <label>İsk.%</label>
+                <input type="number" id="txtIskOran" name="INDORAN" onchange="iskHesap()" onkeyup="iskHesap()" value="@Model.INDORAN.ToString().Replace(",", ".")" class="form-control" />
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group">
+                <label>Son. Fiyat</label>
+                <input type="number" id="txtSonFiyat" name="SONFIYAT" onchange="iskHesapSon()" value="@Model.OnerilenFiyat.ToString().Replace(",",".")" class="form-control" />
+            </div>
         </div>
     </div>
-</div>
+
+    <script>
+    function iskHesap() {
+
+        var txtIsk = document.getElementById("txtIskOran");
+        var txtListFiyat = document.getElementById("txtListFiyat");
+        var txtSonFiyat = document.getElementById("txtSonFiyat");
+        if (txtIsk.value == "") {
+            txtIsk.value = "0";
+        }
+
+        if (txtIsk.value != "" && txtListFiyat.value != "") {
+            if (parseFloat(txtIsk.value)>@Model.ALTORAN.Replace(",",".")) {
+                alert("Tanımlı Taban Fiyatın Altına Satış Yapamazsınız !!!");
+                txtIsk.value = "@Model.ALTORAN.Replace(",", ".")";
+                 txtSonFiyat.value = "@Model.TabanFiyat.Replace(",", ".")";
+            } else {
+                txtSonFiyat.value = parseFloat(txtListFiyat.value) * (1 - parseFloat(txtIsk.value) / 100);
+            }
+
+
+        }
+    }
+
+    function iskHesapSon() {
+        var txtIsk = document.getElementById("txtIskOran");
+        var txtListFiyat = document.getElementById("txtListFiyat");
+        var txtSonFiyat = document.getElementById("txtSonFiyat");
+        if (txtiskFiyat.value == "") {
+            txtiskFiyat.value = "0";
+        }
+        if (txtIsk.value != "" && txtListFiyat.value != "") {
+            if (parseFloat(txtSonFiyat.value) <@Model.TabanFiyat.Replace(",",".")) {
+                alert("Tanımlı Taban Fiyatın Altına Satış Yapamazsınız !!!");
+                txtSonFiyat.value = "@Model.TabanFiyat.Replace(",", ".")";
+                 txtIsk.value="@Model.ALTORAN.Replace(",", ".")";
+            } else {
+                txtIsk.value = (1 - (parseFloat(txtSonFiyat.value) / parseFloat(txtListFiyat.value))) * 100;
+            }
+        }
+    }
+    </script>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label>Miktar</label>
+                <input type="number" id="txtMik" onkeyup="sonHesap()" onchange="sonHesap()" name="MIKTAR" class="form-control" />
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label>Toplam</label>
+                <input type="number" id="txtGenelToplam" readonly name="GENELTOPLAM" class="form-control" />
+            </div>
+        </div>
+        <div class="col-lg-3" style="text-align:center;">
+            <label>&nbsp;</label>
+            <input type="submit" class="btn btn-success" value="Sepete Ekle" />
+        </div>
+        <script>
+            function sonHesap() {
+                var txtSonFiyat = document.getElementById("txtSonFiyat");
+                var txtMik = document.getElementById("txtMik");
+                var txtGenelToplam = document.getElementById("txtGenelToplam");
+                txtGenelToplam.value = parseFloat(txtSonFiyat.value) * parseInt(txtMik.value);
+            }
+        </script>
+    </div>
+
+   </form>
+    <script>
+    function onAcilis() {
+        document.getElementById("LBLTabanFiyat").innerHTML ="@Model.TabanFiyat Taban Fiyatıdır!!!";
+    }
+    window.onload = onAcilis();
+    </script>

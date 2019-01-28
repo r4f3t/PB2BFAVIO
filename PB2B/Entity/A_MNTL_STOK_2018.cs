@@ -22,7 +22,7 @@ namespace PB2B.Entity
         public Nullable<double> KDV { get; set; }
         public int BAKIYE { get; set; }
         public int BAKIYE2 { get; set; }
-        public int ListeFiyati { get; set; }
+        public decimal ListeFiyati { get; set; }
         public int PARABIRIMI { get; set; }
         public int OEM { get; set; }
         public string URUNADI { get; set; }
@@ -34,5 +34,11 @@ namespace PB2B.Entity
         public int INDIRIM { get; set; }
         public string CURRSYMB { get; set; }
         public Nullable<int> MSIRANO { get; set; }
+        public string Maliyet { get; set; }
+        public Nullable<decimal> ORAN { get; set; }
+        public Nullable<decimal> INDORAN { get; set; }
+        public decimal OnerilenFiyat { get; set; }
+        public decimal TabanFiyat { get; set; }
+        public Nullable<decimal> ALTORAN { get; set; }
     }
 }

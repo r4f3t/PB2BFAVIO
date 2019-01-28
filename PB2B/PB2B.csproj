@@ -177,8 +177,10 @@
     <Compile Include="classes\UserAuthorize.cs" />
     <Compile Include="Controllers\DenemeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Master\MasterMusteriController.cs" />
     <Compile Include="Controllers\Musteri\MusteriController.cs" />
     <Compile Include="Controllers\Plasiyer\PlasiyerController.cs" />
+    <Compile Include="Controllers\Sepet\SepetController.cs" />
     <Compile Include="Controllers\Siparis\SiparisController.cs" />
     <Compile Include="Entity\A_MNTL_STOK_2018.cs">
       <DependentUpon>LKSDB.tt</DependentUpon>
@@ -193,6 +195,21 @@
       <DependentUpon>LKSDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\ISRG_Hesap_Extresi_006_04.cs">
+      <DependentUpon>LKSDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\I_SRG_EKSIKSIPARISLER_006_04.cs">
+      <DependentUpon>LKSDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\LG_006_04_ORFICHE.cs">
+      <DependentUpon>LKSDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\LG_006_04_ORFICHESEQ.cs">
+      <DependentUpon>LKSDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\LG_006_04_ORFLINE.cs">
+      <DependentUpon>LKSDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\LG_006_04_ORFLINESEQ.cs">
       <DependentUpon>LKSDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\LKSDB.Context.cs">
@@ -225,16 +242,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LOGOKAMP.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Entity\SRG_SipLine.cs">
+      <DependentUpon>LOGOKAMP.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\XX_SRG_Cari_HDurum_006.cs">
       <DependentUpon>LKSDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\ZTbLUseR.cs">
       <DependentUpon>LOGOKAMP.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\Z_SipLine.cs">
+      <DependentUpon>LOGOKAMP.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CARIEXTRE.cs" />
+    <Compile Include="Models\URUNGEC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -411,6 +435,10 @@
     <Content Include="Views\Musteri\Faturalarim.cshtml" />
     <Content Include="Views\Musteri\FaturaDetay.cshtml" />
     <Content Include="Views\Siparis\SiparisUrunGec.cshtml" />
+    <Content Include="Views\MasterMusteri\Sepet.cshtml" />
+    <Content Include="Views\Sepet\Index.cshtml" />
+    <Content Include="Views\Sepet\SatirSil.cshtml" />
+    <Content Include="Views\Musteri\Siparisler.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

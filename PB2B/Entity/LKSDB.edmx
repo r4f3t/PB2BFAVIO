@@ -5,6 +5,276 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="LKSDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="LG_006_04_ORFICHE">
+          <Key>
+            <PropertyRef Name="LOGICALREF" />
+          </Key>
+          <Property Name="LOGICALREF" Type="int" Nullable="false" />
+          <Property Name="TRCODE" Type="smallint" />
+          <Property Name="FICHENO" Type="varchar" MaxLength="17" />
+          <Property Name="DATE_" Type="datetime" />
+          <Property Name="TIME_" Type="int" />
+          <Property Name="DOCODE" Type="varchar" MaxLength="17" />
+          <Property Name="SPECODE" Type="varchar" MaxLength="11" />
+          <Property Name="CYPHCODE" Type="varchar" MaxLength="11" />
+          <Property Name="CLIENTREF" Type="int" />
+          <Property Name="RECVREF" Type="int" />
+          <Property Name="ACCOUNTREF" Type="int" />
+          <Property Name="CENTERREF" Type="int" />
+          <Property Name="SOURCEINDEX" Type="smallint" />
+          <Property Name="SOURCECOSTGRP" Type="smallint" />
+          <Property Name="UPDCURR" Type="smallint" />
+          <Property Name="ADDDISCOUNTS" Type="float" />
+          <Property Name="TOTALDISCOUNTS" Type="float" />
+          <Property Name="TOTALDISCOUNTED" Type="float" />
+          <Property Name="ADDEXPENSES" Type="float" />
+          <Property Name="TOTALEXPENSES" Type="float" />
+          <Property Name="TOTALPROMOTIONS" Type="float" />
+          <Property Name="TOTALVAT" Type="float" />
+          <Property Name="GROSSTOTAL" Type="float" />
+          <Property Name="NETTOTAL" Type="float" />
+          <Property Name="REPORTRATE" Type="float" />
+          <Property Name="REPORTNET" Type="float" />
+          <Property Name="GENEXP1" Type="varchar" MaxLength="51" />
+          <Property Name="GENEXP2" Type="varchar" MaxLength="51" />
+          <Property Name="GENEXP3" Type="varchar" MaxLength="51" />
+          <Property Name="GENEXP4" Type="varchar" MaxLength="51" />
+          <Property Name="EXTENREF" Type="int" />
+          <Property Name="PAYDEFREF" Type="int" />
+          <Property Name="PRINTCNT" Type="smallint" />
+          <Property Name="BRANCH" Type="smallint" />
+          <Property Name="DEPARTMENT" Type="smallint" />
+          <Property Name="STATUS" Type="smallint" />
+          <Property Name="CAPIBLOCK_CREATEDBY" Type="smallint" />
+          <Property Name="CAPIBLOCK_CREADEDDATE" Type="datetime" />
+          <Property Name="CAPIBLOCK_CREATEDHOUR" Type="smallint" />
+          <Property Name="CAPIBLOCK_CREATEDMIN" Type="smallint" />
+          <Property Name="CAPIBLOCK_CREATEDSEC" Type="smallint" />
+          <Property Name="CAPIBLOCK_MODIFIEDBY" Type="smallint" />
+          <Property Name="CAPIBLOCK_MODIFIEDDATE" Type="datetime" />
+          <Property Name="CAPIBLOCK_MODIFIEDHOUR" Type="smallint" />
+          <Property Name="CAPIBLOCK_MODIFIEDMIN" Type="smallint" />
+          <Property Name="CAPIBLOCK_MODIFIEDSEC" Type="smallint" />
+          <Property Name="SALESMANREF" Type="int" />
+          <Property Name="SHPTYPCOD" Type="varchar" MaxLength="13" />
+          <Property Name="SHPAGNCOD" Type="varchar" MaxLength="13" />
+          <Property Name="GENEXCTYP" Type="smallint" />
+          <Property Name="LINEEXCTYP" Type="smallint" />
+          <Property Name="TRADINGGRP" Type="varchar" MaxLength="17" />
+          <Property Name="TEXTINC" Type="smallint" />
+          <Property Name="SITEID" Type="smallint" />
+          <Property Name="RECSTATUS" Type="smallint" />
+          <Property Name="ORGLOGICREF" Type="int" />
+          <Property Name="FACTORYNR" Type="smallint" />
+          <Property Name="WFSTATUS" Type="int" />
+          <Property Name="SHIPINFOREF" Type="int" />
+          <Property Name="CUSTORDNO" Type="varchar" MaxLength="25" />
+          <Property Name="SENDCNT" Type="smallint" />
+          <Property Name="DLVCLIENT" Type="smallint" />
+          <Property Name="DOCTRACKINGNR" Type="varchar" MaxLength="21" />
+          <Property Name="CANCELLED" Type="smallint" />
+          <Property Name="ORGLOGOID" Type="varchar" MaxLength="25" />
+          <Property Name="OFFERREF" Type="int" />
+          <Property Name="OFFALTREF" Type="int" />
+          <Property Name="TYP" Type="smallint" />
+          <Property Name="ALTNR" Type="smallint" />
+          <Property Name="ADVANCEPAYM" Type="float" />
+          <Property Name="TRCURR" Type="smallint" />
+          <Property Name="TRRATE" Type="float" />
+          <Property Name="TRNET" Type="float" />
+          <Property Name="PAYMENTTYPE" Type="smallint" />
+          <Property Name="ONLYONEPAYLINE" Type="smallint" />
+          <Property Name="OPSTAT" Type="smallint" />
+          <Property Name="WITHPAYTRANS" Type="smallint" />
+          <Property Name="PROJECTREF" Type="int" />
+          <Property Name="WFLOWCRDREF" Type="int" />
+          <Property Name="UPDTRCURR" Type="smallint" />
+          <Property Name="AFFECTCOLLATRL" Type="smallint" />
+          <Property Name="POFFERBEGDT" Type="datetime" />
+          <Property Name="POFFERENDDT" Type="datetime" />
+          <Property Name="REVISNR" Type="varchar" MaxLength="17" />
+          <Property Name="LASTREVISION" Type="smallint" />
+          <Property Name="CHECKAMOUNT" Type="smallint" />
+          <Property Name="SLSOPPRREF" Type="int" />
+          <Property Name="SLSACTREF" Type="int" />
+          <Property Name="SLSCUSTREF" Type="int" />
+          <Property Name="AFFECTRISK" Type="smallint" />
+          <Property Name="TOTALADDTAX" Type="float" />
+          <Property Name="TOTALEXADDTAX" Type="float" />
+          <Property Name="APPROVE" Type="smallint" />
+          <Property Name="APPROVEDATE" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LKSDB.dbo.LG_006_04_ORFICHESEQ' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="LG_006_04_ORFICHESEQ">
+          <Key>
+            <PropertyRef Name="LASTLREF" />
+          </Key>
+          <Property Name="ID" Type="int" />
+          <Property Name="LASTLREF" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LG_006_04_ORFLINE">
+          <Key>
+            <PropertyRef Name="LOGICALREF" />
+          </Key>
+          <Property Name="LOGICALREF" Type="int" Nullable="false" />
+          <Property Name="STOCKREF" Type="int" />
+          <Property Name="ORDFICHEREF" Type="int" />
+          <Property Name="CLIENTREF" Type="int" />
+          <Property Name="LINETYPE" Type="smallint" />
+          <Property Name="PREVLINEREF" Type="int" />
+          <Property Name="PREVLINENO" Type="smallint" />
+          <Property Name="DETLINE" Type="smallint" />
+          <Property Name="LINENO_" Type="smallint" />
+          <Property Name="TRCODE" Type="smallint" />
+          <Property Name="DATE_" Type="datetime" />
+          <Property Name="TIME_" Type="int" />
+          <Property Name="GLOBTRANS" Type="smallint" />
+          <Property Name="CALCTYPE" Type="smallint" />
+          <Property Name="CENTERREF" Type="int" />
+          <Property Name="ACCOUNTREF" Type="int" />
+          <Property Name="VATACCREF" Type="int" />
+          <Property Name="VATCENTERREF" Type="int" />
+          <Property Name="PRACCREF" Type="int" />
+          <Property Name="PRCENTERREF" Type="int" />
+          <Property Name="PRVATACCREF" Type="int" />
+          <Property Name="PRVATCENREF" Type="int" />
+          <Property Name="PROMREF" Type="int" />
+          <Property Name="SPECODE" Type="varchar" MaxLength="17" />
+          <Property Name="DELVRYCODE" Type="varchar" MaxLength="11" />
+          <Property Name="AMOUNT" Type="float" />
+          <Property Name="PRICE" Type="float" />
+          <Property Name="TOTAL" Type="float" />
+          <Property Name="SHIPPEDAMOUNT" Type="float" />
+          <Property Name="DISCPER" Type="float" />
+          <Property Name="DISTCOST" Type="float" />
+          <Property Name="DISTDISC" Type="float" />
+          <Property Name="DISTEXP" Type="float" />
+          <Property Name="DISTPROM" Type="float" />
+          <Property Name="VAT" Type="float" />
+          <Property Name="VATAMNT" Type="float" />
+          <Property Name="VATMATRAH" Type="float" />
+          <Property Name="LINEEXP" Type="varchar" MaxLength="31" />
+          <Property Name="UOMREF" Type="int" />
+          <Property Name="USREF" Type="int" />
+          <Property Name="UINFO1" Type="float" />
+          <Property Name="UINFO2" Type="float" />
+          <Property Name="UINFO3" Type="float" />
+          <Property Name="UINFO4" Type="float" />
+          <Property Name="UINFO5" Type="float" />
+          <Property Name="UINFO6" Type="float" />
+          <Property Name="UINFO7" Type="float" />
+          <Property Name="UINFO8" Type="float" />
+          <Property Name="VATINC" Type="smallint" />
+          <Property Name="CLOSED" Type="smallint" />
+          <Property Name="DORESERVE" Type="smallint" />
+          <Property Name="INUSE" Type="smallint" />
+          <Property Name="DUEDATE" Type="datetime" />
+          <Property Name="PRCURR" Type="smallint" />
+          <Property Name="PRPRICE" Type="float" />
+          <Property Name="REPORTRATE" Type="float" />
+          <Property Name="BILLEDITEM" Type="int" />
+          <Property Name="PAYDEFREF" Type="int" />
+          <Property Name="EXTENREF" Type="int" />
+          <Property Name="CPSTFLAG" Type="smallint" />
+          <Property Name="SOURCEINDEX" Type="smallint" />
+          <Property Name="SOURCECOSTGRP" Type="smallint" />
+          <Property Name="BRANCH" Type="smallint" />
+          <Property Name="DEPARTMENT" Type="smallint" />
+          <Property Name="LINENET" Type="float" />
+          <Property Name="SALESMANREF" Type="int" />
+          <Property Name="STATUS" Type="smallint" />
+          <Property Name="DREF" Type="int" />
+          <Property Name="TRGFLAG" Type="smallint" />
+          <Property Name="SITEID" Type="smallint" />
+          <Property Name="RECSTATUS" Type="smallint" />
+          <Property Name="ORGLOGICREF" Type="int" />
+          <Property Name="FACTORYNR" Type="smallint" />
+          <Property Name="WFSTATUS" Type="int" />
+          <Property Name="NETDISCFLAG" Type="smallint" />
+          <Property Name="NETDISCPERC" Type="float" />
+          <Property Name="NETDISCAMNT" Type="float" />
+          <Property Name="CONDITIONREF" Type="int" />
+          <Property Name="DISTRESERVED" Type="float" />
+          <Property Name="ONVEHICLE" Type="float" />
+          <Property Name="CAMPAIGNREFS1" Type="int" />
+          <Property Name="CAMPAIGNREFS2" Type="int" />
+          <Property Name="CAMPAIGNREFS3" Type="int" />
+          <Property Name="CAMPAIGNREFS4" Type="int" />
+          <Property Name="CAMPAIGNREFS5" Type="int" />
+          <Property Name="POINTCAMPREF" Type="int" />
+          <Property Name="CAMPPOINT" Type="float" />
+          <Property Name="PROMCLASITEMREF" Type="int" />
+          <Property Name="REASONFORNOTSHP" Type="smallint" />
+          <Property Name="CMPGLINEREF" Type="int" />
+          <Property Name="PRRATE" Type="float" />
+          <Property Name="GROSSUINFO1" Type="float" />
+          <Property Name="GROSSUINFO2" Type="float" />
+          <Property Name="CANCELLED" Type="smallint" />
+          <Property Name="DEMPEGGEDAMNT" Type="float" />
+          <Property Name="TEXTINC" Type="smallint" />
+          <Property Name="OFFERREF" Type="int" />
+          <Property Name="ORDERPARAM" Type="smallint" />
+          <Property Name="ITEMASGREF" Type="int" />
+          <Property Name="EXIMAMOUNT" Type="float" />
+          <Property Name="OFFTRANSREF" Type="int" />
+          <Property Name="ORDEREDAMOUNT" Type="float" />
+          <Property Name="ORGLOGOID" Type="varchar" MaxLength="25" />
+          <Property Name="TRCURR" Type="smallint" />
+          <Property Name="TRRATE" Type="float" />
+          <Property Name="WITHPAYTRANS" Type="smallint" />
+          <Property Name="PROJECTREF" Type="int" />
+          <Property Name="POINTCAMPREFS1" Type="int" />
+          <Property Name="POINTCAMPREFS2" Type="int" />
+          <Property Name="POINTCAMPREFS3" Type="int" />
+          <Property Name="POINTCAMPREFS4" Type="int" />
+          <Property Name="CAMPPOINTS1" Type="float" />
+          <Property Name="CAMPPOINTS2" Type="float" />
+          <Property Name="CAMPPOINTS3" Type="float" />
+          <Property Name="CAMPPOINTS4" Type="float" />
+          <Property Name="CMPGLINEREFS1" Type="int" />
+          <Property Name="CMPGLINEREFS2" Type="int" />
+          <Property Name="CMPGLINEREFS3" Type="int" />
+          <Property Name="CMPGLINEREFS4" Type="int" />
+          <Property Name="PRCLISTREF" Type="int" />
+          <Property Name="AFFECTCOLLATRL" Type="smallint" />
+          <Property Name="FCTYP" Type="smallint" />
+          <Property Name="PURCHOFFNR" Type="smallint" />
+          <Property Name="DEMFICHEREF" Type="int" />
+          <Property Name="DEMTRANSREF" Type="int" />
+          <Property Name="ALTPROMFLAG" Type="smallint" />
+          <Property Name="VARIANTREF" Type="int" />
+          <Property Name="REFLVATACCREF" Type="int" />
+          <Property Name="REFLVATOTHACCREF" Type="int" />
+          <Property Name="PRIORITY" Type="smallint" />
+          <Property Name="AFFECTRISK" Type="smallint" />
+          <Property Name="BOMREF" Type="int" />
+          <Property Name="BOMREVREF" Type="int" />
+          <Property Name="ROUTINGREF" Type="int" />
+          <Property Name="OPERATIONREF" Type="int" />
+          <Property Name="WSREF" Type="int" />
+          <Property Name="ADDTAXRATE" Type="float" />
+          <Property Name="ADDTAXCONVFACT" Type="float" />
+          <Property Name="ADDTAXAMOUNT" Type="float" />
+          <Property Name="ADDTAXACCREF" Type="int" />
+          <Property Name="ADDTAXCENTERREF" Type="int" />
+          <Property Name="ADDTAXAMNTISUPD" Type="smallint" />
+          <Property Name="ADDTAXDISCAMOUNT" Type="float" />
+          <Property Name="EXADDTAXRATE" Type="float" />
+          <Property Name="EXADDTAXCONVF" Type="float" />
+          <Property Name="EXADDTAXAMNT" Type="float" />
+          <Property Name="EUVATSTATUS" Type="smallint" />
+          <Property Name="ADDTAXVATMATRAH" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LKSDB.dbo.LG_006_04_ORFLINESEQ' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="LG_006_04_ORFLINESEQ">
+          <Key>
+            <PropertyRef Name="LASTLREF" />
+          </Key>
+          <Property Name="ID" Type="int" />
+          <Property Name="LASTLREF" Type="int" Nullable="false" />
+        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'LKSDB.dbo.A_MNTL_STOK_2018' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="A_MNTL_STOK_2018">
@@ -13,6 +283,8 @@ warning 6002: The table/view 'LKSDB.dbo.A_MNTL_STOK_2018' does not have a primar
             <PropertyRef Name="BAKIYE" />
             <PropertyRef Name="BAKIYE2" />
             <PropertyRef Name="ListeFiyati" />
+            <PropertyRef Name="OnerilenFiyat" />
+            
             <PropertyRef Name="PARABIRIMI" />
             <PropertyRef Name="OEM" />
             <PropertyRef Name="TEDARIKCI" />
@@ -28,7 +300,10 @@ warning 6002: The table/view 'LKSDB.dbo.A_MNTL_STOK_2018' does not have a primar
           <Property Name="KDV" Type="float" />
           <Property Name="BAKIYE" Type="float" Nullable="false" />
           <Property Name="BAKIYE2" Type="int" Nullable="false" />
-          <Property Name="ListeFiyati" Type="int" Nullable="false" />
+          <Property Name="Maliyet" Type="varchar" MaxLength="11" />
+          <Property Name="ListeFiyati" Type="decimal" Precision="37" Scale="6" Nullable="false" />
+          <Property Name="OnerilenFiyat" Type="decimal" Precision="38" Scale="6" Nullable="false" />
+          <Property Name="TabanFiyat" Type="decimal" Precision="38" Scale="6" Nullable="false" />
           <Property Name="PARABIRIMI" Type="int" Nullable="false" />
           <Property Name="OEM" Type="int" Nullable="false" />
           <Property Name="URUNADI" Type="varchar" MaxLength="51" />
@@ -39,6 +314,9 @@ warning 6002: The table/view 'LKSDB.dbo.A_MNTL_STOK_2018' does not have a primar
           <Property Name="SizeOzelTL" Type="int" Nullable="false" />
           <Property Name="INDIRIM" Type="int" Nullable="false" />
           <Property Name="CURRSYMB" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="ORAN" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="INDORAN" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="ALTORAN" Type="decimal" Precision="18" Scale="3" />
           <Property Name="MSIRANO" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -68,6 +346,29 @@ warning 6002: The table/view 'LKSDB.dbo.C_INT_CARIONEKRAN_006' does not have a p
           <Property Name="RiskLimiti" Type="float" Nullable="false" />
           <Property Name="OKoD" Type="varchar" MaxLength="11" />
           <Property Name="LOGOID" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LKSDB.dbo.I_SRG_EKSIKSIPARISLER_006_04' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="I_SRG_EKSIKSIPARISLER_006_04">
+          <Key>
+            <PropertyRef Name="LOGICALREF" />
+            <PropertyRef Name="DURUM" />
+          </Key>
+          <Property Name="LOGICALREF" Type="int" Nullable="false" />
+          <Property Name="FICHENO" Type="varchar" MaxLength="17" />
+          <Property Name="PLASIYER" Type="varchar" MaxLength="3" />
+          <Property Name="DATE_" Type="datetime" />
+          <Property Name="CLIENTREF" Type="int" />
+          <Property Name="CODE" Type="varchar" MaxLength="25" />
+          <Property Name="NAME" Type="varchar" MaxLength="51" />
+          <Property Name="SPECODE2" Type="varchar" MaxLength="11" />
+          <Property Name="AMOUNT" Type="float" />
+          <Property Name="PRICE" Type="float" />
+          <Property Name="TOTAL" Type="float" />
+          <Property Name="SHIPPEDAMOUNT" Type="float" />
+          <Property Name="DURUM" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="DORESERVE" Type="smallint" />
+          <Property Name="Kalan" Type="float" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'LKSDB.dbo.ISRG_FaturaDetaY_006' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -165,6 +466,20 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_Cari_HDurum_006' does not have a 
           <Property Name="Vade_Gunu" Type="datetime" />
         </EntityType>
         <EntityContainer Name="LKSDBModelStoreContainer">
+          <EntitySet Name="LG_006_04_ORFICHE" EntityType="Self.LG_006_04_ORFICHE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LG_006_04_ORFLINE" EntityType="Self.LG_006_04_ORFLINE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LG_006_04_ORFICHESEQ" EntityType="Self.LG_006_04_ORFICHESEQ" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [LG_006_04_ORFICHESEQ].[ID] AS [ID], 
+    [LG_006_04_ORFICHESEQ].[LASTLREF] AS [LASTLREF]
+    FROM [dbo].[LG_006_04_ORFICHESEQ] AS [LG_006_04_ORFICHESEQ]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="LG_006_04_ORFLINESEQ" EntityType="Self.LG_006_04_ORFLINESEQ" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [LG_006_04_ORFLINESEQ].[ID] AS [ID], 
+    [LG_006_04_ORFLINESEQ].[LASTLREF] AS [LASTLREF]
+    FROM [dbo].[LG_006_04_ORFLINESEQ] AS [LG_006_04_ORFLINESEQ]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="A_MNTL_STOK_2018" EntityType="Self.A_MNTL_STOK_2018" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [A_MNTL_STOK_2018].[MARKA] AS [MARKA], 
@@ -175,7 +490,10 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_Cari_HDurum_006' does not have a 
     [A_MNTL_STOK_2018].[KDV] AS [KDV], 
     [A_MNTL_STOK_2018].[BAKIYE] AS [BAKIYE], 
     [A_MNTL_STOK_2018].[BAKIYE2] AS [BAKIYE2], 
+    [A_MNTL_STOK_2018].[Maliyet] AS [Maliyet], 
     [A_MNTL_STOK_2018].[ListeFiyati] AS [ListeFiyati], 
+    [A_MNTL_STOK_2018].[OnerilenFiyat] AS [OnerilenFiyat], 
+    [A_MNTL_STOK_2018].[TabanFiyat] AS [TabanFiyat], 
     [A_MNTL_STOK_2018].[PARABIRIMI] AS [PARABIRIMI], 
     [A_MNTL_STOK_2018].[OEM] AS [OEM], 
     [A_MNTL_STOK_2018].[URUNADI] AS [URUNADI], 
@@ -186,6 +504,9 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_Cari_HDurum_006' does not have a 
     [A_MNTL_STOK_2018].[SizeOzelTL] AS [SizeOzelTL], 
     [A_MNTL_STOK_2018].[INDIRIM] AS [INDIRIM], 
     [A_MNTL_STOK_2018].[CURRSYMB] AS [CURRSYMB], 
+    [A_MNTL_STOK_2018].[ORAN] AS [ORAN], 
+    [A_MNTL_STOK_2018].[INDORAN] AS [INDORAN], 
+    [A_MNTL_STOK_2018].[ALTORAN] AS [ALTORAN], 
     [A_MNTL_STOK_2018].[MSIRANO] AS [MSIRANO]
     FROM [dbo].[A_MNTL_STOK_2018] AS [A_MNTL_STOK_2018]</DefiningQuery>
           </EntitySet>
@@ -206,6 +527,25 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_Cari_HDurum_006' does not have a 
     [C_INT_CARIONEKRAN_006].[OKoD] AS [OKoD], 
     [C_INT_CARIONEKRAN_006].[LOGOID] AS [LOGOID]
     FROM [dbo].[C_INT_CARIONEKRAN_006] AS [C_INT_CARIONEKRAN_006]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="I_SRG_EKSIKSIPARISLER_006_04" EntityType="Self.I_SRG_EKSIKSIPARISLER_006_04" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [I_SRG_EKSIKSIPARISLER_006_04].[LOGICALREF] AS [LOGICALREF], 
+    [I_SRG_EKSIKSIPARISLER_006_04].[FICHENO] AS [FICHENO], 
+    [I_SRG_EKSIKSIPARISLER_006_04].[PLASIYER] AS [PLASIYER], 
+    [I_SRG_EKSIKSIPARISLER_006_04].[DATE_] AS [DATE_], 
+    [I_SRG_EKSIKSIPARISLER_006_04].[CLIENTREF] AS [CLIENTREF], 
+    [I_SRG_EKSIKSIPARISLER_006_04].[CODE] AS [CODE], 
+    [I_SRG_EKSIKSIPARISLER_006_04].[NAME] AS [NAME], 
+    [I_SRG_EKSIKSIPARISLER_006_04].[SPECODE2] AS [SPECODE2], 
+    [I_SRG_EKSIKSIPARISLER_006_04].[AMOUNT] AS [AMOUNT], 
+    [I_SRG_EKSIKSIPARISLER_006_04].[PRICE] AS [PRICE], 
+    [I_SRG_EKSIKSIPARISLER_006_04].[TOTAL] AS [TOTAL], 
+    [I_SRG_EKSIKSIPARISLER_006_04].[SHIPPEDAMOUNT] AS [SHIPPEDAMOUNT], 
+    [I_SRG_EKSIKSIPARISLER_006_04].[DURUM] AS [DURUM], 
+    [I_SRG_EKSIKSIPARISLER_006_04].[DORESERVE] AS [DORESERVE], 
+    [I_SRG_EKSIKSIPARISLER_006_04].[Kalan] AS [Kalan]
+    FROM [dbo].[I_SRG_EKSIKSIPARISLER_006_04] AS [I_SRG_EKSIKSIPARISLER_006_04]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ISRG_FaturaDetaY_006" EntityType="Self.ISRG_FaturaDetaY_006" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -297,6 +637,7 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_Cari_HDurum_006' does not have a 
             <PropertyRef Name="SizeOzelTL" />
             <PropertyRef Name="INDIRIM" />
             <PropertyRef Name="CURRSYMB" />
+            <PropertyRef Name="OnerilenFiyat" />
           </Key>
           <Property Name="MARKA" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="LOGICALREF" Type="Int32" Nullable="false" />
@@ -306,7 +647,7 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_Cari_HDurum_006' does not have a 
           <Property Name="KDV" Type="Double" />
           <Property Name="BAKIYE" Type="Int32" Nullable="false" />
           <Property Name="BAKIYE2" Type="Int32" Nullable="false" />
-          <Property Name="ListeFiyati" Type="Int32" Nullable="false" />
+          <Property Name="ListeFiyati" Type="Decimal" Nullable="false" Precision="37" Scale="6" />
           <Property Name="PARABIRIMI" Type="Int32" Nullable="false" />
           <Property Name="OEM" Type="Int32" Nullable="false" />
           <Property Name="URUNADI" Type="String" MaxLength="51" FixedLength="false" Unicode="false" />
@@ -318,6 +659,12 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_Cari_HDurum_006' does not have a 
           <Property Name="INDIRIM" Type="Int32" Nullable="false" />
           <Property Name="CURRSYMB" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MSIRANO" Type="Int32" />
+          <Property Name="Maliyet" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="ORAN" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="INDORAN" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="OnerilenFiyat" Type="Decimal" Nullable="false" Precision="38" Scale="6" />
+          <Property Name="TabanFiyat" Type="Decimal" Nullable="false" Precision="38" Scale="6" />
+          <Property Name="ALTORAN" Type="Decimal" Precision="18" Scale="3" />
         </EntityType>
         <EntityType Name="C_INT_CARIONEKRAN_006">
           <Key>
@@ -410,6 +757,11 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_Cari_HDurum_006' does not have a 
           <EntitySet Name="ISRG_Faturalar_006" EntityType="Self.ISRG_Faturalar_006" />
           <EntitySet Name="ISRG_Hesap_Extresi_006_04" EntityType="Self.ISRG_Hesap_Extresi_006_04" />
           <EntitySet Name="XX_SRG_Cari_HDurum_006" EntityType="LKSDBModel.XX_SRG_Cari_HDurum_006" />
+          <EntitySet Name="LG_006_04_ORFICHE" EntityType="LKSDBModel.LG_006_04_ORFICHE" />
+          <EntitySet Name="LG_006_04_ORFLINE" EntityType="LKSDBModel.LG_006_04_ORFLINE" />
+          <EntitySet Name="LG_006_04_ORFICHESEQ" EntityType="LKSDBModel.LG_006_04_ORFICHESEQ" />
+          <EntitySet Name="LG_006_04_ORFLINESEQ" EntityType="LKSDBModel.LG_006_04_ORFLINESEQ" />
+          <EntitySet Name="I_SRG_EKSIKSIPARISLER_006_04" EntityType="LKSDBModel.I_SRG_EKSIKSIPARISLER_006_04" />
         </EntityContainer>
         <EntityType Name="XX_SRG_Cari_HDurum_006">
           <Key>
@@ -440,6 +792,293 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_Cari_HDurum_006' does not have a 
           <Property Name="ORTVade" Type="Double" Nullable="false" />
           <Property Name="Vade_Gunu" Type="DateTime" Precision="3" />
         </EntityType>
+        <EntityType Name="LG_006_04_ORFICHE">
+          <Key>
+            <PropertyRef Name="LOGICALREF" />
+          </Key>
+          <Property Name="LOGICALREF" Type="Int32" Nullable="false" />
+          <Property Name="TRCODE" Type="Int16" />
+          <Property Name="FICHENO" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="DATE_" Type="DateTime" Precision="3" />
+          <Property Name="TIME_" Type="Int32" />
+          <Property Name="DOCODE" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="SPECODE" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="CYPHCODE" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="CLIENTREF" Type="Int32" />
+          <Property Name="RECVREF" Type="Int32" />
+          <Property Name="ACCOUNTREF" Type="Int32" />
+          <Property Name="CENTERREF" Type="Int32" />
+          <Property Name="SOURCEINDEX" Type="Int16" />
+          <Property Name="SOURCECOSTGRP" Type="Int16" />
+          <Property Name="UPDCURR" Type="Int16" />
+          <Property Name="ADDDISCOUNTS" Type="Double" />
+          <Property Name="TOTALDISCOUNTS" Type="Double" />
+          <Property Name="TOTALDISCOUNTED" Type="Double" />
+          <Property Name="ADDEXPENSES" Type="Double" />
+          <Property Name="TOTALEXPENSES" Type="Double" />
+          <Property Name="TOTALPROMOTIONS" Type="Double" />
+          <Property Name="TOTALVAT" Type="Double" />
+          <Property Name="GROSSTOTAL" Type="Double" />
+          <Property Name="NETTOTAL" Type="Double" />
+          <Property Name="REPORTRATE" Type="Double" />
+          <Property Name="REPORTNET" Type="Double" />
+          <Property Name="GENEXP1" Type="String" MaxLength="51" FixedLength="false" Unicode="false" />
+          <Property Name="GENEXP2" Type="String" MaxLength="51" FixedLength="false" Unicode="false" />
+          <Property Name="GENEXP3" Type="String" MaxLength="51" FixedLength="false" Unicode="false" />
+          <Property Name="GENEXP4" Type="String" MaxLength="51" FixedLength="false" Unicode="false" />
+          <Property Name="EXTENREF" Type="Int32" />
+          <Property Name="PAYDEFREF" Type="Int32" />
+          <Property Name="PRINTCNT" Type="Int16" />
+          <Property Name="BRANCH" Type="Int16" />
+          <Property Name="DEPARTMENT" Type="Int16" />
+          <Property Name="STATUS" Type="Int16" />
+          <Property Name="CAPIBLOCK_CREATEDBY" Type="Int16" />
+          <Property Name="CAPIBLOCK_CREADEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CAPIBLOCK_CREATEDHOUR" Type="Int16" />
+          <Property Name="CAPIBLOCK_CREATEDMIN" Type="Int16" />
+          <Property Name="CAPIBLOCK_CREATEDSEC" Type="Int16" />
+          <Property Name="CAPIBLOCK_MODIFIEDBY" Type="Int16" />
+          <Property Name="CAPIBLOCK_MODIFIEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CAPIBLOCK_MODIFIEDHOUR" Type="Int16" />
+          <Property Name="CAPIBLOCK_MODIFIEDMIN" Type="Int16" />
+          <Property Name="CAPIBLOCK_MODIFIEDSEC" Type="Int16" />
+          <Property Name="SALESMANREF" Type="Int32" />
+          <Property Name="SHPTYPCOD" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="SHPAGNCOD" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="GENEXCTYP" Type="Int16" />
+          <Property Name="LINEEXCTYP" Type="Int16" />
+          <Property Name="TRADINGGRP" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="TEXTINC" Type="Int16" />
+          <Property Name="SITEID" Type="Int16" />
+          <Property Name="RECSTATUS" Type="Int16" />
+          <Property Name="ORGLOGICREF" Type="Int32" />
+          <Property Name="FACTORYNR" Type="Int16" />
+          <Property Name="WFSTATUS" Type="Int32" />
+          <Property Name="SHIPINFOREF" Type="Int32" />
+          <Property Name="CUSTORDNO" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="SENDCNT" Type="Int16" />
+          <Property Name="DLVCLIENT" Type="Int16" />
+          <Property Name="DOCTRACKINGNR" Type="String" MaxLength="21" FixedLength="false" Unicode="false" />
+          <Property Name="CANCELLED" Type="Int16" />
+          <Property Name="ORGLOGOID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="OFFERREF" Type="Int32" />
+          <Property Name="OFFALTREF" Type="Int32" />
+          <Property Name="TYP" Type="Int16" />
+          <Property Name="ALTNR" Type="Int16" />
+          <Property Name="ADVANCEPAYM" Type="Double" />
+          <Property Name="TRCURR" Type="Int16" />
+          <Property Name="TRRATE" Type="Double" />
+          <Property Name="TRNET" Type="Double" />
+          <Property Name="PAYMENTTYPE" Type="Int16" />
+          <Property Name="ONLYONEPAYLINE" Type="Int16" />
+          <Property Name="OPSTAT" Type="Int16" />
+          <Property Name="WITHPAYTRANS" Type="Int16" />
+          <Property Name="PROJECTREF" Type="Int32" />
+          <Property Name="WFLOWCRDREF" Type="Int32" />
+          <Property Name="UPDTRCURR" Type="Int16" />
+          <Property Name="AFFECTCOLLATRL" Type="Int16" />
+          <Property Name="POFFERBEGDT" Type="DateTime" Precision="3" />
+          <Property Name="POFFERENDDT" Type="DateTime" Precision="3" />
+          <Property Name="REVISNR" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="LASTREVISION" Type="Int16" />
+          <Property Name="CHECKAMOUNT" Type="Int16" />
+          <Property Name="SLSOPPRREF" Type="Int32" />
+          <Property Name="SLSACTREF" Type="Int32" />
+          <Property Name="SLSCUSTREF" Type="Int32" />
+          <Property Name="AFFECTRISK" Type="Int16" />
+          <Property Name="TOTALADDTAX" Type="Double" />
+          <Property Name="TOTALEXADDTAX" Type="Double" />
+          <Property Name="APPROVE" Type="Int16" />
+          <Property Name="APPROVEDATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="LG_006_04_ORFLINE">
+          <Key>
+            <PropertyRef Name="LOGICALREF" />
+          </Key>
+          <Property Name="LOGICALREF" Type="Int32" Nullable="false" />
+          <Property Name="STOCKREF" Type="Int32" />
+          <Property Name="ORDFICHEREF" Type="Int32" />
+          <Property Name="CLIENTREF" Type="Int32" />
+          <Property Name="LINETYPE" Type="Int16" />
+          <Property Name="PREVLINEREF" Type="Int32" />
+          <Property Name="PREVLINENO" Type="Int16" />
+          <Property Name="DETLINE" Type="Int16" />
+          <Property Name="LINENO_" Type="Int16" />
+          <Property Name="TRCODE" Type="Int16" />
+          <Property Name="DATE_" Type="DateTime" Precision="3" />
+          <Property Name="TIME_" Type="Int32" />
+          <Property Name="GLOBTRANS" Type="Int16" />
+          <Property Name="CALCTYPE" Type="Int16" />
+          <Property Name="CENTERREF" Type="Int32" />
+          <Property Name="ACCOUNTREF" Type="Int32" />
+          <Property Name="VATACCREF" Type="Int32" />
+          <Property Name="VATCENTERREF" Type="Int32" />
+          <Property Name="PRACCREF" Type="Int32" />
+          <Property Name="PRCENTERREF" Type="Int32" />
+          <Property Name="PRVATACCREF" Type="Int32" />
+          <Property Name="PRVATCENREF" Type="Int32" />
+          <Property Name="PROMREF" Type="Int32" />
+          <Property Name="SPECODE" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="DELVRYCODE" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="AMOUNT" Type="Double" />
+          <Property Name="PRICE" Type="Double" />
+          <Property Name="TOTAL" Type="Double" />
+          <Property Name="SHIPPEDAMOUNT" Type="Double" />
+          <Property Name="DISCPER" Type="Double" />
+          <Property Name="DISTCOST" Type="Double" />
+          <Property Name="DISTDISC" Type="Double" />
+          <Property Name="DISTEXP" Type="Double" />
+          <Property Name="DISTPROM" Type="Double" />
+          <Property Name="VAT" Type="Double" />
+          <Property Name="VATAMNT" Type="Double" />
+          <Property Name="VATMATRAH" Type="Double" />
+          <Property Name="LINEEXP" Type="String" MaxLength="31" FixedLength="false" Unicode="false" />
+          <Property Name="UOMREF" Type="Int32" />
+          <Property Name="USREF" Type="Int32" />
+          <Property Name="UINFO1" Type="Double" />
+          <Property Name="UINFO2" Type="Double" />
+          <Property Name="UINFO3" Type="Double" />
+          <Property Name="UINFO4" Type="Double" />
+          <Property Name="UINFO5" Type="Double" />
+          <Property Name="UINFO6" Type="Double" />
+          <Property Name="UINFO7" Type="Double" />
+          <Property Name="UINFO8" Type="Double" />
+          <Property Name="VATINC" Type="Int16" />
+          <Property Name="CLOSED" Type="Int16" />
+          <Property Name="DORESERVE" Type="Int16" />
+          <Property Name="INUSE" Type="Int16" />
+          <Property Name="DUEDATE" Type="DateTime" Precision="3" />
+          <Property Name="PRCURR" Type="Int16" />
+          <Property Name="PRPRICE" Type="Double" />
+          <Property Name="REPORTRATE" Type="Double" />
+          <Property Name="BILLEDITEM" Type="Int32" />
+          <Property Name="PAYDEFREF" Type="Int32" />
+          <Property Name="EXTENREF" Type="Int32" />
+          <Property Name="CPSTFLAG" Type="Int16" />
+          <Property Name="SOURCEINDEX" Type="Int16" />
+          <Property Name="SOURCECOSTGRP" Type="Int16" />
+          <Property Name="BRANCH" Type="Int16" />
+          <Property Name="DEPARTMENT" Type="Int16" />
+          <Property Name="LINENET" Type="Double" />
+          <Property Name="SALESMANREF" Type="Int32" />
+          <Property Name="STATUS" Type="Int16" />
+          <Property Name="DREF" Type="Int32" />
+          <Property Name="TRGFLAG" Type="Int16" />
+          <Property Name="SITEID" Type="Int16" />
+          <Property Name="RECSTATUS" Type="Int16" />
+          <Property Name="ORGLOGICREF" Type="Int32" />
+          <Property Name="FACTORYNR" Type="Int16" />
+          <Property Name="WFSTATUS" Type="Int32" />
+          <Property Name="NETDISCFLAG" Type="Int16" />
+          <Property Name="NETDISCPERC" Type="Double" />
+          <Property Name="NETDISCAMNT" Type="Double" />
+          <Property Name="CONDITIONREF" Type="Int32" />
+          <Property Name="DISTRESERVED" Type="Double" />
+          <Property Name="ONVEHICLE" Type="Double" />
+          <Property Name="CAMPAIGNREFS1" Type="Int32" />
+          <Property Name="CAMPAIGNREFS2" Type="Int32" />
+          <Property Name="CAMPAIGNREFS3" Type="Int32" />
+          <Property Name="CAMPAIGNREFS4" Type="Int32" />
+          <Property Name="CAMPAIGNREFS5" Type="Int32" />
+          <Property Name="POINTCAMPREF" Type="Int32" />
+          <Property Name="CAMPPOINT" Type="Double" />
+          <Property Name="PROMCLASITEMREF" Type="Int32" />
+          <Property Name="REASONFORNOTSHP" Type="Int16" />
+          <Property Name="CMPGLINEREF" Type="Int32" />
+          <Property Name="PRRATE" Type="Double" />
+          <Property Name="GROSSUINFO1" Type="Double" />
+          <Property Name="GROSSUINFO2" Type="Double" />
+          <Property Name="CANCELLED" Type="Int16" />
+          <Property Name="DEMPEGGEDAMNT" Type="Double" />
+          <Property Name="TEXTINC" Type="Int16" />
+          <Property Name="OFFERREF" Type="Int32" />
+          <Property Name="ORDERPARAM" Type="Int16" />
+          <Property Name="ITEMASGREF" Type="Int32" />
+          <Property Name="EXIMAMOUNT" Type="Double" />
+          <Property Name="OFFTRANSREF" Type="Int32" />
+          <Property Name="ORDEREDAMOUNT" Type="Double" />
+          <Property Name="ORGLOGOID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="TRCURR" Type="Int16" />
+          <Property Name="TRRATE" Type="Double" />
+          <Property Name="WITHPAYTRANS" Type="Int16" />
+          <Property Name="PROJECTREF" Type="Int32" />
+          <Property Name="POINTCAMPREFS1" Type="Int32" />
+          <Property Name="POINTCAMPREFS2" Type="Int32" />
+          <Property Name="POINTCAMPREFS3" Type="Int32" />
+          <Property Name="POINTCAMPREFS4" Type="Int32" />
+          <Property Name="CAMPPOINTS1" Type="Double" />
+          <Property Name="CAMPPOINTS2" Type="Double" />
+          <Property Name="CAMPPOINTS3" Type="Double" />
+          <Property Name="CAMPPOINTS4" Type="Double" />
+          <Property Name="CMPGLINEREFS1" Type="Int32" />
+          <Property Name="CMPGLINEREFS2" Type="Int32" />
+          <Property Name="CMPGLINEREFS3" Type="Int32" />
+          <Property Name="CMPGLINEREFS4" Type="Int32" />
+          <Property Name="PRCLISTREF" Type="Int32" />
+          <Property Name="AFFECTCOLLATRL" Type="Int16" />
+          <Property Name="FCTYP" Type="Int16" />
+          <Property Name="PURCHOFFNR" Type="Int16" />
+          <Property Name="DEMFICHEREF" Type="Int32" />
+          <Property Name="DEMTRANSREF" Type="Int32" />
+          <Property Name="ALTPROMFLAG" Type="Int16" />
+          <Property Name="VARIANTREF" Type="Int32" />
+          <Property Name="REFLVATACCREF" Type="Int32" />
+          <Property Name="REFLVATOTHACCREF" Type="Int32" />
+          <Property Name="PRIORITY" Type="Int16" />
+          <Property Name="AFFECTRISK" Type="Int16" />
+          <Property Name="BOMREF" Type="Int32" />
+          <Property Name="BOMREVREF" Type="Int32" />
+          <Property Name="ROUTINGREF" Type="Int32" />
+          <Property Name="OPERATIONREF" Type="Int32" />
+          <Property Name="WSREF" Type="Int32" />
+          <Property Name="ADDTAXRATE" Type="Double" />
+          <Property Name="ADDTAXCONVFACT" Type="Double" />
+          <Property Name="ADDTAXAMOUNT" Type="Double" />
+          <Property Name="ADDTAXACCREF" Type="Int32" />
+          <Property Name="ADDTAXCENTERREF" Type="Int32" />
+          <Property Name="ADDTAXAMNTISUPD" Type="Int16" />
+          <Property Name="ADDTAXDISCAMOUNT" Type="Double" />
+          <Property Name="EXADDTAXRATE" Type="Double" />
+          <Property Name="EXADDTAXCONVF" Type="Double" />
+          <Property Name="EXADDTAXAMNT" Type="Double" />
+          <Property Name="EUVATSTATUS" Type="Int16" />
+          <Property Name="ADDTAXVATMATRAH" Type="Double" />
+        </EntityType>
+        <EntityType Name="LG_006_04_ORFICHESEQ">
+          <Key>
+            <PropertyRef Name="LASTLREF" />
+          </Key>
+          <Property Name="ID" Type="Int32" />
+          <Property Name="LASTLREF" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LG_006_04_ORFLINESEQ">
+          <Key>
+            <PropertyRef Name="LASTLREF" />
+          </Key>
+          <Property Name="ID" Type="Int32" />
+          <Property Name="LASTLREF" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="I_SRG_EKSIKSIPARISLER_006_04">
+          <Key>
+            <PropertyRef Name="LOGICALREF" />
+            <PropertyRef Name="DURUM" />
+          </Key>
+          <Property Name="LOGICALREF" Type="Int32" Nullable="false" />
+          <Property Name="FICHENO" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="PLASIYER" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="DATE_" Type="DateTime" Precision="3" />
+          <Property Name="CLIENTREF" Type="Int32" />
+          <Property Name="CODE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="NAME" Type="String" MaxLength="51" FixedLength="false" Unicode="false" />
+          <Property Name="SPECODE2" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="AMOUNT" Type="Double" />
+          <Property Name="PRICE" Type="Double" />
+          <Property Name="TOTAL" Type="Double" />
+          <Property Name="SHIPPEDAMOUNT" Type="Double" />
+          <Property Name="DURUM" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DORESERVE" Type="Int16" />
+          <Property Name="Kalan" Type="Double" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -449,6 +1088,12 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_Cari_HDurum_006' does not have a 
           <EntitySetMapping Name="A_MNTL_STOK_2018">
             <EntityTypeMapping TypeName="LKSDBModel.A_MNTL_STOK_2018">
               <MappingFragment StoreEntitySet="A_MNTL_STOK_2018">
+                <ScalarProperty Name="ALTORAN" ColumnName="ALTORAN" />
+                <ScalarProperty Name="TabanFiyat" ColumnName="TabanFiyat" />
+                <ScalarProperty Name="OnerilenFiyat" ColumnName="OnerilenFiyat" />
+                <ScalarProperty Name="INDORAN" ColumnName="INDORAN" />
+                <ScalarProperty Name="ORAN" ColumnName="ORAN" />
+                <ScalarProperty Name="Maliyet" ColumnName="Maliyet" />
                 <ScalarProperty Name="MARKA" ColumnName="MARKA" />
                 <ScalarProperty Name="LOGICALREF" ColumnName="LOGICALREF" />
                 <ScalarProperty Name="URUNKODU" ColumnName="URUNKODU" />
@@ -569,6 +1214,297 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_Cari_HDurum_006' does not have a 
                 <ScalarProperty Name="Şehiri" ColumnName="Şehiri" />
                 <ScalarProperty Name="Müşteri_Adı" ColumnName="Müşteri Adı" />
                 <ScalarProperty Name="M_Kodu" ColumnName="M.Kodu" />
+                <ScalarProperty Name="LOGICALREF" ColumnName="LOGICALREF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LG_006_04_ORFICHE">
+            <EntityTypeMapping TypeName="LKSDBModel.LG_006_04_ORFICHE">
+              <MappingFragment StoreEntitySet="LG_006_04_ORFICHE">
+                <ScalarProperty Name="APPROVEDATE" ColumnName="APPROVEDATE" />
+                <ScalarProperty Name="APPROVE" ColumnName="APPROVE" />
+                <ScalarProperty Name="TOTALEXADDTAX" ColumnName="TOTALEXADDTAX" />
+                <ScalarProperty Name="TOTALADDTAX" ColumnName="TOTALADDTAX" />
+                <ScalarProperty Name="AFFECTRISK" ColumnName="AFFECTRISK" />
+                <ScalarProperty Name="SLSCUSTREF" ColumnName="SLSCUSTREF" />
+                <ScalarProperty Name="SLSACTREF" ColumnName="SLSACTREF" />
+                <ScalarProperty Name="SLSOPPRREF" ColumnName="SLSOPPRREF" />
+                <ScalarProperty Name="CHECKAMOUNT" ColumnName="CHECKAMOUNT" />
+                <ScalarProperty Name="LASTREVISION" ColumnName="LASTREVISION" />
+                <ScalarProperty Name="REVISNR" ColumnName="REVISNR" />
+                <ScalarProperty Name="POFFERENDDT" ColumnName="POFFERENDDT" />
+                <ScalarProperty Name="POFFERBEGDT" ColumnName="POFFERBEGDT" />
+                <ScalarProperty Name="AFFECTCOLLATRL" ColumnName="AFFECTCOLLATRL" />
+                <ScalarProperty Name="UPDTRCURR" ColumnName="UPDTRCURR" />
+                <ScalarProperty Name="WFLOWCRDREF" ColumnName="WFLOWCRDREF" />
+                <ScalarProperty Name="PROJECTREF" ColumnName="PROJECTREF" />
+                <ScalarProperty Name="WITHPAYTRANS" ColumnName="WITHPAYTRANS" />
+                <ScalarProperty Name="OPSTAT" ColumnName="OPSTAT" />
+                <ScalarProperty Name="ONLYONEPAYLINE" ColumnName="ONLYONEPAYLINE" />
+                <ScalarProperty Name="PAYMENTTYPE" ColumnName="PAYMENTTYPE" />
+                <ScalarProperty Name="TRNET" ColumnName="TRNET" />
+                <ScalarProperty Name="TRRATE" ColumnName="TRRATE" />
+                <ScalarProperty Name="TRCURR" ColumnName="TRCURR" />
+                <ScalarProperty Name="ADVANCEPAYM" ColumnName="ADVANCEPAYM" />
+                <ScalarProperty Name="ALTNR" ColumnName="ALTNR" />
+                <ScalarProperty Name="TYP" ColumnName="TYP" />
+                <ScalarProperty Name="OFFALTREF" ColumnName="OFFALTREF" />
+                <ScalarProperty Name="OFFERREF" ColumnName="OFFERREF" />
+                <ScalarProperty Name="ORGLOGOID" ColumnName="ORGLOGOID" />
+                <ScalarProperty Name="CANCELLED" ColumnName="CANCELLED" />
+                <ScalarProperty Name="DOCTRACKINGNR" ColumnName="DOCTRACKINGNR" />
+                <ScalarProperty Name="DLVCLIENT" ColumnName="DLVCLIENT" />
+                <ScalarProperty Name="SENDCNT" ColumnName="SENDCNT" />
+                <ScalarProperty Name="CUSTORDNO" ColumnName="CUSTORDNO" />
+                <ScalarProperty Name="SHIPINFOREF" ColumnName="SHIPINFOREF" />
+                <ScalarProperty Name="WFSTATUS" ColumnName="WFSTATUS" />
+                <ScalarProperty Name="FACTORYNR" ColumnName="FACTORYNR" />
+                <ScalarProperty Name="ORGLOGICREF" ColumnName="ORGLOGICREF" />
+                <ScalarProperty Name="RECSTATUS" ColumnName="RECSTATUS" />
+                <ScalarProperty Name="SITEID" ColumnName="SITEID" />
+                <ScalarProperty Name="TEXTINC" ColumnName="TEXTINC" />
+                <ScalarProperty Name="TRADINGGRP" ColumnName="TRADINGGRP" />
+                <ScalarProperty Name="LINEEXCTYP" ColumnName="LINEEXCTYP" />
+                <ScalarProperty Name="GENEXCTYP" ColumnName="GENEXCTYP" />
+                <ScalarProperty Name="SHPAGNCOD" ColumnName="SHPAGNCOD" />
+                <ScalarProperty Name="SHPTYPCOD" ColumnName="SHPTYPCOD" />
+                <ScalarProperty Name="SALESMANREF" ColumnName="SALESMANREF" />
+                <ScalarProperty Name="CAPIBLOCK_MODIFIEDSEC" ColumnName="CAPIBLOCK_MODIFIEDSEC" />
+                <ScalarProperty Name="CAPIBLOCK_MODIFIEDMIN" ColumnName="CAPIBLOCK_MODIFIEDMIN" />
+                <ScalarProperty Name="CAPIBLOCK_MODIFIEDHOUR" ColumnName="CAPIBLOCK_MODIFIEDHOUR" />
+                <ScalarProperty Name="CAPIBLOCK_MODIFIEDDATE" ColumnName="CAPIBLOCK_MODIFIEDDATE" />
+                <ScalarProperty Name="CAPIBLOCK_MODIFIEDBY" ColumnName="CAPIBLOCK_MODIFIEDBY" />
+                <ScalarProperty Name="CAPIBLOCK_CREATEDSEC" ColumnName="CAPIBLOCK_CREATEDSEC" />
+                <ScalarProperty Name="CAPIBLOCK_CREATEDMIN" ColumnName="CAPIBLOCK_CREATEDMIN" />
+                <ScalarProperty Name="CAPIBLOCK_CREATEDHOUR" ColumnName="CAPIBLOCK_CREATEDHOUR" />
+                <ScalarProperty Name="CAPIBLOCK_CREADEDDATE" ColumnName="CAPIBLOCK_CREADEDDATE" />
+                <ScalarProperty Name="CAPIBLOCK_CREATEDBY" ColumnName="CAPIBLOCK_CREATEDBY" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="DEPARTMENT" ColumnName="DEPARTMENT" />
+                <ScalarProperty Name="BRANCH" ColumnName="BRANCH" />
+                <ScalarProperty Name="PRINTCNT" ColumnName="PRINTCNT" />
+                <ScalarProperty Name="PAYDEFREF" ColumnName="PAYDEFREF" />
+                <ScalarProperty Name="EXTENREF" ColumnName="EXTENREF" />
+                <ScalarProperty Name="GENEXP4" ColumnName="GENEXP4" />
+                <ScalarProperty Name="GENEXP3" ColumnName="GENEXP3" />
+                <ScalarProperty Name="GENEXP2" ColumnName="GENEXP2" />
+                <ScalarProperty Name="GENEXP1" ColumnName="GENEXP1" />
+                <ScalarProperty Name="REPORTNET" ColumnName="REPORTNET" />
+                <ScalarProperty Name="REPORTRATE" ColumnName="REPORTRATE" />
+                <ScalarProperty Name="NETTOTAL" ColumnName="NETTOTAL" />
+                <ScalarProperty Name="GROSSTOTAL" ColumnName="GROSSTOTAL" />
+                <ScalarProperty Name="TOTALVAT" ColumnName="TOTALVAT" />
+                <ScalarProperty Name="TOTALPROMOTIONS" ColumnName="TOTALPROMOTIONS" />
+                <ScalarProperty Name="TOTALEXPENSES" ColumnName="TOTALEXPENSES" />
+                <ScalarProperty Name="ADDEXPENSES" ColumnName="ADDEXPENSES" />
+                <ScalarProperty Name="TOTALDISCOUNTED" ColumnName="TOTALDISCOUNTED" />
+                <ScalarProperty Name="TOTALDISCOUNTS" ColumnName="TOTALDISCOUNTS" />
+                <ScalarProperty Name="ADDDISCOUNTS" ColumnName="ADDDISCOUNTS" />
+                <ScalarProperty Name="UPDCURR" ColumnName="UPDCURR" />
+                <ScalarProperty Name="SOURCECOSTGRP" ColumnName="SOURCECOSTGRP" />
+                <ScalarProperty Name="SOURCEINDEX" ColumnName="SOURCEINDEX" />
+                <ScalarProperty Name="CENTERREF" ColumnName="CENTERREF" />
+                <ScalarProperty Name="ACCOUNTREF" ColumnName="ACCOUNTREF" />
+                <ScalarProperty Name="RECVREF" ColumnName="RECVREF" />
+                <ScalarProperty Name="CLIENTREF" ColumnName="CLIENTREF" />
+                <ScalarProperty Name="CYPHCODE" ColumnName="CYPHCODE" />
+                <ScalarProperty Name="SPECODE" ColumnName="SPECODE" />
+                <ScalarProperty Name="DOCODE" ColumnName="DOCODE" />
+                <ScalarProperty Name="TIME_" ColumnName="TIME_" />
+                <ScalarProperty Name="DATE_" ColumnName="DATE_" />
+                <ScalarProperty Name="FICHENO" ColumnName="FICHENO" />
+                <ScalarProperty Name="TRCODE" ColumnName="TRCODE" />
+                <ScalarProperty Name="LOGICALREF" ColumnName="LOGICALREF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LG_006_04_ORFLINE">
+            <EntityTypeMapping TypeName="LKSDBModel.LG_006_04_ORFLINE">
+              <MappingFragment StoreEntitySet="LG_006_04_ORFLINE">
+                <ScalarProperty Name="ADDTAXVATMATRAH" ColumnName="ADDTAXVATMATRAH" />
+                <ScalarProperty Name="EUVATSTATUS" ColumnName="EUVATSTATUS" />
+                <ScalarProperty Name="EXADDTAXAMNT" ColumnName="EXADDTAXAMNT" />
+                <ScalarProperty Name="EXADDTAXCONVF" ColumnName="EXADDTAXCONVF" />
+                <ScalarProperty Name="EXADDTAXRATE" ColumnName="EXADDTAXRATE" />
+                <ScalarProperty Name="ADDTAXDISCAMOUNT" ColumnName="ADDTAXDISCAMOUNT" />
+                <ScalarProperty Name="ADDTAXAMNTISUPD" ColumnName="ADDTAXAMNTISUPD" />
+                <ScalarProperty Name="ADDTAXCENTERREF" ColumnName="ADDTAXCENTERREF" />
+                <ScalarProperty Name="ADDTAXACCREF" ColumnName="ADDTAXACCREF" />
+                <ScalarProperty Name="ADDTAXAMOUNT" ColumnName="ADDTAXAMOUNT" />
+                <ScalarProperty Name="ADDTAXCONVFACT" ColumnName="ADDTAXCONVFACT" />
+                <ScalarProperty Name="ADDTAXRATE" ColumnName="ADDTAXRATE" />
+                <ScalarProperty Name="WSREF" ColumnName="WSREF" />
+                <ScalarProperty Name="OPERATIONREF" ColumnName="OPERATIONREF" />
+                <ScalarProperty Name="ROUTINGREF" ColumnName="ROUTINGREF" />
+                <ScalarProperty Name="BOMREVREF" ColumnName="BOMREVREF" />
+                <ScalarProperty Name="BOMREF" ColumnName="BOMREF" />
+                <ScalarProperty Name="AFFECTRISK" ColumnName="AFFECTRISK" />
+                <ScalarProperty Name="PRIORITY" ColumnName="PRIORITY" />
+                <ScalarProperty Name="REFLVATOTHACCREF" ColumnName="REFLVATOTHACCREF" />
+                <ScalarProperty Name="REFLVATACCREF" ColumnName="REFLVATACCREF" />
+                <ScalarProperty Name="VARIANTREF" ColumnName="VARIANTREF" />
+                <ScalarProperty Name="ALTPROMFLAG" ColumnName="ALTPROMFLAG" />
+                <ScalarProperty Name="DEMTRANSREF" ColumnName="DEMTRANSREF" />
+                <ScalarProperty Name="DEMFICHEREF" ColumnName="DEMFICHEREF" />
+                <ScalarProperty Name="PURCHOFFNR" ColumnName="PURCHOFFNR" />
+                <ScalarProperty Name="FCTYP" ColumnName="FCTYP" />
+                <ScalarProperty Name="AFFECTCOLLATRL" ColumnName="AFFECTCOLLATRL" />
+                <ScalarProperty Name="PRCLISTREF" ColumnName="PRCLISTREF" />
+                <ScalarProperty Name="CMPGLINEREFS4" ColumnName="CMPGLINEREFS4" />
+                <ScalarProperty Name="CMPGLINEREFS3" ColumnName="CMPGLINEREFS3" />
+                <ScalarProperty Name="CMPGLINEREFS2" ColumnName="CMPGLINEREFS2" />
+                <ScalarProperty Name="CMPGLINEREFS1" ColumnName="CMPGLINEREFS1" />
+                <ScalarProperty Name="CAMPPOINTS4" ColumnName="CAMPPOINTS4" />
+                <ScalarProperty Name="CAMPPOINTS3" ColumnName="CAMPPOINTS3" />
+                <ScalarProperty Name="CAMPPOINTS2" ColumnName="CAMPPOINTS2" />
+                <ScalarProperty Name="CAMPPOINTS1" ColumnName="CAMPPOINTS1" />
+                <ScalarProperty Name="POINTCAMPREFS4" ColumnName="POINTCAMPREFS4" />
+                <ScalarProperty Name="POINTCAMPREFS3" ColumnName="POINTCAMPREFS3" />
+                <ScalarProperty Name="POINTCAMPREFS2" ColumnName="POINTCAMPREFS2" />
+                <ScalarProperty Name="POINTCAMPREFS1" ColumnName="POINTCAMPREFS1" />
+                <ScalarProperty Name="PROJECTREF" ColumnName="PROJECTREF" />
+                <ScalarProperty Name="WITHPAYTRANS" ColumnName="WITHPAYTRANS" />
+                <ScalarProperty Name="TRRATE" ColumnName="TRRATE" />
+                <ScalarProperty Name="TRCURR" ColumnName="TRCURR" />
+                <ScalarProperty Name="ORGLOGOID" ColumnName="ORGLOGOID" />
+                <ScalarProperty Name="ORDEREDAMOUNT" ColumnName="ORDEREDAMOUNT" />
+                <ScalarProperty Name="OFFTRANSREF" ColumnName="OFFTRANSREF" />
+                <ScalarProperty Name="EXIMAMOUNT" ColumnName="EXIMAMOUNT" />
+                <ScalarProperty Name="ITEMASGREF" ColumnName="ITEMASGREF" />
+                <ScalarProperty Name="ORDERPARAM" ColumnName="ORDERPARAM" />
+                <ScalarProperty Name="OFFERREF" ColumnName="OFFERREF" />
+                <ScalarProperty Name="TEXTINC" ColumnName="TEXTINC" />
+                <ScalarProperty Name="DEMPEGGEDAMNT" ColumnName="DEMPEGGEDAMNT" />
+                <ScalarProperty Name="CANCELLED" ColumnName="CANCELLED" />
+                <ScalarProperty Name="GROSSUINFO2" ColumnName="GROSSUINFO2" />
+                <ScalarProperty Name="GROSSUINFO1" ColumnName="GROSSUINFO1" />
+                <ScalarProperty Name="PRRATE" ColumnName="PRRATE" />
+                <ScalarProperty Name="CMPGLINEREF" ColumnName="CMPGLINEREF" />
+                <ScalarProperty Name="REASONFORNOTSHP" ColumnName="REASONFORNOTSHP" />
+                <ScalarProperty Name="PROMCLASITEMREF" ColumnName="PROMCLASITEMREF" />
+                <ScalarProperty Name="CAMPPOINT" ColumnName="CAMPPOINT" />
+                <ScalarProperty Name="POINTCAMPREF" ColumnName="POINTCAMPREF" />
+                <ScalarProperty Name="CAMPAIGNREFS5" ColumnName="CAMPAIGNREFS5" />
+                <ScalarProperty Name="CAMPAIGNREFS4" ColumnName="CAMPAIGNREFS4" />
+                <ScalarProperty Name="CAMPAIGNREFS3" ColumnName="CAMPAIGNREFS3" />
+                <ScalarProperty Name="CAMPAIGNREFS2" ColumnName="CAMPAIGNREFS2" />
+                <ScalarProperty Name="CAMPAIGNREFS1" ColumnName="CAMPAIGNREFS1" />
+                <ScalarProperty Name="ONVEHICLE" ColumnName="ONVEHICLE" />
+                <ScalarProperty Name="DISTRESERVED" ColumnName="DISTRESERVED" />
+                <ScalarProperty Name="CONDITIONREF" ColumnName="CONDITIONREF" />
+                <ScalarProperty Name="NETDISCAMNT" ColumnName="NETDISCAMNT" />
+                <ScalarProperty Name="NETDISCPERC" ColumnName="NETDISCPERC" />
+                <ScalarProperty Name="NETDISCFLAG" ColumnName="NETDISCFLAG" />
+                <ScalarProperty Name="WFSTATUS" ColumnName="WFSTATUS" />
+                <ScalarProperty Name="FACTORYNR" ColumnName="FACTORYNR" />
+                <ScalarProperty Name="ORGLOGICREF" ColumnName="ORGLOGICREF" />
+                <ScalarProperty Name="RECSTATUS" ColumnName="RECSTATUS" />
+                <ScalarProperty Name="SITEID" ColumnName="SITEID" />
+                <ScalarProperty Name="TRGFLAG" ColumnName="TRGFLAG" />
+                <ScalarProperty Name="DREF" ColumnName="DREF" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="SALESMANREF" ColumnName="SALESMANREF" />
+                <ScalarProperty Name="LINENET" ColumnName="LINENET" />
+                <ScalarProperty Name="DEPARTMENT" ColumnName="DEPARTMENT" />
+                <ScalarProperty Name="BRANCH" ColumnName="BRANCH" />
+                <ScalarProperty Name="SOURCECOSTGRP" ColumnName="SOURCECOSTGRP" />
+                <ScalarProperty Name="SOURCEINDEX" ColumnName="SOURCEINDEX" />
+                <ScalarProperty Name="CPSTFLAG" ColumnName="CPSTFLAG" />
+                <ScalarProperty Name="EXTENREF" ColumnName="EXTENREF" />
+                <ScalarProperty Name="PAYDEFREF" ColumnName="PAYDEFREF" />
+                <ScalarProperty Name="BILLEDITEM" ColumnName="BILLEDITEM" />
+                <ScalarProperty Name="REPORTRATE" ColumnName="REPORTRATE" />
+                <ScalarProperty Name="PRPRICE" ColumnName="PRPRICE" />
+                <ScalarProperty Name="PRCURR" ColumnName="PRCURR" />
+                <ScalarProperty Name="DUEDATE" ColumnName="DUEDATE" />
+                <ScalarProperty Name="INUSE" ColumnName="INUSE" />
+                <ScalarProperty Name="DORESERVE" ColumnName="DORESERVE" />
+                <ScalarProperty Name="CLOSED" ColumnName="CLOSED" />
+                <ScalarProperty Name="VATINC" ColumnName="VATINC" />
+                <ScalarProperty Name="UINFO8" ColumnName="UINFO8" />
+                <ScalarProperty Name="UINFO7" ColumnName="UINFO7" />
+                <ScalarProperty Name="UINFO6" ColumnName="UINFO6" />
+                <ScalarProperty Name="UINFO5" ColumnName="UINFO5" />
+                <ScalarProperty Name="UINFO4" ColumnName="UINFO4" />
+                <ScalarProperty Name="UINFO3" ColumnName="UINFO3" />
+                <ScalarProperty Name="UINFO2" ColumnName="UINFO2" />
+                <ScalarProperty Name="UINFO1" ColumnName="UINFO1" />
+                <ScalarProperty Name="USREF" ColumnName="USREF" />
+                <ScalarProperty Name="UOMREF" ColumnName="UOMREF" />
+                <ScalarProperty Name="LINEEXP" ColumnName="LINEEXP" />
+                <ScalarProperty Name="VATMATRAH" ColumnName="VATMATRAH" />
+                <ScalarProperty Name="VATAMNT" ColumnName="VATAMNT" />
+                <ScalarProperty Name="VAT" ColumnName="VAT" />
+                <ScalarProperty Name="DISTPROM" ColumnName="DISTPROM" />
+                <ScalarProperty Name="DISTEXP" ColumnName="DISTEXP" />
+                <ScalarProperty Name="DISTDISC" ColumnName="DISTDISC" />
+                <ScalarProperty Name="DISTCOST" ColumnName="DISTCOST" />
+                <ScalarProperty Name="DISCPER" ColumnName="DISCPER" />
+                <ScalarProperty Name="SHIPPEDAMOUNT" ColumnName="SHIPPEDAMOUNT" />
+                <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+                <ScalarProperty Name="DELVRYCODE" ColumnName="DELVRYCODE" />
+                <ScalarProperty Name="SPECODE" ColumnName="SPECODE" />
+                <ScalarProperty Name="PROMREF" ColumnName="PROMREF" />
+                <ScalarProperty Name="PRVATCENREF" ColumnName="PRVATCENREF" />
+                <ScalarProperty Name="PRVATACCREF" ColumnName="PRVATACCREF" />
+                <ScalarProperty Name="PRCENTERREF" ColumnName="PRCENTERREF" />
+                <ScalarProperty Name="PRACCREF" ColumnName="PRACCREF" />
+                <ScalarProperty Name="VATCENTERREF" ColumnName="VATCENTERREF" />
+                <ScalarProperty Name="VATACCREF" ColumnName="VATACCREF" />
+                <ScalarProperty Name="ACCOUNTREF" ColumnName="ACCOUNTREF" />
+                <ScalarProperty Name="CENTERREF" ColumnName="CENTERREF" />
+                <ScalarProperty Name="CALCTYPE" ColumnName="CALCTYPE" />
+                <ScalarProperty Name="GLOBTRANS" ColumnName="GLOBTRANS" />
+                <ScalarProperty Name="TIME_" ColumnName="TIME_" />
+                <ScalarProperty Name="DATE_" ColumnName="DATE_" />
+                <ScalarProperty Name="TRCODE" ColumnName="TRCODE" />
+                <ScalarProperty Name="LINENO_" ColumnName="LINENO_" />
+                <ScalarProperty Name="DETLINE" ColumnName="DETLINE" />
+                <ScalarProperty Name="PREVLINENO" ColumnName="PREVLINENO" />
+                <ScalarProperty Name="PREVLINEREF" ColumnName="PREVLINEREF" />
+                <ScalarProperty Name="LINETYPE" ColumnName="LINETYPE" />
+                <ScalarProperty Name="CLIENTREF" ColumnName="CLIENTREF" />
+                <ScalarProperty Name="ORDFICHEREF" ColumnName="ORDFICHEREF" />
+                <ScalarProperty Name="STOCKREF" ColumnName="STOCKREF" />
+                <ScalarProperty Name="LOGICALREF" ColumnName="LOGICALREF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LG_006_04_ORFICHESEQ">
+            <EntityTypeMapping TypeName="LKSDBModel.LG_006_04_ORFICHESEQ">
+              <MappingFragment StoreEntitySet="LG_006_04_ORFICHESEQ">
+                <ScalarProperty Name="LASTLREF" ColumnName="LASTLREF" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LG_006_04_ORFLINESEQ">
+            <EntityTypeMapping TypeName="LKSDBModel.LG_006_04_ORFLINESEQ">
+              <MappingFragment StoreEntitySet="LG_006_04_ORFLINESEQ">
+                <ScalarProperty Name="LASTLREF" ColumnName="LASTLREF" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I_SRG_EKSIKSIPARISLER_006_04">
+            <EntityTypeMapping TypeName="LKSDBModel.I_SRG_EKSIKSIPARISLER_006_04">
+              <MappingFragment StoreEntitySet="I_SRG_EKSIKSIPARISLER_006_04">
+                <ScalarProperty Name="Kalan" ColumnName="Kalan" />
+                <ScalarProperty Name="DORESERVE" ColumnName="DORESERVE" />
+                <ScalarProperty Name="DURUM" ColumnName="DURUM" />
+                <ScalarProperty Name="SHIPPEDAMOUNT" ColumnName="SHIPPEDAMOUNT" />
+                <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+                <ScalarProperty Name="SPECODE2" ColumnName="SPECODE2" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="CLIENTREF" ColumnName="CLIENTREF" />
+                <ScalarProperty Name="DATE_" ColumnName="DATE_" />
+                <ScalarProperty Name="PLASIYER" ColumnName="PLASIYER" />
+                <ScalarProperty Name="FICHENO" ColumnName="FICHENO" />
                 <ScalarProperty Name="LOGICALREF" ColumnName="LOGICALREF" />
               </MappingFragment>
             </EntityTypeMapping>

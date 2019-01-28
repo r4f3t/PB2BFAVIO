@@ -36,6 +36,8 @@ namespace PB2B.Controllers
                     Session["userTip"] = (model.Yetkisi==1)?"Plasiyer":"";
                     Session["adi"] = model.Adi;
                     Session["giris"] = "1";
+                    Session["SipID"] = model.SipID;
+                    Session["SipSTR"] = model.SipStr;
 
                     giris.Expires = DateTime.Now.AddDays(1);
                     Response.Cookies.Add(giris);

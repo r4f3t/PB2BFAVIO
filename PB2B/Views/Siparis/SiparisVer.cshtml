@@ -44,6 +44,7 @@
                         <th><font color="white">Marka</font></th>
                         <th><font color="white">Model</font></th>
                         <th><font color="white">Stok</font></th>
+                        <th><font color="white">Liste Fiyati</font></th>
                         <th><font color="white">Sepet</font></th>
                     </tr>
                 </thead>
@@ -60,8 +61,9 @@
                                 <td>@item.MARKA</td>
                                 <td>@item.MODEL</td>
                                 <td>@Convert.ToDecimal(item.BAKIYE).ToString("N")</td>
+                                <td>@Convert.ToDecimal(item.ListeFiyati).ToString("N")</td>
                                 <td>
-                                    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal">
+                                    <button type="button" onclick="poppupAc(@item.LOGICALREF)" class="btn btn-primary " data-toggle="modal" data-target="#myModal">
                                         +
                                     </button>
                                 </td>
@@ -74,7 +76,7 @@
             </table>
 
 
-          
+
         </div>
     </div>
 
@@ -86,21 +88,42 @@
 
             <!-- Modal content-->
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header" style="background-color:#E80405;">
+
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Modal Header</h4>
+                    <div class="modal-title" style="text-align:center;">
+                        <img src="~/web/images/logo.jpg" width="150">
+                    </div>
                 </div>
-                <div class="modal-body">
-                    @{Html.RenderAction("SiparisURunGec", "Siparis");}
+                <div class="modal-body" id="partialContent">
+                
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <div id="yanip-sonen" class="modal-footer" style="background-color:#E80405;color:#fff;text-align:left;">
+                    <span id="LBLTabanFiyat"></span>   (Fiyatarımıza KDV Dahildir).
                 </div>
             </div>
 
         </div>
     </div>
-
-
+    <script>
+        function poppupAc(itemref) {
+            var url = '@Url.Action("SiparisURunGec","Siparis")';
+            $("#partialContent").load(url + "?itemref=" + itemref);
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            setInterval(function () {
+                if ($("#yanip-sonen").css("background-color") == "#E80405") {
+                    $("#yanip-sonen").css("background-color", "#ffff");
+                    //veya $("#yanip-sonen").attr("style","visibility:hidden");
+                }
+                else {
+                    $("#yanip-sonen").css("background-color", "#E80405");
+                    //veya $("#yanip-sonen").attr("style","visibility:visible");
+                }
+            }, 1500); //700 milisaniyede bir yanıp sönecek
+        });
+    </script>
 </div>
 
