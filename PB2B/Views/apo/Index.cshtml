@@ -1,0 +1,130 @@
+﻿@model IEnumerable<PB2B.Entity.A_MNTL_STOK_2018>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LTEMusteriMaster.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MARKA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.URUNKODU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.URETICI_KODU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MODEL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KDV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ListeFiyati)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.URUNADI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ARAC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TEDARIKCI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.B2B)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CURRSYMB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Maliyet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ORAN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INDORAN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OnerilenFiyat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TabanFiyat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ALTORAN)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MARKA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.URUNKODU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.URETICI_KODU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MODEL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KDV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ListeFiyati)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.URUNADI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ARAC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TEDARIKCI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.B2B)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CURRSYMB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Maliyet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ORAN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INDORAN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OnerilenFiyat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TabanFiyat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ALTORAN)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

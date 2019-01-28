@@ -175,6 +175,7 @@
     <Compile Include="classes\GLOBALS.cs" />
     <Compile Include="classes\LoginAuthorize.cs" />
     <Compile Include="classes\UserAuthorize.cs" />
+    <Compile Include="Controllers\apoController.cs" />
     <Compile Include="Controllers\DenemeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Master\MasterMusteriController.cs" />
@@ -439,6 +440,7 @@
     <Content Include="Views\Sepet\Index.cshtml" />
     <Content Include="Views\Sepet\SatirSil.cshtml" />
     <Content Include="Views\Musteri\Siparisler.cshtml" />
+    <Content Include="Views\apo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
