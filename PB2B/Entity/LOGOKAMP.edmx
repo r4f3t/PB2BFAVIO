@@ -5,6 +5,19 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="LOGOKAMPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="IND_COND">
+          <Key>
+            <PropertyRef Name="LOGICALREF" />
+          </Key>
+          <Property Name="LOGICALREF" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="COND1" Type="nvarchar" MaxLength="50" />
+          <Property Name="COND2" Type="nvarchar" MaxLength="50" />
+          <Property Name="COND3" Type="nvarchar" MaxLength="50" />
+          <Property Name="ORAN" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="INDORAN" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="ALTORAN" Type="decimal" Precision="18" Scale="3" />
+        </EntityType>
         <EntityType Name="Z_SipLine">
           <Key>
             <PropertyRef Name="LOGICALREF" />
@@ -145,6 +158,7 @@ warning 6002: The table/view 'LOGOKAMP.dbo.SRG_SipLine' does not have a primary 
           <Property Name="MUSTERISIPARIS" Type="nvarchar" MaxLength="150" />
         </EntityType>
         <EntityContainer Name="LOGOKAMPModelStoreContainer">
+          <EntitySet Name="IND_COND" EntityType="Self.IND_COND" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Z_SipLine" EntityType="Self.Z_SipLine" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ZTbLUseR" EntityType="Self.ZTbLUseR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SRG_SipLine" EntityType="Self.SRG_SipLine" store:Type="Views" store:Schema="dbo">
@@ -238,6 +252,7 @@ warning 6002: The table/view 'LOGOKAMP.dbo.SRG_SipLine' does not have a primary 
           <EntitySet Name="ZTbLUseR" EntityType="Self.ZTbLUseR" />
           <EntitySet Name="Z_SipLine" EntityType="LOGOKAMPModel.Z_SipLine" />
           <EntitySet Name="SRG_SipLine" EntityType="LOGOKAMPModel.SRG_SipLine" />
+          <EntitySet Name="IND_COND" EntityType="LOGOKAMPModel.IND_COND" />
         </EntityContainer>
         <EntityType Name="Z_SipLine">
           <Key>
@@ -346,6 +361,19 @@ warning 6002: The table/view 'LOGOKAMP.dbo.SRG_SipLine' does not have a primary 
           <Property Name="USERAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SAPKODU" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="MUSTERISIPARIS" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="IND_COND">
+          <Key>
+            <PropertyRef Name="LOGICALREF" />
+          </Key>
+          <Property Name="LOGICALREF" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="COND1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="COND2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="COND3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ORAN" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="INDORAN" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="ALTORAN" Type="Decimal" Precision="18" Scale="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -489,6 +517,20 @@ warning 6002: The table/view 'LOGOKAMP.dbo.SRG_SipLine' does not have a primary 
                 <ScalarProperty Name="DATE_" ColumnName="DATE_" />
                 <ScalarProperty Name="FICHENO" ColumnName="FICHENO" />
                 <ScalarProperty Name="SIPID" ColumnName="SIPID" />
+                <ScalarProperty Name="LOGICALREF" ColumnName="LOGICALREF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IND_COND">
+            <EntityTypeMapping TypeName="LOGOKAMPModel.IND_COND">
+              <MappingFragment StoreEntitySet="IND_COND">
+                <ScalarProperty Name="ALTORAN" ColumnName="ALTORAN" />
+                <ScalarProperty Name="INDORAN" ColumnName="INDORAN" />
+                <ScalarProperty Name="ORAN" ColumnName="ORAN" />
+                <ScalarProperty Name="COND3" ColumnName="COND3" />
+                <ScalarProperty Name="COND2" ColumnName="COND2" />
+                <ScalarProperty Name="COND1" ColumnName="COND1" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
                 <ScalarProperty Name="LOGICALREF" ColumnName="LOGICALREF" />
               </MappingFragment>
             </EntityTypeMapping>

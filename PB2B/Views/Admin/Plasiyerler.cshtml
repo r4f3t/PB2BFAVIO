@@ -1,0 +1,99 @@
+﻿@model IEnumerable<PB2B.Entity.ZTbLUseR>
+
+@{
+    ViewBag.Title = "Plasiyerler";
+    Layout = "~/Views/Shared/LTEAdminMaster.cshtml";
+}
+<style>
+    .text-white {
+        color: #fff;
+    }
+</style>
+<div class="row">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Plasiyer Listesi
+        </div>
+        <div class="panel-body">
+
+
+            @using (Html.BeginForm())
+            {
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label>Kullanıcı Adı</label>
+                            <input type="text" name="Adi" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label>Şifre</label>
+                            <input type="text" name="Sifresi" class="form-control" />
+                        </div>
+                    </div>
+                    @{
+                        PB2B.Entity.LKSDBEntities1 db = new PB2B.Entity.LKSDBEntities1();
+                        var plasiyerler = db.XX_SRG_Cari_HDurum_006.GroupBy(x => x.Plasiyer).Where(x => x.Key != "").Select(x => new { Plasiyer = x.Key }).ToList();
+                    }
+
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label>Plasiyer</label>
+                            <select class="form-control" name="CariSTR">
+                                @foreach (var item in plasiyerler)
+                                {
+                                    <option>@item.Plasiyer</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-1">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <input type="submit" style="width:100%;" class="btn btn-primary" value="Ekle" />
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <table class="table">
+                <tr style="background-color:red;" class="text-white">
+                    <th>
+                        @Html.DisplayNameFor(model => model.Adi)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Sifresi)
+                    </th>
+
+                    <th>
+                        Plasiyer Adı
+                    </th>
+
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Adi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Sifresi)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CariSTR)
+                        </td>
+
+                        <td>
+                            @Html.ActionLink("Sil", "PlasiyerSil", new { UserId = item.UserId }) |
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>

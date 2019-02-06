@@ -1,0 +1,45 @@
+﻿<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+<script src="~/Scripts/rafet.js"></script>
+
+<script>
+    window.onload=new function VeriCek() {
+        var Labels = new Array();
+        var values = new Array();
+        var i = 0;
+        $.ajax({
+            url:"/Chart/GetSatisJson",
+            type: "Get",
+            data: "",
+            success: function (data) {
+                $.each(data, function (id, CHARTSATIS) {
+                    Labels[i] = CHARTSATIS.Zaman;
+                    values[i] = CHARTSATIS.Satis.replace(",",".");
+                    //alert(values[i]);
+                    i++;
+                });
+                ChartDoldur(Labels, values);
+            }
+
+        });
+
+    }
+</script>
+
+
+
+<canvas id="line-chart" width="800" height="450"></canvas>
+
+
+<script>
+    function ChartDoldur(labeller, veriler) {
+    //labelleri ve verileri listelere at sonra buraya yazdır
+        new Chart(document.getElementById("line-chart"),
+        {
+            "type": "line", "data": {
+                "labels": labeller,
+                "datasets": [{ "label": "Satışlar Son 6 Aylık", "data": veriler, "fill": false, "borderColor": "rgb(75, 192, 192)", "lineTension": 1 }]
+            }, "options": {}
+            });
+    }
+</script>

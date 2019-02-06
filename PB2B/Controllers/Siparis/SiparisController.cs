@@ -28,10 +28,14 @@ namespace PB2B.Controllers.Siparis
         }
 
         [HttpPost]
-        public ActionResult SiparisVer(string searchParam)
+        public ActionResult SiparisVer(string searchParam,string stokOlan)
         {
-            var model = lDb.A_MNTL_STOK_2018.Where(x => (x.URUNADI + x.URUNKODU + x.MARKA + x.MODEL).Replace(" ", "").Contains(searchParam.Replace(" ", ""))).ToList();
-            return View(model);
+            var model= lDb.A_MNTL_STOK_2018.AsQueryable();
+            if (stokOlan=="on")
+            {
+                model = model.Where(x => x.BAKIYE > 0);
+            }
+            return View(model.Where(x => (x.URUNADI + x.URUNKODU + x.MARKA + x.MODEL).Replace(" ", "").Contains(searchParam.Replace(" ", ""))).ToList());
         }
 
         public PartialViewResult SiparisUrunGec(string itemref)

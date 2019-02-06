@@ -48,10 +48,17 @@ namespace PB2B.Controllers.Sepet
  // "('" + LineID + "'," + urunid[i] + ", " + FisId + ", " + cariId[i] + ", 0, 0, 0, 0, " + a + ", 1, '" + tarih[i].ToString("MM/dd/yy") + "', 268440134, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', " + miktar[i].ToString().Replace(",", ".") + ", " + BFiyaT[i].ToString().Replace(",", ".") + ", " + BTuTaR[i].ToString().Replace(",", ".") + ", 0.0, 0.0, 0.0,0.0, 0.0, 0.0," + VAT[i] + ", " + KdVTuTar[i].ToString().Replace(",", ".") + ", " + BTuTaR[i].ToString().Replace(",", ".") + ", '', " + UOMRef[i] + ", " + USRef[i] + ", 1.0,1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0, 0, 1, 0, '" + DateTime.Now.ToString("MM/dd/yy") + "', 160, " + BFiyaT[i].ToString().Replace(",", ".") + ", 1, 0, 0, 0, 0, 0, 0, 0, 0, " + BTuTaR[i].ToString().Replace(",", ".") + ", 0, 4, 0, 0, 0, 1, 0, 0, 0, 0, 0.0,0.0, 0, 0.0, 0.0, 0, 0, 0, 0, 0, 0, 0.0, 0, 0, 0, 0.0, 0.0,0.0, 0, 0.0, 0, 0, 0, 0, 0.0, 0, 0.0, '', 0, 0.0, 0, 0, 0, 0, 0, 0, 0.0,0.0, 0.0, 0.0, 0, 0, 0, 0, '" + PrCLisTReF + "', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.0, 0.0,0.0, 0, 0, 0, 0.0, 0.0, 0.0, 0.0, 0, 0.0)");
                     i++;
                 }
-
             }
             return View(model);
         }
+        [HttpPost]
+        public ActionResult SepetMail()
+        {
+
+
+            return RedirectToAction("Sepet");
+        }
+        
         public ActionResult SatirSil(string id)
         {
             var model = db.Z_SipLine.Where(x => x.LOGICALREF.ToString() == id).SingleOrDefault();

@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "PlasiyerRaporlari";
+    Layout = "~/Views/Shared/LTEMASTER.cshtml";
+}
+
+<h4>Plasiyer Raporları</h4>
+@{
+    PB2B.Entity.LKSDBEntities1 db = new PB2B.Entity.LKSDBEntities1();
+    var plasiyerler = db.XX_SRG_Cari_HDurum_006.GroupBy(x => x.Plasiyer).Where(x => x.Key != "").Select(x => new { Plasiyer = x.Key }).ToList();
+}
+
+@{
+    string stylePlasiyerler = (Session["yetki"].ToString() == "2") ? "" : "display:none;";
+}
+<form action="~/Plasiyer/PlasiyerRaporlari" method="post" novalidate>
+    <div class="col-lg-3" style="margin-top:10px;@stylePlasiyerler">
+        <select name="plasiyer" class="form-control" onchange="this.form.submit()">
+            <option>@ViewData["Plasiyer"]</option>
+            <option>Hepsi</option>
+            @foreach (var item in plasiyerler)
+            {
+                <option>@item.Plasiyer</option>
+            }
+        </select>
+    </div>
+</form>
+
+
+<div class="row">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Cari Genel Rapor Ekranı
+        </div>
+
+        <div class="panel-body" id="partialReports"></div>
+    </div>
+</div>
+
+<script>
+    window.onload = new function () {
+         var url = '@Url.Action("PlasiyerRaporPartial", "Plasiyer")';
+        $("#partialReports").load(url + "?Plasiyer=@ViewData["Plasiyer"]");
+    }
+</script>
+
+
+<div class="col-md-6">
+    <div class="panel-group" id="accordion-test-2">
+        <div class="panel panel-default" style="border: 1px solid #aeaeae; border-radius: 5px; box-shadow: 3px 3px 0px grey;">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" onclick="poppupAc()" data-parent="#accordion-test-2" href="#topOnTablo" aria-expanded="false" class="text-center collapsed">
+                        En Fazla Ciro Yapılan 10 Ürün
+                    </a>
+                </h4>
+            </div>
+            <div id="topOnTablo" class="panel-collapse collapse" aria-expanded="false" style="width: 100%; overflow-x: scroll; height: 0px;">
+                <div class="panel-body" id="partialEncokSatilan">
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="panel-group" id="accordion-test-3">
+        <div class="panel panel-default" style="border: 1px solid #aeaeae; border-radius: 5px; box-shadow: 3px 3px 0px grey;">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion-test-3" href="#top10Firma" aria-expanded="false" class="text-center collapsed">
+                        En Fazla Satış Yapılan 10 Firma
+                    </a>
+                </h4>
+            </div>
+            <div id="top10Firma" class="panel-collapse collapse" aria-expanded="false" style="width: 100%; overflow-x: scroll; height: 0px;">
+                <div class="panel-body" id="partialEncokSatilanFirma">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+                        function poppupAc() {
+                            var url = '@Url.Action("EnCokSatilanUrun","Plasiyer")';
+                            $("#partialEncokSatilan").load(url + "?Plasiyer=@ViewData["Plasiyer"]");
+                            url = '@Url.Action("EnCokSatilanFirma","Plasiyer")';
+                            $("#partialEncokSatilanFirma").load(url + "?Plasiyer=@ViewData["Plasiyer"]");
+                        }
+                        window.onload = poppupAc();
+    </script>
+</div>

@@ -14,32 +14,32 @@
             Cari Arama Ekranı
         </div>
         <div class="panel-body">
-            
-                @using (Html.BeginForm())
-                {
-                    <div class="row">
-                        <div class="col-lg-3" style="padding:0px;">
-                            <div class="search-box" style="width:100%;">
 
-                                <input class="sb-search-input" name="searchParam" placeholder="Cari Listesinde Ara..." type="search" />
-                                <label class="input__label" for="input-31">
-                                    <svg class="graphic" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
-                                        <path d="m0,0l404,0l0,77l-404,0l0,-77z" />
-                                    </svg>
-                                </label>
+            @using (Html.BeginForm())
+            {
+                <div class="row">
+                    <div class="col-lg-3" style="padding:0px;">
+                        <div class="search-box" style="width:100%;">
 
-                            </div>
+                            <input class="sb-search-input" name="searchParam" placeholder="Cari Listesinde Ara..." type="search" />
+                            <label class="input__label" for="input-31">
+                                <svg class="graphic" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
+                                    <path d="m0,0l404,0l0,77l-404,0l0,-77z" />
+                                </svg>
+                            </label>
+
                         </div>
-                        <div class="col-lg-1">
-                            <input id="Ara" class="btn btn-danger" type="submit" style="width:100%;margin-top:10px;" value="Ara" />
-                        </div>
-                        <br>
-                        @*<div class="col-lg-2"><input type="checkbox"> Geciken Cariler</div>
-                        <div class="col-lg-2"><input type="checkbox"> Sepette Ürün Olanlar</div>
-                        <div class="col-lg-2"><input type="checkbox"> Bakiyeli Cariler</div>*@
                     </div>
-                }
-           
+                    <div class="col-lg-1">
+                        <input id="Ara" class="btn btn-danger" type="submit" style="width:100%;margin-top:10px;" value="Ara" />
+                    </div>
+                   
+                    <br />
+                    <div class="col-lg-2"><input type="checkbox" name="isSepet"> Sepette Ürün Olanlar</div>
+                    <div class="col-lg-2"><input type="checkbox" name="isBakiyeli"> Bakiyeli Cariler</div>
+                </div>
+            }
+
             <table class="table table-hover">
                 <thead>
                     <tr style="background-color:red;">
@@ -55,21 +55,22 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-                    
+
                         <tr onclick="yonlendir(@item.LOGREF)">
                             <td>@item.KODU</td>
                             <td>@item.Firma_Bilgisi</td>
                             <td>@item.Ilce</td>
                             <td>@item.Sehir</td>
-                            <td>@Convert.ToDecimal(item.Bakiye).ToString("N")</td>
+                            <td style="text-align:right;">@Convert.ToDecimal(item.Bakiye).ToString("N")</td>
                             <td>@item.RiskLimiti</td>
                             <td>0</td>
                         </tr>
-                    
+
                     }
 
                 </tbody>
             </table>
+
 
 
             <script>
@@ -79,6 +80,7 @@
             </script>
         </div>
     </div>
-
+    <br /><br />
+  
 </div>
 

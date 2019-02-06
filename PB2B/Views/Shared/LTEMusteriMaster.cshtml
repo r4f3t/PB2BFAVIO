@@ -30,6 +30,11 @@
             width: 100%;
             height: 295px;
         }
+        .red-font{
+            color:red;
+            font-color:red;
+           
+        }
     </style>
 
 </head>
@@ -111,7 +116,7 @@
             </div>
 
             <div class="header-right">
-                <div class="profile_details_left" style="margin-right:10px;">
+                <div class="profile_details_left" >
                     <!--notifications of menu start -->
                     <ul class="nofitications-dropdown ">
                         <li class="dropdown head-dpdn">
@@ -121,7 +126,7 @@
                                     @Html.Label(sepSayi)
                                 </span>
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu" style="right:50px; margin-right:50px;">
                                 <li>
                                     <div class="notification_header">
                                         <h3>SEPET</h3>
@@ -131,8 +136,8 @@
                                     {
                                         <li>
                                             <a href="~/Sepet">
-                                                <div class="user_img"><img src="images/1.jpg" alt=""></div>
-                                                <div class="notification_desc">
+                                                
+                                                <div class="notification_desc" >
                                                     <p>@item.STOCKNAME</p>
                                                     <p><span>@item.DATE_</span></p>
                                                 </div>
@@ -172,7 +177,7 @@
                                 </div>
                             </a>
                             <ul class="dropdown-menu drp-mnu">                                
-                                <li> <a href="/Home/Index"><i class="fa fa-sign-out"></i> Çıkış Yap</a> </li>
+                                <li> <a href="/Home/Index"> <i class="fa fa-sign-out "></i> Çıkış Yap</a> </li>
                             </ul>
                         </li>
                     </ul>

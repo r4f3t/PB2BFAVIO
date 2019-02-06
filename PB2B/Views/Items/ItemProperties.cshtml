@@ -1,0 +1,120 @@
+﻿@model PB2B.Entity.LG_006_ITEMS
+
+@{
+    ViewBag.Title = "ItemProperties";
+    Layout = "~/Views/Shared/LTEAdminMaster.cshtml";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Ürün İçerik Güncelleme
+            </div>
+            <div class="panel-body ">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                <div class="form-group">
+                    <div class="control-label col-md-1 text-left" style="text-align:left;"><b>Adı</b></div>
+                    <div class="col-md-4">
+                        <label class="form-control">@Model.NAME</label>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="control-label col-md-1 text-left" style="text-align:left;"><b>Kod</b></div>
+                    <div class="col-md-4">
+                        <label class="form-control">@Model.CODE</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="control-label col-md-1 text-left" style="text-align:left;"><b>Özel Kod</b></div>
+                    <div class="col-md-4">
+                        <input id="Text1" type="text" name="SPECODE" class="form-control" value="@Model.SPECODE" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="control-label col-md-1 text-left" style="text-align:left;"><b>Özel Kod2</b></div>
+                    <div class="col-md-4">
+                        <input id="Text1" type="text" name="SPECODE2" class="form-control" value="@Model.SPECODE2" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="control-label col-md-1 text-left" style="text-align:left;"><b>Özel Kod3</b></div>
+                    <div class="col-md-4">
+                        <input id="Text1" type="text" name="SPECODE3" class="form-control" value="@Model.SPECODE3" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="control-label col-md-1 text-left" style="text-align:left;"><b>Özel Kod4</b></div>
+                    <div class="col-md-4">
+                        <input id="Text1" type="text" name="SPECODE4" class="form-control" value="@Model.SPECODE4" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="control-label col-md-1 text-left" style="text-align:left;"><b>Özel Kod5</b></div>
+                    <div class="col-md-4">
+                        <input id="Text1" type="text" name="SPECODE5" class="form-control" value="@Model.SPECODE5" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="control-label col-md-1 text-left" style="text-align:left;"><b>Yetki Kodu</b></div>
+                    <div class="col-md-4">
+                        <input id="Text1" type="text" name="CYPHCODE" class="form-control" value="@Model.CYPHCODE"/>
+                        
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="control-label col-md-1 text-left" style="text-align:left;"><b>B2C Açıklama</b></div>
+                    <div class="col-md-4">
+                        <textarea id="TextArea1" class="form-control" placeholder="Açıklama Giriniz" rows="2" cols="20"></textarea>
+                        
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <div class="control-label col-md-1 text-left" style="text-align:left;"><b>Resim Ekle</b></div>
+                    <div class="col-md-2">
+                        <input id="File1" type="file" />
+
+                    </div>
+                    <div class="col-md-4" style="text-align:left;">&nbsp; &nbsp; <i class="fa fa-plus" style="color:red;"></i></div>
+
+                </div>
+                <div class="col-md-6">
+                    <table class="table col-md-6">
+                        <tbody>
+                            <tr style="background-color:red;" class="text-white">
+                                <th>
+                                    Resim
+                                </th>
+                                <th>
+                                    #
+                                </th>
+
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td></td>
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <input type="submit" value="Kaydet" class="btn btn-primary"/>
+}
+
+

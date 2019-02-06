@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
@@ -9,5 +11,10 @@ namespace PB2B
     {
         public static string GFirma = "006";
         public static string GDonem = "04";
+
+        public static SqlConnection DapperConnection()
+        {
+            return new SqlConnection(ConfigurationManager.ConnectionStrings["LKSDBDAPPER"].ConnectionString);
+        }
     }
 }

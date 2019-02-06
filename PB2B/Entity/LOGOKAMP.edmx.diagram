@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="LOGOKAMPModel.ZTbLUseR" Width="1.5" PointX="1" PointY="0.5" IsExpanded="false" />
         <EntityTypeShape EntityType="LOGOKAMPModel.Z_SipLine" Width="1.5" PointX="2.75" PointY="0.5" IsExpanded="false" />
         <EntityTypeShape EntityType="LOGOKAMPModel.SRG_SipLine" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="LOGOKAMPModel.IND_COND" Width="1.5" PointX="0.75" PointY="2.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

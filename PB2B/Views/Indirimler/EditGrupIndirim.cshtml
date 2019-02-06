@@ -1,0 +1,90 @@
+﻿@model PB2B.Entity.IND_COND
+
+@{
+    ViewBag.Title = "EditGrupIndirim";
+    Layout = "~/Views/Shared/LTEAdminMaster.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                EditGrupİndirim
+            </div>
+            <div class="panel-body" >
+                <div  style="text-align:left;">
+
+                    						
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="Açıklama">Açıklama</label>
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.NAME, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="Sart1">Şart1(GrupKod)</label>
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.COND1, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.COND1, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="Sart2">Şart2(Özelkod)</label>
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.COND2, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.COND2, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="Sart3">ŞArt3(Atanmadı)</label>
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.COND3, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.COND3, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="YukOran">Yükseltme Oranı</label>
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.ORAN, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ORAN, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="İndOran">İndirim Oranı</label>
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.INDORAN, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.INDORAN, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="TabanOran">Taban Satış Oranı</label>
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.ALTORAN, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ALTORAN, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Kaydet" style="background-color:red; color:white;" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

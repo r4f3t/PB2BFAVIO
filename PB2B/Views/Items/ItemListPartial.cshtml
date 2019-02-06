@@ -1,0 +1,65 @@
+﻿@model IEnumerable<PB2B.Entity.LG_006_ITEMS>
+<script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+<link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+
+<table id="tblUrunler" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                Ürün Adı
+            </th>
+            <th>
+                Ürün Kodu
+            </th>
+            <th>
+                Ürün Açıklama
+            </th>
+            <th>
+                Özel Kod
+            </th>
+            <th>
+                Özel Kod2
+            </th>
+            <th>
+                Özel Kod3
+            </th>
+            <th>
+                Özel Kod4
+            </th>
+            <th>
+                Yetki Kodu
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr onclick="propertyAc(@item.LOGICALREF)">
+                <td>@item.NAME</td>
+                <td>@item.CODE</td>
+                <td>@item.NAME2</td>
+                <td>@item.SPECODE</td>
+                <td>@item.SPECODE2</td>
+                <td>@item.SPECODE3</td>
+                <td>@item.SPECODE4</td>
+                <td>@item.CYPHCODE</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    window.onload = new function () {
+        $('#tblUrunler').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+            }
+        });
+    }
+    function propertyAc(itemref) {
+        var url = "@Url.Action("ItemProperties","Items")";
+        window.open(url + "?logicalref=" + itemref);
+    }
+</script>
+    

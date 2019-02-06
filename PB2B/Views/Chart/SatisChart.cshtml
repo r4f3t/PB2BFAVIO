@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "SatisChart";
+    Layout = "~/Views/Shared/LTEMASTER.cshtml";
+}
+
+<h4>Satış Grafikleri</h4>
+
+
+<div id="partialChart"></div>
+
+
+
+
+<script>
+    window.onload = new function () {
+        var url = "@Url.Action("SatisChartPartial","Chart")";
+        $("#partialChart").load(url);
+    }
+</script>

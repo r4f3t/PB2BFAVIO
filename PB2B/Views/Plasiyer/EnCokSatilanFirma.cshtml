@@ -1,0 +1,25 @@
+﻿
+@model IEnumerable<PB2B.Entity.J_SRG_SATICIFIRMA_006_04>
+<table id="Table1" class="btablo" width="100%" style="font-size: 9pt;">
+    <thead>
+        <tr>
+            <th id="Th1" style="text-align: center;"></th>
+            <th id="Th2" style="text-align: center;">Kodu</th>
+            <th id="Th3" style="text-align: center;">Firma Adı</th>
+            <th id="Th4" style="text-align: center;">Net Tutar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="padding: 0px; text-align: center; width: 15px;" data-columns="tech-companies-1-col-0"></td>
+                <td style="padding: 0px;" data-columns="tech-companies-1-col-0">@item.CODE</td>
+                <td style="padding: 0px;" data-columns="tech-companies-1-col-0">@item.CADI</td>
+                <td style="text-align:right; padding: 0px;" data-columns="tech-companies-1-col-0">@Convert.ToDecimal(item.NETTUTAR).ToString("N")</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+

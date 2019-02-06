@@ -27,7 +27,7 @@ namespace PB2B
         }
 
         public static string GFirma = WebConfigurationManager.AppSettings["GFirma"].ToString();
-        public static IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["PTEKNIKMSSQL"].ConnectionString);
+        public static IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["LKSDBDAPPER"].ConnectionString);
         public static HttpCookie GetCookie(string CookieName)
         {
             if (HttpContext.Current.Request.Cookies[CookieName] != null)
@@ -64,5 +64,30 @@ namespace PB2B
             }
             return false;
         }
+        #region overload 
+        public static string ParaStr(decimal sayi) {
+            return Convert.ToDecimal(sayi).ToString("N");
+        }
+        public static string ParaStr(decimal? sayi)
+        {
+            if (sayi == null) return "";
+            return Convert.ToDecimal(sayi).ToString("N");
+        }
+        public static string ParaStr(double sayi)
+        {
+            return Convert.ToDecimal(sayi).ToString("N");
+        }
+        public static string ParaStr(double? sayi)
+        {
+            if (sayi == null) return "";
+            return Convert.ToDecimal(sayi).ToString("N");
+        }
+        public static string ParaStr(string sayi)
+        {
+            if (sayi == null) return "";
+            return Convert.ToDecimal(sayi).ToString("N");
+        }
+       
+        #endregion
     }
 }

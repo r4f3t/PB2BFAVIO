@@ -50,17 +50,21 @@
                         <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
                             <ul class="sidebar-menu">
                                 <li class="treeview">
-                                    <a href="~/Views/Plasiyer/PlasiyerIndex.cshtml">
+                                    <a href="@Url.Action("PlasiyerIndex","Plasiyer",new { @direktAc="0" })">
                                         <font color="white"><i class="fa fa-dashboard"></i> <span> Plasiyer</span></font>
                                     </a>
                                 </li>
 
                                 <li class="treeview">
-                                    <a href="zzcariextre.html">
+                                    <a href="@Url.Action("PLasiyerRaporlari","Plasiyer")">
                                         <font color="white"><i class="fa fa-pie-chart"></i> <span>Plasiyer Raporları</span></font>
                                     </a>
                                 </li>
-
+                                <li class="treeview">
+                                    <a href="@Url.Action("SatisChart","Chart")">
+                                        <font color="white"><i class="fa fa-pie-chart"></i> <span>Son 6 Ay Satış Grafik</span></font>
+                                    </a>
+                                </li>
 
                             </ul>
                         </div>
@@ -108,7 +112,7 @@
                                     </div>
                                 </a>
                                 <ul class="dropdown-menu drp-mnu">
-                                    <li> <a href="/Home/Index"><i class="fa fa-sign-out"></i> Çıkış Yap</a> </li>
+                                    <li style="margin-right:20px;"> <a href="/Home/Index"><i class="fa fa-sign-out"></i> Çıkış Yap</a> </li>
                                 </ul>
                             </li>
                         </ul>

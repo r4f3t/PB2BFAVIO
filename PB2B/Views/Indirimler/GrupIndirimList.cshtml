@@ -1,0 +1,80 @@
+﻿@model IEnumerable<PB2B.Entity.IND_COND>
+
+@{
+    ViewBag.Title = "GrupIndirimList";
+    Layout = "~/Views/Shared/LTEAdminMaster.cshtml";
+}
+
+
+
+
+<div class="row">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            GrupIndirimList
+        </div>
+        <div class="panel-body">
+            @Html.ActionLink("Yeni Ekle","CreateGrupIndirim");
+            <table class="table">
+                <tr style="color:white;background-color:red;">
+                    <th>
+                        Açıklama
+                    </th>
+                    <th>
+                        Şart1(GrupKod)
+                    </th>
+                    <th>
+                        Şart2(Özelkod)
+                    </th>
+                    <th>
+                        ŞArt3(Atanmadı)
+                    </th>
+                    <th>
+                        Yükseltme Oranı
+                    </th>
+                    <th>
+                        İndirim Oranı
+                    </th>
+                    <th>
+                        Taban Satış Oranı
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NAME)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.COND1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.COND2)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.COND3)
+                        </td>
+                        <td style="text-align:center;">
+                            @Html.DisplayFor(modelItem => item.ORAN)
+                        </td>
+                        <td style="text-align:center;">
+                            @Html.DisplayFor(modelItem => item.INDORAN)
+                        </td>
+                        <td style="text-align:center;">
+                            @Html.DisplayFor(modelItem => item.ALTORAN)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Güncelle", "EditGrupIndirim", new { id = item.LOGICALREF }) |
+
+                            @Html.ActionLink("Sil", "DeleteGrupIndirim", new { id = item.LOGICALREF })
+                            ,
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>

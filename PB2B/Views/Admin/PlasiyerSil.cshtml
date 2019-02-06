@@ -1,0 +1,121 @@
+﻿@model PB2B.Entity.ZTbLUseR
+
+@{
+    ViewBag.Title = "PlasiyerSil";
+    Layout = "~/Views/Shared/LTEAdminMaster.cshtml";
+}
+
+<h2>PlasiyerSil</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ZTbLUseR</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Adi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sifresi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sifresi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SipStr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SipStr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CariSTR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CariSTR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLIENTREF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLIENTREF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SLSCODE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SLSCODE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SLSNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SLSNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GrupSTR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GrupSTR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KullanıcıEkle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KullanıcıEkle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DosyaYukle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DosyaYukle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CARIKILIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CARIKILIT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -36,5 +36,10 @@ namespace PB2B.Entity
         public virtual DbSet<LG_006_04_ORFICHESEQ> LG_006_04_ORFICHESEQ { get; set; }
         public virtual DbSet<LG_006_04_ORFLINESEQ> LG_006_04_ORFLINESEQ { get; set; }
         public virtual DbSet<I_SRG_EKSIKSIPARISLER_006_04> I_SRG_EKSIKSIPARISLER_006_04 { get; set; }
+        public virtual DbSet<J_SRG_SATICISATILAN_006_04> J_SRG_SATICISATILAN_006_04 { get; set; }
+        public virtual DbSet<J_SRG_SATICIFIRMA_006_04> J_SRG_SATICIFIRMA_006_04 { get; set; }
+        public virtual DbSet<JSrG_GenelCari_006_04> JSrG_GenelCari_006_04 { get; set; }
+        public virtual DbSet<JSRG_CEK_SENET_DURUM> JSRG_CEK_SENET_DURUM { get; set; }
+        public virtual DbSet<LG_006_ITEMS> LG_006_ITEMS { get; set; }
     }
 }

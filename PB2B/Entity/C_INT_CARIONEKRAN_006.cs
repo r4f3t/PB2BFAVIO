@@ -28,5 +28,6 @@ namespace PB2B.Entity
         public double RiskLimiti { get; set; }
         public string OKoD { get; set; }
         public string LOGOID { get; set; }
+        public string SATICI { get; set; }
     }
 }
