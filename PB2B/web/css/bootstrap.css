@@ -4045,7 +4045,7 @@ select[multiple].form-group-lg .form-control {
 
 .btn-danger {
     color: #fff;
-    background-color: #d9534f;
+    background-color: #ab1313;
     border-color: #d43f3a;
 }
 
@@ -4056,7 +4056,7 @@ select[multiple].form-group-lg .form-control {
     .btn-danger.active,
     .open > .dropdown-toggle.btn-danger {
         color: #fff;
-        background-color: #c9302c;
+        background-color: #ab1313;
         border-color: #ac2925;
     }
 

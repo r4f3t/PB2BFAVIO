@@ -6,11 +6,10 @@
 <table id="tblCariler" class="table table-hover table-responsive">
     <thead>
         <tr style="background-color:#AB1313;">
-            <th><font color="white">Firma Kodu</font></th>
+          
             <th><font color="white">Firma Adı</font></th>
             <th><font color="white">Plasiyer</font></th>
-            <th><font color="white">Tel</font></th>
-            <th><font color="white">Şehir</font></th>
+            
             <th><font color="white">Bakiye</font></th>
             <th><font color="white">Önceki Bakiye</font></th>
             <th><font color="white">Çıkışlar</font></th>
@@ -28,11 +27,10 @@
             {
 
         <tr>
-            <td>@item.FirmaKodu</td>
+            
             <td>@item.FirmaAdı</td>
             <td>@item.Plasiyer</td>
-            <td>@item.Telefon</td>
-            <td>@item.Sehiri</td>
+           
             <td class="text-right">@Convert.ToDecimal(item.Bakiye).ToString("N")</td>
             <td class="text-right">@Convert.ToDecimal(item.ONCEKIBAKIYE).ToString("N")</td>
             <td class="text-right">@Convert.ToDecimal(item.CIKISLAR).ToString("N")</td>

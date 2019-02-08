@@ -2081,7 +2081,7 @@ p.creating {
     background: url(../images/lock.png)no-repeat 8px 16px #fff;
 }
     .signup-page input[type="text"]:focus, .signup-page input[type="email"]:focus, .signup-page input[type="password"]:focus, .login-page input[type="email"]:focus, .login-page input[type="password"]:focus {
-        border-color: #FA711D;
+        border-color: #2d2d2d;
     }
 .signup-page h5,.signup-page h6{
 	margin: 0 0 1em;
