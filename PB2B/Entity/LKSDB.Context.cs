@@ -41,5 +41,6 @@ namespace PB2B.Entity
         public virtual DbSet<JSrG_GenelCari_006_04> JSrG_GenelCari_006_04 { get; set; }
         public virtual DbSet<JSRG_CEK_SENET_DURUM> JSRG_CEK_SENET_DURUM { get; set; }
         public virtual DbSet<LG_006_ITEMS> LG_006_ITEMS { get; set; }
+        public virtual DbSet<XX_SRG_CLFGenel_006> XX_SRG_CLFGenel_006 { get; set; }
     }
 }

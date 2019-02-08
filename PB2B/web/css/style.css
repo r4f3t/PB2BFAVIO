@@ -102,9 +102,9 @@ button#showLeftPush {
     -moz-transition: all 0.2s ease-out 0s;
     -webkit-transition: all 0.2s ease-out 0s;
     transition: all 0.2s ease-out 0s;
-	border: none;
-    background-color: #E80405;
-	outline:none;
+    border: none;
+    background-color: #AB1313;
+    outline: none;
     border-radius: 50%;
     height: 40px;
     width: 40px;
@@ -232,7 +232,7 @@ span.nav-badge {
 span.nav-badge-btm {
     font-size: 12px;
     color: #FFF;
-    background: #E80405;
+    background: #AB1313;
     position: absolute;
     top: 18%;
     right: 15%;
@@ -861,11 +861,11 @@ ul.dropdown-menu.drp-mnu li {
     list-style-type: none;
     padding: 3px 0;
 }
-.user-name p{
-	font-size:1em;
-	color: #E80405;
-	line-height:1em;
-	font-weight:700;
+.user-name p {
+    font-size: 1em;
+    color: #AB1313;
+    line-height: 1em;
+    font-weight: 700;
 }
 .user-name span {
     font-size: .75em;
@@ -1212,9 +1212,9 @@ h2.title1,h3.title1 {
 	margin:2em 0 0 0;
 }
 .demolayout {
-  background:#E80405;
-  width: 60px;
-  overflow: hidden;
+    background: #AB1313;
+    width: 60px;
+    overflow: hidden;
 }
 .padding-5 {
   padding: 5px;
@@ -1476,12 +1476,12 @@ section#tables  p {
     margin-top: 10px;
 }
 .forms button.btn.btn-default {
-    background-color: #E80405;
+    background-color: #AB1313;
     color: #fff;
     padding: .5em 1.5em;
-	border: none;
-	outline:none;
-	border-radius: inherit;
+    border: none;
+    outline: none;
+    border-radius: inherit;
 }
 .inline-form.widget-shadow {
     margin-top: 2em;
@@ -1609,9 +1609,9 @@ button.note-color-btn {
 	border-radius: inherit;
     opacity: 1;
 }
-.validation-grids .btn-primary:hover{
-	 background: #E80405 !important;
-}
+    .validation-grids .btn-primary:hover {
+        background: #AB1313 !important;
+    }
 .bottom .btn-primary {
     margin: 0;
 }
@@ -1726,7 +1726,7 @@ form.search-form {
     width: 100%;
     color: #A8A8A8;
     outline: none;
-    border: 1px solid #D3D3D3;
+    border: 1px solid #AB1313;
     background: #FFFFFF;
     margin: 0em 0em 1.5em 0em;
 }
@@ -2061,13 +2061,13 @@ p.creating {
     float: left;
     margin-top: 1em;
 }
-.signup-page input[type="text"],.signup-page input[type="email"],.signup-page input[type="password"]{
-	outline:none;
-	border: 1px solid #D0D0D0;
+.signup-page input[type="text"], .signup-page input[type="email"], .signup-page input[type="password"] {
+    outline: none;
+    border: 1px solid #AB1313;
     background: none;
     font-size: 15px;
     padding: 14px 15px 14px 37px;
-	width:100%;
+    width: 100%;
     margin: 0em 0 1.5em 0;
 }
 .signup-page input[type="email"]{
@@ -2080,9 +2080,9 @@ p.creating {
 .signup-page input[type="password"] {
     background: url(../images/lock.png)no-repeat 8px 16px #fff;
 }
-.signup-page input[type="text"]:focus ,.signup-page input[type="email"]:focus,.signup-page input[type="password"]:focus,.login-page input[type="email"]:focus,.login-page input[type="password"]:focus{
-    border-color: #337ab7;
-}
+    .signup-page input[type="text"]:focus, .signup-page input[type="email"]:focus, .signup-page input[type="password"]:focus, .login-page input[type="email"]:focus, .login-page input[type="password"]:focus {
+        border-color: #FA711D;
+    }
 .signup-page h5,.signup-page h6{
 	margin: 0 0 1em;
     color: #629aa9;

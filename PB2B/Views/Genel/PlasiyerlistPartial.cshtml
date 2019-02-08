@@ -1,0 +1,93 @@
+﻿@model IEnumerable<PB2B.Entity.XX_SRG_CLFGenel_006>
+    <style>
+        .bckclr {
+            background-color:#AB1313;
+            color:white;
+        }   
+    </style>
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+    <link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Plasiyer Tahsilat Raporları
+        </div>
+        <div class="panel-body ">
+            <table id="tblPlasiyerler" class="table ">
+                <thead>
+                    <tr class="bckclr">
+                        <th>
+                           Cari Adı
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Nakit)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Cek)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Senet)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.KK)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Havale)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Dekont)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PlasiyerBakiyesi)
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+        {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CariSatici)
+                        </td>
+                        <td>
+                            @Convert.ToDecimal(item.Nakit).ToString("N")
+                        </td>
+                        <td>
+                            @Convert.ToDecimal(item.Cek).ToString("N")
+                        </td>
+                        <td>
+                            @Convert.ToDecimal(item.Senet).ToString("N")
+                        </td>
+                        <td>
+                            @Convert.ToDecimal(item.KK).ToString("N")
+                        </td>
+                        <td style="text-align:right;">
+                            @Convert.ToDecimal(item.Havale).ToString("N")
+                        </td>
+                        <td style="text-align:right;">
+                            @Convert.ToDecimal(item.Dekont).ToString("N")
+                        </td>
+                        <td style="text-align:right;">
+                            @Convert.ToDecimal(item.PlasiyerBakiyesi).ToString("N")
+                        </td>
+
+
+                    </tr>
+        }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+    window.onload = new function () {
+        $('#tblPlasiyerler').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+            }
+        });
+    }
+
+    </script>

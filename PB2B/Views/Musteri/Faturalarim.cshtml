@@ -5,6 +5,9 @@
     Layout = "~/Views/Shared/LTEMusteriMaster.cshtml";
 }
 
+<script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+<link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
 
 
 
@@ -14,62 +17,73 @@
     </div>
     <div class="panel-body ">
         <div class="col-md-12">
-            <table class="table">
-                <tr style="background-color:red;">
+            <table id="tblUrunler" class="table">
+                <thead>
+                    <tr style="background-color:red;">
 
-                    <th>
-                        <font color="white"> Fatura No</font>
-                    </th>
-                    <th>
-                        <font color="white"> Tarih</font>
-                    </th>
-                    <th>
-                        <font color="white"> Net Toplam</font>
-                    </th>
-                    <th>
-                        <font color="white">   Tip</font>
-                    </th>
-                    <th>
-                        <font color="white"> Masraf</font>
-                    </th>
-                    <th>
-                        <font color="white">  İndirim</font>
-                    </th>
-                    <th>
-                        <font color="white">  Yekün</font>
-                    </th>
-                </tr>
-
-                @foreach (var item in Model)
-                {
-                    <tr onclick="window.location.href='/Musteri/FaturaDetay/@item.FICHENO'">
-
-                        <td>
-                            @Html.DisplayFor(modelItem => item.FICHENO)
-                        </td>
-                        <td>
-                            @Convert.ToDateTime(item.DATE_).ToString("dd/MM/yyyy")
-                        </td>
-                        <td  style="text-align:right;">
-                            @Convert.ToDecimal(item.NETTOTAL).ToString("N")
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.drmX)
-                        </td>
-                        <td  style="text-align:right;">
-                            @Convert.ToDecimal(item.MASRAF).ToString("N")
-                        </td>
-                        <td style="text-align:right;">
-                            @Convert.ToDecimal(item.INDIRIM).ToString("N")
-                        </td>
-                        <td  style="text-align:right;">
-                            @Convert.ToDecimal(item.YEKUN).ToString("N")
-                        </td>
-
+                        <th>
+                            <font color="white"> Fatura No</font>
+                        </th>
+                        <th>
+                            <font color="white"> Tarih</font>
+                        </th>
+                        <th>
+                            <font color="white"> Net Toplam</font>
+                        </th>
+                        <th>
+                            <font color="white">   Tip</font>
+                        </th>
+                        <th>
+                            <font color="white"> Masraf</font>
+                        </th>
+                        <th>
+                            <font color="white">  İndirim</font>
+                        </th>
+                        <th>
+                            <font color="white">  Yekün</font>
+                        </th>
                     </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr onclick="window.location.href='/Musteri/FaturaDetay/@item.FICHENO'">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FICHENO)
+                            </td>
+                            <td>
+                                @Convert.ToDateTime(item.DATE_).ToString("dd/MM/yyyy")
+                            </td>
+                            <td style="text-align:right;">
+                                @Convert.ToDecimal(item.NETTOTAL).ToString("N")
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.drmX)
+                            </td>
+                            <td style="text-align:right;">
+                                @Convert.ToDecimal(item.MASRAF).ToString("N")
+                            </td>
+                            <td style="text-align:right;">
+                                @Convert.ToDecimal(item.INDIRIM).ToString("N")
+                            </td>
+                            <td style="text-align:right;">
+                                @Convert.ToDecimal(item.YEKUN).ToString("N")
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <script>
+                window.onload = new function () {
+                    $('#tblUrunler').DataTable({
+                        "language": {
+                            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+                        }
+                    });
                 }
 
-            </table>
+            </script>
         </div>
     </div>
 </div>

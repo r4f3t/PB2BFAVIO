@@ -114,37 +114,37 @@ fieldset[disabled] .btn-default.active {
   background-repeat: repeat-x;
   border-color: #245580;
 }
-.btn-primary:hover,
-.btn-primary:focus {
-  background-color: #265a88;
-  background-position: 0 -15px;
-}
-.btn-primary:active,
-.btn-primary.active {
-  background-color: #265a88;
-  border-color: #245580;
-}
-.btn-primary.disabled,
-.btn-primary[disabled],
-fieldset[disabled] .btn-primary,
-.btn-primary.disabled:hover,
-.btn-primary[disabled]:hover,
-fieldset[disabled] .btn-primary:hover,
-.btn-primary.disabled:focus,
-.btn-primary[disabled]:focus,
-fieldset[disabled] .btn-primary:focus,
-.btn-primary.disabled.focus,
-.btn-primary[disabled].focus,
-fieldset[disabled] .btn-primary.focus,
-.btn-primary.disabled:active,
-.btn-primary[disabled]:active,
-fieldset[disabled] .btn-primary:active,
-.btn-primary.disabled.active,
-.btn-primary[disabled].active,
-fieldset[disabled] .btn-primary.active {
-  background-color: #265a88;
-  background-image: none;
-}
+    .btn-primary:hover,
+    .btn-primary:focus {
+        background-color: #AB1313;
+        background-position: 0 -15px;
+    }
+    .btn-primary:active,
+    .btn-primary.active {
+        background-color: #AB1313;
+        border-color: #AB1313;
+    }
+    .btn-primary.disabled,
+    .btn-primary[disabled],
+    fieldset[disabled] .btn-primary,
+    .btn-primary.disabled:hover,
+    .btn-primary[disabled]:hover,
+    fieldset[disabled] .btn-primary:hover,
+    .btn-primary.disabled:focus,
+    .btn-primary[disabled]:focus,
+    fieldset[disabled] .btn-primary:focus,
+    .btn-primary.disabled.focus,
+    .btn-primary[disabled].focus,
+    fieldset[disabled] .btn-primary.focus,
+    .btn-primary.disabled:active,
+    .btn-primary[disabled]:active,
+    fieldset[disabled] .btn-primary:active,
+    .btn-primary.disabled.active,
+    .btn-primary[disabled].active,
+    fieldset[disabled] .btn-primary.active {
+        background-color: #AB1313;
+        background-image: none;
+    }
 .btn-success {
   background-image: -webkit-linear-gradient(top, #5cb85c 0%, #419641 100%);
   background-image:      -o-linear-gradient(top, #5cb85c 0%, #419641 100%);

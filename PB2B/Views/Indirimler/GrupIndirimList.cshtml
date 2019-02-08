@@ -1,47 +1,51 @@
 ﻿@model IEnumerable<PB2B.Entity.IND_COND>
 
-@{
+    @{
     ViewBag.Title = "GrupIndirimList";
     Layout = "~/Views/Shared/LTEAdminMaster.cshtml";
-}
+    }
 
 
+    <style>
+        .backclr {
+            background-color: #AB1313;
+        }
+    </style>
 
+    <div class="row">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                GrupIndirimList
+            </div>
+            <div class="panel-body">
+                @Html.ActionLink("Yeni Ekle","CreateGrupIndirim");
+                <table class="table">
+                    <tr class="backclr" style="color:white;">
+                        <th>
+                            Açıklama
+                        </th>
+                        <th>
+                            Şart1(GrupKod)
+                        </th>
+                        <th>
+                            Şart2(Özelkod)
+                        </th>
+                        <th>
+                            ŞArt3(Atanmadı)
+                        </th>
+                        <th>
+                            Yükseltme Oranı
+                        </th>
+                        <th>
+                            İndirim Oranı
+                        </th>
+                        <th>
+                            Taban Satış Oranı
+                        </th>
+                        <th></th>
+                    </tr>
 
-<div class="row">
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            GrupIndirimList
-        </div>
-        <div class="panel-body">
-            @Html.ActionLink("Yeni Ekle","CreateGrupIndirim");
-            <table class="table">
-                <tr style="color:white;background-color:red;">
-                    <th>
-                        Açıklama
-                    </th>
-                    <th>
-                        Şart1(GrupKod)
-                    </th>
-                    <th>
-                        Şart2(Özelkod)
-                    </th>
-                    <th>
-                        ŞArt3(Atanmadı)
-                    </th>
-                    <th>
-                        Yükseltme Oranı
-                    </th>
-                    <th>
-                        İndirim Oranı
-                    </th>
-                    <th>
-                        Taban Satış Oranı
-                    </th>
-                    <th></th>
-                </tr>
-
-                @foreach (var item in Model)
+                    @foreach (var item in Model)
                 {
                     <tr>
                         <td>
@@ -74,7 +78,7 @@
                     </tr>
                 }
 
-            </table>
+                </table>
+            </div>
         </div>
     </div>
-</div>

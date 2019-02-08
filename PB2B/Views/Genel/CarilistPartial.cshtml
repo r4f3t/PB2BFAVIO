@@ -1,0 +1,60 @@
+﻿@model IEnumerable<PB2B.Entity.JSrG_GenelCari_006_04>
+<script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+<link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+
+<table id="tblCariler" class="table table-hover table-responsive">
+    <thead>
+        <tr style="background-color:#AB1313;">
+            <th><font color="white">Firma Kodu</font></th>
+            <th><font color="white">Firma Adı</font></th>
+            <th><font color="white">Plasiyer</font></th>
+            <th><font color="white">Tel</font></th>
+            <th><font color="white">Şehir</font></th>
+            <th><font color="white">Bakiye</font></th>
+            <th><font color="white">Önceki Bakiye</font></th>
+            <th><font color="white">Çıkışlar</font></th>
+            <th><font color="white">Girişler</font></th>
+            <th><font color="white">Son Tahsilat</font></th>
+            <th><font color="white">Fatura Sayısı</font></th>
+            <th><font color="white">Yıllık Satış</font></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+
+        <tr>
+            <td>@item.FirmaKodu</td>
+            <td>@item.FirmaAdı</td>
+            <td>@item.Plasiyer</td>
+            <td>@item.Telefon</td>
+            <td>@item.Sehiri</td>
+            <td class="text-right">@Convert.ToDecimal(item.Bakiye).ToString("N")</td>
+            <td class="text-right">@Convert.ToDecimal(item.ONCEKIBAKIYE).ToString("N")</td>
+            <td class="text-right">@Convert.ToDecimal(item.CIKISLAR).ToString("N")</td>
+            <td class="text-right">@Convert.ToDecimal(item.GIRISLER).ToString("N")</td>
+            <td class="text-right">@Convert.ToDateTime(item.SONTAHSILATTARIHI).ToString("dd.MM.yyyy")</td>
+            <td class="text-right">@Convert.ToDecimal(item.FATURASAYISI).ToString("N")</td>
+            <td class="text-right">@Convert.ToDecimal(item.YILLIKSATISTUTARI).ToString("N")</td>
+        </tr>
+
+            }
+        }
+    </tbody>
+</table>
+
+
+<script>
+    window.onload = new function () {
+        $('#tblCariler').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+            }
+        });
+    }
+
+</script>

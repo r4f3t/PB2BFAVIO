@@ -1,75 +1,89 @@
 ﻿@model IEnumerable<PB2B.Entity.JSRG_CEK_SENET_DURUM>
 
-    @{
-        ViewBag.Title = "CekSenetlerim";
-        Layout = "~/Views/Shared/LTEMASTER.cshtml";
-    }
+@{
+    ViewBag.Title = "CekSenetlerim";
+    Layout = "~/Views/Shared/LTEMASTER.cshtml";
+}
 
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            Çek Senetlerim
-        </div>
-        <div class="panel-body">
-            <table class="table ">
+<script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+<link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Çek Senetlerim
+    </div>
+    <div class="panel-body">
+        <table id="tblUrunler" class="table ">
+            <tr>
+                <th>
+                    Tarih
+                </th>
+                <th>
+                    SeriNo
+                </th>
+                <th>
+                    Bankası
+                </th>
+                <th>
+                    Vadesi
+                </th>
+                <th>
+                    Tutar
+                </th>
+                <th>
+                    Magaza
+                </th>
+                <th>
+                    CariAdı
+                </th>
+                <th>
+                    Plasiyer
+                </th>
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
                 <tr>
-                    <th>
-                        Tarih
-                    </th>
-                    <th>
-                        SeriNo
-                    </th>
-                    <th>
-                        Bankası
-                    </th>
-                    <th>
-                        Vadesi
-                    </th>
-                    <th>
-                        Tutar
-                    </th>
-                    <th>
-                        Magaza
-                    </th>
-                    <th>
-                        CariAdı
-                    </th>
-                    <th>
-                        Plasiyer
-                    </th>
+                    <td>
+                        @Convert.ToDateTime(item.TARIH).ToString("dd.MM.yyyy")
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NEWSERINO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BANKASI)
+                    </td>
+                    <td>
+                        @Convert.ToDateTime(item.VADE).ToString("dd.MM.yyyy")
+                    </td>
+                    <td>
+                        @Convert.ToDecimal(item.TUTAR).ToString("N") TL
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MAGAZA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CARI)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Plasiyer)
+                    </td>
 
                 </tr>
+            }
 
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Convert.ToDateTime(item.TARIH).ToString("dd.MM.yyyy")
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.NEWSERINO)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.BANKASI)
-                        </td>
-                        <td>
-                            @Convert.ToDateTime(item.VADE).ToString("dd.MM.yyyy")
-                        </td>
-                        <td>
-                            @Convert.ToDecimal(item.TUTAR).ToString("N") TL
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.MAGAZA)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.CARI)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Plasiyer)
-                        </td>
+        </table>
+        <script>
+            window.onload = new function () {
+                $('#tblUrunler').DataTable({
+                    "language": {
+                        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+                    }
+                });
+            }
 
-                    </tr>
-                }
-
-            </table>
-        </div>
+        </script>
     </div>
+</div>

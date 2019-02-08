@@ -8,6 +8,9 @@
     .text-white {
         color: #fff;
     }
+    .backclr {
+        background-color: #AB1313;
+    }
 </style>
 <div class="row">
     <div class="panel panel-primary">
@@ -51,14 +54,14 @@
                     <div class="col-lg-1">
                         <div class="form-group">
                             <label>&nbsp;</label>
-                            <input type="submit" style="width:100%;" class="btn btn-primary" value="Ekle" />
+                            <input type="submit" style="width:100%;" class="btn btn-primary"  value="Ekle" />
                         </div>
                     </div>
                 </div>
             }
 
             <table class="table">
-                <tr style="background-color:red;" class="text-white">
+                <tr  class="text-white backclr">
                     <th>
                         @Html.DisplayNameFor(model => model.Adi)
                     </th>
@@ -88,7 +91,7 @@
                         </td>
 
                         <td>
-                            @Html.ActionLink("Sil", "PlasiyerSil", new { UserId = item.UserId }) |
+                            @Html.ActionLink("Sil", "PlasiyerSil", new { UserId = item.UserId })
                         </td>
                     </tr>
                 }

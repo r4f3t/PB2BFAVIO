@@ -4,6 +4,9 @@
     Layout = "~/Views/Shared/LTEMusteriMaster.cshtml";
 }
 
+<script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+<link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
 
 <div class="row">
     <div class="panel panel-primary">
@@ -36,7 +39,7 @@
                 </div>
             }
 
-            <table class="table table-hover table-responsive">
+            <table id="tblUrunler" class="table table-hover table-responsive">
                 <thead>
                     <tr style="background-color:red;">
                         <th><font color="white">Ürün Kodu</font></th>
@@ -75,7 +78,16 @@
                 </tbody>
             </table>
 
+            <script>
+                window.onload = new function () {
+                    $('#tblUrunler').DataTable({
+                        "language": {
+                            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+                        }
+                    });
+                }
 
+            </script>
 
         </div>
     </div>
@@ -96,10 +108,10 @@
                     </div>
                 </div>
                 <div class="modal-body" id="partialContent">
-                
+
                 </div>
                 <div id="yanip-sonen" class="modal-footer" style="background-color:#E80405;color:#fff;text-align:left;">
-                       (Fiyatarımıza KDV Dahildir).
+                    (Fiyatarımıza KDV Dahildir).
                 </div>
             </div>
 

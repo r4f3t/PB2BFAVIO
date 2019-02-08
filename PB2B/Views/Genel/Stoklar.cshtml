@@ -1,15 +1,11 @@
-﻿
+﻿@model IEnumerable<PB2B.Entity.A_MNTL_STOK_2018>
+
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/LTEAdminMaster.cshtml";
+    ViewBag.Title = "Stoklar";
+    Layout = ViewBag.MasterGenel;//"~/Views/Shared/LTEMASTER.cshtml";
 }
 
-<style>
-    .backclr {
-        background-color: #AB1313;
-    }
-</style>
-
+<h2>Stoklar</h2>
 <div class="panel panel-primary">
     <div class="panel-heading">
         Ürün Arama Ekranı
@@ -19,23 +15,23 @@
             <div class="col-lg-3">
                 <input type="text" name="searchparams" placeholder="Ürün Adı,Kodu,Özel Kodlar" id="TXTSearch" class="form-control" />
             </div>
-          
+
             <div class="col-lg-1">
                 <button class="btn btn-primary" onclick="UrunGetir()">
                     Ara
                 </button>
             </div>
         </div>
-        <div id="LBLProgress" class="col-lg-12 text-center backclr" style="display:none;font-size:15pt;color:#fff;">Yükleniyor...</div>
+        <div id="LBLProgress" class="col-lg-12 text-center" style="display:none;font-size:15pt;background:#AB1313;color:#fff;">Yükleniyor...</div>
         <div id="partialTable">
 
         </div>
         <script>
           function UrunGetir() {
               var searchParam = $("#TXTSearch").val();
-      
+
               //alert(marka);
-              var url = "@Url.Action("ItemListPartial","Items")";
+              var url = "@Url.Action("StokListPartial","Genel")";
               $("#LBLProgress").show();
               $("#partialTable").load(url + "?searchParams=" + searchParam + "", function () {
                   $("#LBLProgress").hide();
@@ -44,6 +40,3 @@
         </script>
     </div>
 </div>
-
-
-

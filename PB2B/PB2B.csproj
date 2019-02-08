@@ -180,6 +180,7 @@
     <Compile Include="Controllers\Admin\IndirimlerController.cs" />
     <Compile Include="Controllers\Admin\ItemsController.cs" />
     <Compile Include="Controllers\DenemeController.cs" />
+    <Compile Include="Controllers\Genel\GenelController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Master\MasterMusteriController.cs" />
     <Compile Include="Controllers\Musteri\MusteriController.cs" />
@@ -191,6 +192,9 @@
       <DependentUpon>LKSDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\LG_006_ITEMS.cs">
+      <DependentUpon>LKSDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\XX_SRG_CLFGenel_006.cs">
       <DependentUpon>LKSDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CHARTSATIS.cs" />
@@ -724,6 +728,12 @@
     <Content Include="Views\Indirimler\EditGrupIndirim.cshtml" />
     <Content Include="Views\Indirimler\CreateGrupIndirim.cshtml" />
     <Content Include="Views\Indirimler\DeleteGrupIndirim.cshtml" />
+    <Content Include="Views\Genel\Stoklar.cshtml" />
+    <Content Include="Views\Genel\StoklistPartial.cshtml" />
+    <Content Include="Views\Genel\CarilistPartial.cshtml" />
+    <Content Include="Views\Genel\Cariler.cshtml" />
+    <Content Include="Views\Genel\Plasiyerler.cshtml" />
+    <Content Include="Views\Genel\PlasiyerlistPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

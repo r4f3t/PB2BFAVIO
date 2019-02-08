@@ -454,7 +454,7 @@ warning 6002: The table/view 'LKSDB.dbo.A_MNTL_STOK_2018' does not have a primar
           <Property Name="Maliyet" Type="varchar" MaxLength="11" />
           <Property Name="ListeFiyati" Type="decimal" Precision="37" Scale="6" Nullable="false" />
           <Property Name="OnerilenFiyat" Type="decimal" Precision="38" Scale="6" Nullable="false" />
-          <Property Name="TabanFiyat" Type="decimal" Precision="38" Scale="6" Nullable="false" />
+          <Property Name="TabanFiyat" Type="decimal" Precision="37" Scale="6" Nullable="false" />
           <Property Name="PARABIRIMI" Type="int" Nullable="false" />
           <Property Name="OEM" Type="int" Nullable="false" />
           <Property Name="URUNADI" Type="varchar" MaxLength="51" />
@@ -664,6 +664,7 @@ warning 6002: The table/view 'LKSDB.dbo.JSrG_GenelCari_006_04' does not have a p
           <Property Name="FATURASAYISI" Type="int" Nullable="false" />
           <Property Name="YILLIKSATISTUTARI" Type="float" Nullable="false" />
           <Property Name="ACIKRISK" Type="float" Nullable="false" />
+          <Property Name="ADDDATE" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'LKSDB.dbo.XX_SRG_Cari_HDurum_006' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -695,6 +696,22 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_Cari_HDurum_006' does not have a 
           <Property Name="DigerAylar" Type="float" Nullable="false" />
           <Property Name="ORTVade" Type="float" Nullable="false" />
           <Property Name="Vade_Gunu" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LKSDB.dbo.XX_SRG_CLFGenel_006' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="XX_SRG_CLFGenel_006">
+          <Key>
+            <PropertyRef Name="PlasiyerBakiyesi" />
+          </Key>
+          <Property Name="CariSatici" Type="varchar" MaxLength="11" />
+          <Property Name="Nakit" Type="float" />
+          <Property Name="Cek" Type="float" />
+          <Property Name="Senet" Type="float" />
+          <Property Name="KK" Type="float" />
+          <Property Name="Havale" Type="float" />
+          <Property Name="Dekont" Type="float" />
+          <Property Name="PlasiyerCarisi" Type="int" />
+          <Property Name="PlasiyerBakiyesi" Type="float" Nullable="false" />
         </EntityType>
         <EntityContainer Name="LKSDBModelStoreContainer">
           <EntitySet Name="LG_006_04_ORFICHE" EntityType="Self.LG_006_04_ORFICHE" Schema="dbo" store:Type="Tables" />
@@ -888,7 +905,8 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_Cari_HDurum_006' does not have a 
     [JSrG_GenelCari_006_04].[SONFATURATARIHI] AS [SONFATURATARIHI], 
     [JSrG_GenelCari_006_04].[FATURASAYISI] AS [FATURASAYISI], 
     [JSrG_GenelCari_006_04].[YILLIKSATISTUTARI] AS [YILLIKSATISTUTARI], 
-    [JSrG_GenelCari_006_04].[ACIKRISK] AS [ACIKRISK]
+    [JSrG_GenelCari_006_04].[ACIKRISK] AS [ACIKRISK], 
+    [JSrG_GenelCari_006_04].[ADDDATE] AS [ADDDATE]
     FROM [dbo].[JSrG_GenelCari_006_04] AS [JSrG_GenelCari_006_04]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="XX_SRG_Cari_HDurum_006" EntityType="Self.XX_SRG_Cari_HDurum_006" store:Type="Views" store:Schema="dbo">
@@ -910,6 +928,19 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_Cari_HDurum_006' does not have a 
     [XX_SRG_Cari_HDurum_006].[ORTVade] AS [ORTVade], 
     [XX_SRG_Cari_HDurum_006].[Vade_Gunu] AS [Vade_Gunu]
     FROM [dbo].[XX_SRG_Cari_HDurum_006] AS [XX_SRG_Cari_HDurum_006]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="XX_SRG_CLFGenel_006" EntityType="Self.XX_SRG_CLFGenel_006" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [XX_SRG_CLFGenel_006].[CariSatici] AS [CariSatici], 
+    [XX_SRG_CLFGenel_006].[Nakit] AS [Nakit], 
+    [XX_SRG_CLFGenel_006].[Cek] AS [Cek], 
+    [XX_SRG_CLFGenel_006].[Senet] AS [Senet], 
+    [XX_SRG_CLFGenel_006].[KK] AS [KK], 
+    [XX_SRG_CLFGenel_006].[Havale] AS [Havale], 
+    [XX_SRG_CLFGenel_006].[Dekont] AS [Dekont], 
+    [XX_SRG_CLFGenel_006].[PlasiyerCarisi] AS [PlasiyerCarisi], 
+    [XX_SRG_CLFGenel_006].[PlasiyerBakiyesi] AS [PlasiyerBakiyesi]
+    FROM [dbo].[XX_SRG_CLFGenel_006] AS [XX_SRG_CLFGenel_006]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -956,7 +987,7 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_Cari_HDurum_006' does not have a 
           <Property Name="ORAN" Type="Decimal" Precision="18" Scale="3" />
           <Property Name="INDORAN" Type="Decimal" Precision="18" Scale="3" />
           <Property Name="OnerilenFiyat" Type="Decimal" Nullable="false" Precision="38" Scale="6" />
-          <Property Name="TabanFiyat" Type="Decimal" Nullable="false" Precision="38" Scale="6" />
+          <Property Name="TabanFiyat" Type="Decimal" Nullable="false" Precision="37" Scale="6" />
           <Property Name="ALTORAN" Type="Decimal" Precision="18" Scale="3" />
         </EntityType>
         <EntityType Name="C_INT_CARIONEKRAN_006">
@@ -1061,6 +1092,7 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_Cari_HDurum_006' does not have a 
           <EntitySet Name="JSrG_GenelCari_006_04" EntityType="LKSDBModel.JSrG_GenelCari_006_04" />
           <EntitySet Name="JSRG_CEK_SENET_DURUM" EntityType="LKSDBModel.JSRG_CEK_SENET_DURUM" />
           <EntitySet Name="LG_006_ITEMS" EntityType="LKSDBModel.LG_006_ITEMS" />
+          <EntitySet Name="XX_SRG_CLFGenel_006" EntityType="LKSDBModel.XX_SRG_CLFGenel_006" />
         </EntityContainer>
         <EntityType Name="XX_SRG_Cari_HDurum_006">
           <Key>
@@ -1430,6 +1462,7 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_Cari_HDurum_006' does not have a 
           <Property Name="FATURASAYISI" Type="Int32" Nullable="false" />
           <Property Name="YILLIKSATISTUTARI" Type="Double" Nullable="false" />
           <Property Name="ACIKRISK" Type="Double" Nullable="false" />
+          <Property Name="ADDDATE" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="JSRG_CEK_SENET_DURUM">
           <Key>
@@ -1599,6 +1632,20 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_Cari_HDurum_006' does not have a 
           <Property Name="EXIMTAX3" Type="Double" />
           <Property Name="EXIMTAX4" Type="Double" />
           <Property Name="EXIMTAX5" Type="Double" />
+        </EntityType>
+        <EntityType Name="XX_SRG_CLFGenel_006">
+          <Key>
+            <PropertyRef Name="PlasiyerBakiyesi" />
+          </Key>
+          <Property Name="CariSatici" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="Nakit" Type="Double" />
+          <Property Name="Cek" Type="Double" />
+          <Property Name="Senet" Type="Double" />
+          <Property Name="KK" Type="Double" />
+          <Property Name="Havale" Type="Double" />
+          <Property Name="Dekont" Type="Double" />
+          <Property Name="PlasiyerCarisi" Type="Int32" />
+          <Property Name="PlasiyerBakiyesi" Type="Double" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2058,6 +2105,7 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_Cari_HDurum_006' does not have a 
           <EntitySetMapping Name="JSrG_GenelCari_006_04">
             <EntityTypeMapping TypeName="LKSDBModel.JSrG_GenelCari_006_04">
               <MappingFragment StoreEntitySet="JSrG_GenelCari_006_04">
+                <ScalarProperty Name="ADDDATE" ColumnName="ADDDATE" />
                 <ScalarProperty Name="ACIKRISK" ColumnName="ACIKRISK" />
                 <ScalarProperty Name="YILLIKSATISTUTARI" ColumnName="YILLIKSATISTUTARI" />
                 <ScalarProperty Name="FATURASAYISI" ColumnName="FATURASAYISI" />
@@ -2246,6 +2294,21 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_Cari_HDurum_006' does not have a 
                 <ScalarProperty Name="CARDTYPE" ColumnName="CARDTYPE" />
                 <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
                 <ScalarProperty Name="LOGICALREF" ColumnName="LOGICALREF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="XX_SRG_CLFGenel_006">
+            <EntityTypeMapping TypeName="LKSDBModel.XX_SRG_CLFGenel_006">
+              <MappingFragment StoreEntitySet="XX_SRG_CLFGenel_006">
+                <ScalarProperty Name="PlasiyerBakiyesi" ColumnName="PlasiyerBakiyesi" />
+                <ScalarProperty Name="PlasiyerCarisi" ColumnName="PlasiyerCarisi" />
+                <ScalarProperty Name="Dekont" ColumnName="Dekont" />
+                <ScalarProperty Name="Havale" ColumnName="Havale" />
+                <ScalarProperty Name="KK" ColumnName="KK" />
+                <ScalarProperty Name="Senet" ColumnName="Senet" />
+                <ScalarProperty Name="Cek" ColumnName="Cek" />
+                <ScalarProperty Name="Nakit" ColumnName="Nakit" />
+                <ScalarProperty Name="CariSatici" ColumnName="CariSatici" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

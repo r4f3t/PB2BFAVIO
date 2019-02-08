@@ -7,10 +7,13 @@
     .yazi{
         font-size:9pt;
     }
+    .renk {
+        background-color: #AB1313;
+    }
 </style>
 <a href="@Url.Action("PlasiyerIndex","Plasiyer",new { @direktAc="1" })">
     <div class="col-md-3 ">
-        <div class="r3_counter_box" style="background-color:red; border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
+        <div class="r3_counter_box renk" style="border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
             <i class="pull-left fa fa-bullhorn icon-rounded" style="background-color:darkred;"></i>
             <div class="stats">
                 <h5><strong class="text-white yazi">@Model.LOGICALREF</strong></h5>
@@ -21,7 +24,7 @@
 </a>
 <a href="#">
     <div class="col-md-3">
-        <div class="r3_counter_box" style="background-color:red; border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white; ">
+        <div class="r3_counter_box renk" style=" border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white; ">
             <i class="pull-left fa fa-turkish-lira icon-rounded" style="background-color:darkred;"></i>
             <div class="stats">
                 <h5><strong class="text-white yazi">@Convert.ToDecimal(Model.Bakiye).ToString("N") TL</strong></h5>
@@ -32,7 +35,7 @@
 </a>
 <a href="@Url.Action("CekSenetLine","Plasiyer")">
     <div class="col-md-3 ">
-        <div class="r3_counter_box" style="background-color:red; border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
+        <div class="r3_counter_box renk" style=" border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
             <i class="pull-left fa fa-calendar icon-rounded" style="background-color:darkred;"></i>
             <div class="stats">
                 <h5><strong class="text-white yazi">@Convert.ToDecimal(Model.ACIKRISK).ToString("N") TL</strong></h5>
@@ -43,7 +46,7 @@
 </a>
 <a href="#">
     <div class="col-md-3 ">
-        <div class="r3_counter_box" style="background-color:red; border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
+        <div class="r3_counter_box renk" style=" border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
             <i class="pull-left fa fa-warning icon-rounded" style="background-color:darkred;"></i>
             <div class="stats">
                 @{var risk = (Model.Bakiye + Model.ACIKRISK);}
@@ -58,7 +61,7 @@
 
 <a href="#">
     <div class="col-md-3 ">
-        <div class="r3_counter_box" style="background-color:red; border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
+        <div class="r3_counter_box renk" style=" border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
             <i class="pull-left fa fa-bell icon-rounded" style="background-color:darkred;"></i>
             <div class="stats">
                 <h5><strong class="text-white yazi">@Convert.ToDecimal(Model.ONCEKIBAKIYE).ToString("N")</strong></h5>
@@ -67,9 +70,9 @@
         </div>
     </div>
 </a>
-<a href="@Url.Action("Faturalar","Plasiyer")">
+<a href="#">
     <div class="col-md-3 ">
-        <div class="r3_counter_box" style="background-color:red; border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
+        <div class="r3_counter_box renk" style="border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
             <i class="pull-left fa fa-briefcase icon-rounded" style="background-color:darkred;"></i>
             <div class="stats">
                 <h5><strong class="text-white yazi">@Convert.ToDecimal(Model.CIKISLAR).ToString("N") TL</strong></h5>
@@ -80,7 +83,7 @@
 </a>
 <a href="#">
     <div class="col-md-3 ">
-        <div class="r3_counter_box" style="background-color:red; border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
+        <div class="r3_counter_box renk" style=" border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
             <i class="pull-left fa fa-bullseye icon-rounded" style="background-color:darkred;"></i>
             <div class="stats">
                 <h5><strong class="text-white yazi">@Convert.ToDecimal(Model.GIRISLER).ToString("N") TL</strong></h5>
@@ -89,9 +92,9 @@
         </div>
     </div>
 </a>
-<a href="#">
+<a href="@Url.Action("Faturalar","Plasiyer")">
     <div class="col-md-3 ">
-        <div class="r3_counter_box" style="background-color:red; border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
+        <div class="r3_counter_box renk" style=" border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
             <i class="pull-left fa fa-star icon-rounded" style="background-color:darkred;"></i>
             <div class="stats">
                 <h5><strong class="text-white yazi">@Convert.ToDecimal(Model.YILLIKSATISTUTARI).ToString("N") TL</strong></h5>

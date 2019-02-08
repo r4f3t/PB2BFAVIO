@@ -31,5 +31,6 @@ namespace PB2B.Entity
         public int FATURASAYISI { get; set; }
         public double YILLIKSATISTUTARI { get; set; }
         public double ACIKRISK { get; set; }
+        public Nullable<System.DateTime> ADDDATE { get; set; }
     }
 }

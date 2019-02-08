@@ -3,17 +3,20 @@
     ViewBag.Title = "Siparisler";
     Layout = "~/Views/Shared/LTEMusteriMaster.cshtml";
 }
+<script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+<link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
 
 <div class="row">
     <div class="panel panel-primary">
         <div class="panel-heading">
-         Siparişlerim
+            Siparişlerim
         </div>
         <div class="panel-body">
 
-        
 
-            <table class="table table-hover">
+
+            <table id="tblUrunler" class="table table-hover">
                 <thead>
                     <tr style="background-color:red;">
                         <th><font color="white">Sipariş No</font></th>
@@ -30,17 +33,17 @@
                     @foreach (var item in Model)
                     {
 
-                    <tr>
-                        <td>@item.FICHENO</td>
-                        <td>@item.DATE_</td>
-                        <td>@item.CODE</td>
-                        <td>@item.NAME</td>
-                        <td style="text-align:right;">@Convert.ToDecimal(item.AMOUNT).ToString("N")</td>
-                        <td style="text-align:right;">@Convert.ToDecimal(item.Kalan).ToString("N")</td>
-                        <td style="text-align:right;">@Convert.ToDecimal(item.PRICE).ToString("N")</td>
-                        <td style="text-align:right;">@Convert.ToDecimal(item.TOTAL).ToString("N")</td>
-                        
-                    </tr>
+                        <tr>
+                            <td>@item.FICHENO</td>
+                            <td>@item.DATE_</td>
+                            <td>@item.CODE</td>
+                            <td>@item.NAME</td>
+                            <td style="text-align:right;">@Convert.ToDecimal(item.AMOUNT).ToString("N")</td>
+                            <td style="text-align:right;">@Convert.ToDecimal(item.Kalan).ToString("N")</td>
+                            <td style="text-align:right;">@Convert.ToDecimal(item.PRICE).ToString("N")</td>
+                            <td style="text-align:right;">@Convert.ToDecimal(item.TOTAL).ToString("N")</td>
+
+                        </tr>
 
                     }
 
@@ -55,6 +58,15 @@
             </script>
         </div>
     </div>
+    <script>
+        window.onload = new function () {
+            $('#tblUrunler').DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+                }
+            });
+        }
 
+    </script>
 </div>
 

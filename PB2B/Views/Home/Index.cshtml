@@ -3,6 +3,11 @@
 
                 Layout = null;
 }
+<style>
+    .txt-clr{
+        color:black;
+    }
+</style>
 <!DOCTYPE HTML>
 <html>
 
@@ -26,21 +31,23 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     <link href="~/web/css/custom.css" rel="stylesheet">
 </head>
 <body>
+    <br /><br /><br />
     <div id="page">
-        <div class="main-page login-page " style="width:500px;">
-            <div style="background-color:#E80405;" class="text-center"><img src="~/web/images/logo.jpg" width="228"></div>
+        <div class="main-page login-page " style="width:500px; border-bottom:2px solid #FB7117; ">
+            <div style="background-color:#fff; border-bottom:2px solid #AB1313; border-top:2px solid #AB1313; border-left:2px solid #AB1313; border-right:2px solid #AB1313;" class="text-center"><img src="~/web/images/logo.jpg" width="228"></div>
             <div class="widget-shadow">
-                <div class="login-body">
+                <div class="login-body " style="border-left:2px solid #FB7117; border-right:2px solid #FB7117; background-color:#FB7117;">
                     <form action="/" method="post" novalidate>
-                        <input type="email" class="user" name="Adi" placeholder="Kullancı Adı">
-                        <input type="password" name="Sifresi" class="lock" placeholder="Şifre">
+                        <input type="email" class="user txt-clr" name="Adi" placeholder="Kullancı Adı">
+                        <input type="password" name="Sifresi" class="lock txt-clr" placeholder="Şifre">
                         <div class="forgot-grid">
-                            <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Beni Hatırla</label>
+                            <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i><font color="black">Beni Hatırla</font></label>
                             <div class="clearfix"> </div>
                         </div>
-                        <input type="submit" name="Sign In" style="background:#E80405" value="Giriş Yap">
+                        <input type="submit" name="Sign In" style="background:#AB1313" value="Giriş Yap">
                     </form>
                 </div>
+
             </div>
 
         </div>

@@ -1,0 +1,51 @@
+﻿
+<script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+<link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+
+<table id="tblUrunler" class="table table-hover table-responsive">
+    <thead>
+        <tr style="background-color:#AB1313;">
+            <th><font color="white">Ürün Kodu</font></th>
+            <th><font color="white">Açıklama</font></th>
+            <th><font color="white">Marka</font></th>
+            <th><font color="white">Model</font></th>
+            <th><font color="white">Stok</font></th>
+            <th><font color="white">Liste Fiyati</font></th>
+         
+        </tr>
+    </thead>
+    <tbody>
+
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+
+                <tr>
+                    <td>@item.URUNKODU</td>
+                    <td>@item.URUNADI</td>
+                    <td>@item.MARKA</td>
+                    <td>@item.MODEL</td>
+                    <td>@item.BAKIYE</td>
+                    <td class="text-right">@Convert.ToDecimal(item.ListeFiyati).ToString("N")</td>
+                    
+
+                </tr>
+
+            }
+        }
+    </tbody>
+</table>
+
+
+<script>
+    window.onload = new function () {
+        $('#tblUrunler').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+            }
+        });
+    }
+
+</script>
