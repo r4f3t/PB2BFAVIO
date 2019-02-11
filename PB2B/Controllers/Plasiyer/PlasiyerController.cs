@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PB2B.classes;
 using PB2B.Entity;
+using PB2B.Models;
+using Dapper;
 namespace PB2B.Controllers.Plasiyer
 {
     [LoginAuthorize]
     public class PlasiyerController : Controller
     {
         LKSDBEntities1 tDb = new LKSDBEntities1();
+        IDbConnection dDbLKSDB = baglanti.DapperConnection();
         // GET: Plasiyer
         public ActionResult Index()
         {
@@ -21,7 +25,7 @@ namespace PB2B.Controllers.Plasiyer
         {
             List<C_INT_CARIONEKRAN_006> _list = new List<C_INT_CARIONEKRAN_006>();
             var model = tDb.C_INT_CARIONEKRAN_006.AsQueryable();
-            if (Session["SATICI"].ToString() != "HEPSİ")
+            if (Session["SATICI"].ToString() != "Hepsi")
             {
                 string clientref = Session["SATICI"].ToString();
                 model = model.Where(x => x.SATICI == clientref);
@@ -34,19 +38,19 @@ namespace PB2B.Controllers.Plasiyer
         }
 
         [HttpPost]
-        public ActionResult PlasiyerIndex(string searchParam, string isSepet, string isBakiyeli)
+        public ActionResult PlasiyerIndex(string searchParam, string CMBSearch)
         {
             var model = tDb.C_INT_CARIONEKRAN_006.AsQueryable();
-            if (Session["SATICI"].ToString() != "HEPSİ")
+            if (Session["SATICI"].ToString() != "Hepsi")
             {
                 string clientref = Session["SATICI"].ToString();
                 model = model.Where(x => x.SATICI ==clientref );
             }
-            if (isSepet == "on")
+            if (CMBSearch == "Sepet Aktif")
             {
 
             }
-            if (isBakiyeli == "on")
+            if (CMBSearch == "Bakiyeli")
             {
                 model = model.Where(x => x.Bakiye > 10);
             }
@@ -65,6 +69,7 @@ namespace PB2B.Controllers.Plasiyer
                 Session["Firma_Bilgisi"] = model.Firma_Bilgisi;
                 Session["CODE"] = model.KODU;
                 Session["CLIENTREF"] = model.LOGREF;
+                Session["CARIISK"] = (String.IsNullOrEmpty(model.CARIISK))?"0":model.CARIISK;
                 return RedirectToAction("Index", "Musteri");
             }
             return RedirectToAction("Index");
@@ -79,7 +84,7 @@ namespace PB2B.Controllers.Plasiyer
         [HttpPost]
         public ActionResult PlasiyerRaporlari(string plasiyer)
         {
-
+         
             ViewData["Plasiyer"] = plasiyer;
             return View();
         }
@@ -95,6 +100,11 @@ namespace PB2B.Controllers.Plasiyer
             }else if (!String.IsNullOrEmpty(Plasiyer) && Plasiyer!="Hepsi")
             {
                 query = tDb.JSrG_GenelCari_006_04.Where(x => x.Plasiyer == Plasiyer);
+                Session["SATICI"] = Plasiyer;
+            }
+            else if(Plasiyer=="Hepsi")
+            {
+                Session["SATICI"] = Plasiyer;
             }
           
             var model = new JSrG_GenelCari_006_04();
@@ -107,9 +117,9 @@ namespace PB2B.Controllers.Plasiyer
             model.SONFATURATARIHI = query.Max(x => x.SONFATURATARIHI);
             model.SONTAHSILATTARIHI = query.Max(x => x.SONTAHSILATTARIHI);
             model.YILLIKSATISTUTARI = query.Sum(x => x.YILLIKSATISTUTARI);
-            model.Plasiyer = Plasiyer;
+            model.Plasiyer = Session["SATICI"].ToString();
             model.LOGICALREF = query.Count();
-            Session["SATICI"] = Plasiyer;
+          
             
             return View(model);
         }
@@ -188,7 +198,16 @@ namespace PB2B.Controllers.Plasiyer
             }
             return View(model);
         }
-
+        public PartialViewResult CariExtrePartial(string clientref)
+        {
+            List<CARIEXTRE> list = new List<CARIEXTRE>();
+            using (dDbLKSDB)
+            {
+                string CLIENTREF =clientref;
+                list = dDbLKSDB.Query<CARIEXTRE>("SELECT *, (SELECT SUM(b.TTUTAR)AS BAKIYE FROM ISRG_Hesap_Extresi_" + baglanti.GFirma + "_" + baglanti.GDonem + " AS b Where b.rank<=K.rank AND CLIENTREF=" + CLIENTREF + ")AS BAKIYE  FROM(select rank,LOGICALREF,CLIENTREF,ISLEMTARIHI,ISLEMTURU,TRANNO,SOURCEFREF, (CASE WHEN BORC_ALACAK=0 THEN TUTAR ELSE 0 END) AS ALACAK,(CASE WHEN BORC_ALACAK=1 THEN TUTAR ELSE 0 END) AS BORC,VADE,LEFT(ISLEMACIKLAMASI,20) AS ISLEMACIKLAMASI from ISRG_Hesap_Extresi_" + baglanti.GFirma + "_" + baglanti.GDonem + " Where CLIENTREF=" + CLIENTREF + " ) AS K ORDER BY rank,TRANNO").ToList();
+            }
+            return PartialView(list);
+        }
 
     }
 }

@@ -6,6 +6,7 @@
     <div class="row" style="">
         <h4>@Model.NAME <small>@Model.CODE</small></h4>
         <input type="hidden" name="NAME" value="@Model.NAME" />
+        <input type="hidden" name="ITEMREF" value="@Model.ITEMREF" />
         <input type="hidden" name="CODE" value="@Model.CODE" />
     </div>
     <div class="row">
@@ -22,7 +23,7 @@
                 <input type="text" readonly id="txtiskFiyat" name="OnerilenFiyat" value='@Model.OnerilenFiyat' class="form-control" />
             </div>
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-2"style="display:none;">
             <div class="form-group">
                 <label>İsk.%</label>
                 <input type="number" id="txtIskOran" name="INDORAN" onchange="iskHesap()" onkeyup="iskHesap()" value="@Model.INDORAN.ToString().Replace(",", ".")" class="form-control" />

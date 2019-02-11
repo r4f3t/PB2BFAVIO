@@ -426,6 +426,37 @@ warning 6002: The table/view 'LKSDB.dbo.LG_006_04_ORFLINESEQ' does not have a pr
           <Property Name="EXIMTAX4" Type="float" />
           <Property Name="EXIMTAX5" Type="float" />
         </EntityType>
+        <EntityType Name="LG_SLSMAN">
+          <Key>
+            <PropertyRef Name="LOGICALREF" />
+          </Key>
+          <Property Name="LOGICALREF" Type="int" Nullable="false" />
+          <Property Name="CODE" Type="varchar" MaxLength="25" />
+          <Property Name="DEFINITION_" Type="varchar" MaxLength="51" />
+          <Property Name="CARDTYPE" Type="smallint" />
+          <Property Name="SPECODE" Type="varchar" MaxLength="11" />
+          <Property Name="CYPHCODE" Type="varchar" MaxLength="11" />
+          <Property Name="POSITION_" Type="varchar" MaxLength="11" />
+          <Property Name="CAPIBLOCK_CREATEDBY" Type="smallint" />
+          <Property Name="CAPIBLOCK_CREADEDDATE" Type="datetime" />
+          <Property Name="CAPIBLOCK_CREATEDHOUR" Type="smallint" />
+          <Property Name="CAPIBLOCK_CREATEDMIN" Type="smallint" />
+          <Property Name="CAPIBLOCK_CREATEDSEC" Type="smallint" />
+          <Property Name="CAPIBLOCK_MODIFIEDBY" Type="smallint" />
+          <Property Name="CAPIBLOCK_MODIFIEDDATE" Type="datetime" />
+          <Property Name="CAPIBLOCK_MODIFIEDHOUR" Type="smallint" />
+          <Property Name="CAPIBLOCK_MODIFIEDMIN" Type="smallint" />
+          <Property Name="CAPIBLOCK_MODIFIEDSEC" Type="smallint" />
+          <Property Name="ACTIVE" Type="smallint" />
+          <Property Name="SITEID" Type="int" />
+          <Property Name="ORGLOGICREF" Type="int" />
+          <Property Name="USERID" Type="smallint" />
+          <Property Name="DEPTID" Type="smallint" />
+          <Property Name="DIVISID" Type="smallint" />
+          <Property Name="FIRMNR" Type="smallint" />
+          <Property Name="RECSTATUS" Type="smallint" />
+          <Property Name="TYP" Type="smallint" />
+        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'LKSDB.dbo.A_MNTL_STOK_2018' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="A_MNTL_STOK_2018">
@@ -498,6 +529,7 @@ warning 6002: The table/view 'LKSDB.dbo.C_INT_CARIONEKRAN_006' does not have a p
           <Property Name="RiskLimiti" Type="float" Nullable="false" />
           <Property Name="OKoD" Type="varchar" MaxLength="11" />
           <Property Name="LOGOID" Type="varchar" MaxLength="25" />
+          <Property Name="CARIISK" Type="varchar" MaxLength="11" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'LKSDB.dbo.I_SRG_EKSIKSIPARISLER_006_04' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -717,6 +749,7 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_CLFGenel_006' does not have a pri
           <EntitySet Name="LG_006_04_ORFICHE" EntityType="Self.LG_006_04_ORFICHE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LG_006_04_ORFLINE" EntityType="Self.LG_006_04_ORFLINE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LG_006_ITEMS" EntityType="Self.LG_006_ITEMS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LG_SLSMAN" EntityType="Self.LG_SLSMAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LG_006_04_ORFICHESEQ" EntityType="Self.LG_006_04_ORFICHESEQ" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [LG_006_04_ORFICHESEQ].[ID] AS [ID], 
@@ -775,7 +808,8 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_CLFGenel_006' does not have a pri
     [C_INT_CARIONEKRAN_006].[LOGREF] AS [LOGREF], 
     [C_INT_CARIONEKRAN_006].[RiskLimiti] AS [RiskLimiti], 
     [C_INT_CARIONEKRAN_006].[OKoD] AS [OKoD], 
-    [C_INT_CARIONEKRAN_006].[LOGOID] AS [LOGOID]
+    [C_INT_CARIONEKRAN_006].[LOGOID] AS [LOGOID], 
+    [C_INT_CARIONEKRAN_006].[CARIISK] AS [CARIISK]
     FROM [dbo].[C_INT_CARIONEKRAN_006] AS [C_INT_CARIONEKRAN_006]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="I_SRG_EKSIKSIPARISLER_006_04" EntityType="Self.I_SRG_EKSIKSIPARISLER_006_04" store:Type="Views" store:Schema="dbo">
@@ -1016,6 +1050,7 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_CLFGenel_006' does not have a pri
           <Property Name="OKoD" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
           <Property Name="LOGOID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="SATICI" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="CARIISK" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="ISRG_FaturaDetaY_006">
           <Key>
@@ -1093,6 +1128,7 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_CLFGenel_006' does not have a pri
           <EntitySet Name="JSRG_CEK_SENET_DURUM" EntityType="LKSDBModel.JSRG_CEK_SENET_DURUM" />
           <EntitySet Name="LG_006_ITEMS" EntityType="LKSDBModel.LG_006_ITEMS" />
           <EntitySet Name="XX_SRG_CLFGenel_006" EntityType="LKSDBModel.XX_SRG_CLFGenel_006" />
+          <EntitySet Name="LG_SLSMAN" EntityType="LKSDBModel.LG_SLSMAN" />
         </EntityContainer>
         <EntityType Name="XX_SRG_Cari_HDurum_006">
           <Key>
@@ -1647,6 +1683,37 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_CLFGenel_006' does not have a pri
           <Property Name="PlasiyerCarisi" Type="Int32" />
           <Property Name="PlasiyerBakiyesi" Type="Double" Nullable="false" />
         </EntityType>
+        <EntityType Name="LG_SLSMAN">
+          <Key>
+            <PropertyRef Name="LOGICALREF" />
+          </Key>
+          <Property Name="LOGICALREF" Type="Int32" Nullable="false" />
+          <Property Name="CODE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="DEFINITION_" Type="String" MaxLength="51" FixedLength="false" Unicode="false" />
+          <Property Name="CARDTYPE" Type="Int16" />
+          <Property Name="SPECODE" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="CYPHCODE" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="POSITION_" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="CAPIBLOCK_CREATEDBY" Type="Int16" />
+          <Property Name="CAPIBLOCK_CREADEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CAPIBLOCK_CREATEDHOUR" Type="Int16" />
+          <Property Name="CAPIBLOCK_CREATEDMIN" Type="Int16" />
+          <Property Name="CAPIBLOCK_CREATEDSEC" Type="Int16" />
+          <Property Name="CAPIBLOCK_MODIFIEDBY" Type="Int16" />
+          <Property Name="CAPIBLOCK_MODIFIEDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CAPIBLOCK_MODIFIEDHOUR" Type="Int16" />
+          <Property Name="CAPIBLOCK_MODIFIEDMIN" Type="Int16" />
+          <Property Name="CAPIBLOCK_MODIFIEDSEC" Type="Int16" />
+          <Property Name="ACTIVE" Type="Int16" />
+          <Property Name="SITEID" Type="Int32" />
+          <Property Name="ORGLOGICREF" Type="Int32" />
+          <Property Name="USERID" Type="Int16" />
+          <Property Name="DEPTID" Type="Int16" />
+          <Property Name="DIVISID" Type="Int16" />
+          <Property Name="FIRMNR" Type="Int16" />
+          <Property Name="RECSTATUS" Type="Int16" />
+          <Property Name="TYP" Type="Int16" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1688,6 +1755,7 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_CLFGenel_006' does not have a pri
           <EntitySetMapping Name="C_INT_CARIONEKRAN_006">
             <EntityTypeMapping TypeName="LKSDBModel.C_INT_CARIONEKRAN_006">
               <MappingFragment StoreEntitySet="C_INT_CARIONEKRAN_006">
+                <ScalarProperty Name="CARIISK" ColumnName="CARIISK" />
                 <ScalarProperty Name="SATICI" ColumnName="SATICI" />
                 <ScalarProperty Name="GECIKEN" ColumnName="GECIKEN" />
                 <ScalarProperty Name="GecikenDurum" ColumnName="GecikenDurum" />
@@ -2309,6 +2377,38 @@ warning 6002: The table/view 'LKSDB.dbo.XX_SRG_CLFGenel_006' does not have a pri
                 <ScalarProperty Name="Cek" ColumnName="Cek" />
                 <ScalarProperty Name="Nakit" ColumnName="Nakit" />
                 <ScalarProperty Name="CariSatici" ColumnName="CariSatici" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LG_SLSMAN">
+            <EntityTypeMapping TypeName="LKSDBModel.LG_SLSMAN">
+              <MappingFragment StoreEntitySet="LG_SLSMAN">
+                <ScalarProperty Name="TYP" ColumnName="TYP" />
+                <ScalarProperty Name="RECSTATUS" ColumnName="RECSTATUS" />
+                <ScalarProperty Name="FIRMNR" ColumnName="FIRMNR" />
+                <ScalarProperty Name="DIVISID" ColumnName="DIVISID" />
+                <ScalarProperty Name="DEPTID" ColumnName="DEPTID" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="ORGLOGICREF" ColumnName="ORGLOGICREF" />
+                <ScalarProperty Name="SITEID" ColumnName="SITEID" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="CAPIBLOCK_MODIFIEDSEC" ColumnName="CAPIBLOCK_MODIFIEDSEC" />
+                <ScalarProperty Name="CAPIBLOCK_MODIFIEDMIN" ColumnName="CAPIBLOCK_MODIFIEDMIN" />
+                <ScalarProperty Name="CAPIBLOCK_MODIFIEDHOUR" ColumnName="CAPIBLOCK_MODIFIEDHOUR" />
+                <ScalarProperty Name="CAPIBLOCK_MODIFIEDDATE" ColumnName="CAPIBLOCK_MODIFIEDDATE" />
+                <ScalarProperty Name="CAPIBLOCK_MODIFIEDBY" ColumnName="CAPIBLOCK_MODIFIEDBY" />
+                <ScalarProperty Name="CAPIBLOCK_CREATEDSEC" ColumnName="CAPIBLOCK_CREATEDSEC" />
+                <ScalarProperty Name="CAPIBLOCK_CREATEDMIN" ColumnName="CAPIBLOCK_CREATEDMIN" />
+                <ScalarProperty Name="CAPIBLOCK_CREATEDHOUR" ColumnName="CAPIBLOCK_CREATEDHOUR" />
+                <ScalarProperty Name="CAPIBLOCK_CREADEDDATE" ColumnName="CAPIBLOCK_CREADEDDATE" />
+                <ScalarProperty Name="CAPIBLOCK_CREATEDBY" ColumnName="CAPIBLOCK_CREATEDBY" />
+                <ScalarProperty Name="POSITION_" ColumnName="POSITION_" />
+                <ScalarProperty Name="CYPHCODE" ColumnName="CYPHCODE" />
+                <ScalarProperty Name="SPECODE" ColumnName="SPECODE" />
+                <ScalarProperty Name="CARDTYPE" ColumnName="CARDTYPE" />
+                <ScalarProperty Name="DEFINITION_" ColumnName="DEFINITION_" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="LOGICALREF" ColumnName="LOGICALREF" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

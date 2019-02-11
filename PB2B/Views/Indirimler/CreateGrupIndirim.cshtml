@@ -5,7 +5,16 @@
     Layout = "~/Views/Shared/LTEAdminMaster.cshtml";
 }
 
+@{
 
+    PB2B.Entity.LKSDBEntities1 lDb = new PB2B.Entity.LKSDBEntities1();
+    PB2B.Models.MARKAMODELClass viewModel = new PB2B.Models.MARKAMODELClass()
+    {
+        markalars = lDb.A_MNTL_STOK_2018.GroupBy(x => x.MARKA).OrderBy(x => x.Key).Select(x => x.Key).ToList(),
+        modellers = lDb.A_MNTL_STOK_2018.GroupBy(x => x.MODEL).OrderBy(x => x.Key).Select(x => x.Key).ToList()
+    };
+
+}
 
 @using (Html.BeginForm())
 {
@@ -18,7 +27,7 @@
             </div>
             <div class="panel-body ">
                 <div style="text-align:left;">
-                    
+
                     <hr />
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div class="form-group">
@@ -32,16 +41,25 @@
                     <div class="form-group">
                         <label class="control-label col-md-2" for="Sart1">Şart1(GrupKod)</label>
                         <div class="col-md-4">
-                            @Html.EditorFor(model => model.COND1, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.COND1, "", new { @class = "text-danger" })
+                            <select name="COND1" class="form-control">
+                                @foreach (var item in viewModel.markalars)
+                                {
+                                    <option value="@item">@item</option>
+                                }
+                            </select>
+                        
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label col-md-2" for="Sart2">Şart2(Özelkod)</label>
                         <div class="col-md-4">
-                            @Html.EditorFor(model => model.COND2, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.COND2, "", new { @class = "text-danger" })
+                            <select name="COND2" class="form-control">
+                                @foreach (var item in viewModel.markalars)
+                                {
+                                    <option value="@item">@item</option>
+                                }
+                            </select>
                         </div>
                     </div>
 

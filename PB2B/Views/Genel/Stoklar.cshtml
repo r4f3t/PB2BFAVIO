@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PB2B.Entity.A_MNTL_STOK_2018>
+﻿@model PB2B.Models.MARKAMODELClass
 
 @{
     ViewBag.Title = "Stoklar";
@@ -13,9 +13,27 @@
     <div class="panel-body">
         <div class="row">
             <div class="col-lg-3">
+                <label></label>
                 <input type="text" name="searchparams" placeholder="Ürün Adı,Kodu,Özel Kodlar" id="TXTSearch" class="form-control" />
             </div>
-
+            <div class="col-lg-3">
+                <label>Marka</label>
+                <select id="CMBMarka" class="form-control">
+                    @foreach (var item in Model.markalars)
+                    {
+                        <option value="@item">@item</option>
+                    }
+                </select>
+            </div>
+            <div class="col-lg-3">
+                <label>Grup</label>
+                <select id="CMBModel" class="form-control">
+                    @foreach (var item in Model.modellers)
+                    {
+                        <option value="@item">@item</option>
+                    }
+                </select>
+            </div>
             <div class="col-lg-1">
                 <button class="btn btn-primary" onclick="UrunGetir()">
                     Ara
@@ -29,11 +47,12 @@
         <script>
           function UrunGetir() {
               var searchParam = $("#TXTSearch").val();
-
-              //alert(marka);
+              var CMBMARKA = $('#CMBMarka').val();
+              var CMBModel = $('#CMBModel').val();
+             // alert(CMBMARKA);
               var url = "@Url.Action("StokListPartial","Genel")";
               $("#LBLProgress").show();
-              $("#partialTable").load(url + "?searchParams=" + searchParam + "", function () {
+              $("#partialTable").load(url + "?searchParams=" + searchParam + "&marka=" + CMBMARKA + "&modell=" + CMBModel + "", function () {
                   $("#LBLProgress").hide();
               });
           }

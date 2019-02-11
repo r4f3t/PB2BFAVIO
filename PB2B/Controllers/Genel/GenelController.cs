@@ -1,5 +1,6 @@
 ﻿using PB2B.classes;
 using PB2B.Entity;
+using PB2B.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,15 +26,31 @@ namespace PB2B.Controllers.Genel
             {
                 ViewBag.MasterGenel = "~/Views/Shared/LTEAdminMASTER.cshtml";
             }
+            MARKAMODELClass viewModel = new MARKAMODELClass() {
+                markalars = lDb.A_MNTL_STOK_2018.GroupBy(x => x.MARKA).OrderBy(x=>x.Key).Select(x=>x.Key).ToList(),
+                modellers = lDb.A_MNTL_STOK_2018.GroupBy(x => x.MODEL).OrderBy(x => x.Key).Select(x => x.Key).ToList()
+            };
 
-            return View();
+            return View(viewModel);
         }
 
-        public PartialViewResult StoklistPartial(string searchParams)
+        public PartialViewResult StoklistPartial(string searchParams,string marka,string modell)
         {
-            List<A_MNTL_STOK_2018> model = lDb.A_MNTL_STOK_2018.Where(x => (x.URUNADI + x.URUNKODU + x.MARKA).Replace(" ", "").
-            Contains(searchParams.Replace(" ", ""))).ToList();
-            return PartialView(model);
+            var model = lDb.A_MNTL_STOK_2018.AsQueryable();
+            if (searchParams!="")
+            {
+                model=model.Where(x => (x.URUNADI + x.URUNKODU + x.MARKA).Replace(" ", "").
+            Contains(searchParams.Replace(" ", "")));
+            }
+            if (!String.IsNullOrEmpty(marka))
+            {
+                model = model.Where(x=>x.MARKA==marka);
+            }
+            if (!String.IsNullOrEmpty(modell))
+            {
+                model = model.Where(x=>x.MODEL==modell);
+            }
+            return PartialView(model.ToList());
         }
 
         public ActionResult Cariler()
@@ -92,7 +109,7 @@ namespace PB2B.Controllers.Genel
         {
             string SATICI = Session["SATICI"].ToString();
             var query = lDb.XX_SRG_CLFGenel_006.AsQueryable();
-            if (SATICI != "HEPSI" && SATICI!="")
+            if (SATICI != "Hepsi" && SATICI!="")
             {
                 query = lDb.XX_SRG_CLFGenel_006.Where(x => x.CariSatici == SATICI);
             }

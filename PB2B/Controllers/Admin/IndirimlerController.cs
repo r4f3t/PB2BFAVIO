@@ -10,6 +10,7 @@ namespace PB2B.Controllers.Admin
 {
     public class IndirimlerController : Controller
     {
+
         LOGOKAMPEntities1 db = new LOGOKAMPEntities1();
         // GET: Indirimler
         public ActionResult Index()
@@ -27,12 +28,16 @@ namespace PB2B.Controllers.Admin
 
         public ActionResult CreateGrupIndirim()
         {
+
             return View();
         }
 
         [HttpPost]
         public ActionResult CreateGrupIndirim(IND_COND _model)
         {
+            _model.ORAN = 1 +( _model.ORAN / 100);
+            _model.ALTORAN = 1 + (_model.ALTORAN / 100);
+            _model.INDORAN = 1 + (_model.INDORAN / 100);
             db.IND_COND.AddOrUpdate(_model);
             db.SaveChanges();
             return RedirectToAction("GrupIndirimList");

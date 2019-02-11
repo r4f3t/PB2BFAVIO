@@ -175,6 +175,7 @@
     <Compile Include="classes\baglanti.cs" />
     <Compile Include="classes\GLOBALS.cs" />
     <Compile Include="classes\LoginAuthorize.cs" />
+    <Compile Include="classes\PMail.cs" />
     <Compile Include="classes\UserAuthorize.cs" />
     <Compile Include="Controllers\Admin\AdminController.cs" />
     <Compile Include="Controllers\Admin\IndirimlerController.cs" />
@@ -192,6 +193,9 @@
       <DependentUpon>LKSDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\LG_006_ITEMS.cs">
+      <DependentUpon>LKSDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\LG_SLSMAN.cs">
       <DependentUpon>LKSDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\XX_SRG_CLFGenel_006.cs">
@@ -286,6 +290,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CARIEXTRE.cs" />
+    <Compile Include="Models\MARKALAR.cs" />
+    <Compile Include="Models\MARKAMODELClass.cs" />
+    <Compile Include="Models\MODELLER.cs" />
     <Compile Include="Models\URUNGEC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -734,6 +741,7 @@
     <Content Include="Views\Genel\Cariler.cshtml" />
     <Content Include="Views\Genel\Plasiyerler.cshtml" />
     <Content Include="Views\Genel\PlasiyerlistPartial.cshtml" />
+    <Content Include="Views\Plasiyer\CariExtrePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

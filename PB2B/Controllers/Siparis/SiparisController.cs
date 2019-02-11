@@ -41,6 +41,7 @@ namespace PB2B.Controllers.Siparis
         public PartialViewResult SiparisUrunGec(string itemref)
         {
             var model = lDb.A_MNTL_STOK_2018.Where(x => x.LOGICALREF.ToString() == itemref).SingleOrDefault();
+            double CARIISK = Convert.ToDouble(Session["CARIISK"].ToString());
             URUNGEC urungec = new URUNGEC();
             if (model != null)
             {
@@ -50,11 +51,11 @@ namespace PB2B.Controllers.Siparis
                     NAME = model.URUNADI,
                     CODE = model.URUNKODU,
                     ListeFiyati = model.ListeFiyati.ToString("N"),
-                    OnerilenFiyat = model.OnerilenFiyat.ToString("N"),
+                    OnerilenFiyat =Convert.ToDecimal(Convert.ToDouble(model.ListeFiyati)*(1-(CARIISK/100))).ToString("N"),
                     ORAN = model.ORAN.ToString(),
                     INDORAN = ((1 - model.INDORAN) * 100).ToString(),
                     ALTORAN= ((1 - model.ALTORAN) * 100).ToString(),
-                    TabanFiyat = model.TabanFiyat.ToString("N")
+                    TabanFiyat = model.Maliyet
                 };
             }
             return PartialView(urungec);
@@ -69,11 +70,12 @@ namespace PB2B.Controllers.Siparis
                 PRICE = Convert.ToDecimal(_urungec.SONFIYAT.Replace(".",",")),
                 MIKINDORAN = Convert.ToDecimal(_urungec.INDORAN.Replace(".", ",")),
                 SATIRTUTARI = Convert.ToDecimal(_urungec.GENELTOPLAM.Replace(".", ",")),
-                STOCKREF = itemref,
+                STOCKREF =_urungec.ITEMREF.ToString(),
                 SIPID = Convert.ToInt32(Session["SipID"].ToString()),
                 FICHENO = Session["SipSTR"].ToString() + "-" + Session["SipID"].ToString(),
                 STOCKNAME = _urungec.NAME,
                 STOCKCODE = _urungec.CODE,
+                
                 Durum = 0
             };
             db.Z_SipLine.Add(model);

@@ -6,8 +6,7 @@
 <table id="tblUrunler" class="table table-hover table-responsive">
     <thead>
         <tr style="background-color:#AB1313;">
-            <th><font color="white">Ürün Kodu</font></th>
-            <th><font color="white">Açıklama</font></th>
+            <th><font color="white">Ürün</font></th>
             <th><font color="white">Marka</font></th>
             <th><font color="white">Model</font></th>
             <th><font color="white">Stok</font></th>
@@ -23,11 +22,10 @@
             {
 
                 <tr>
-                    <td>@item.URUNKODU</td>
                     <td>@item.URUNADI</td>
                     <td>@item.MARKA</td>
                     <td>@item.MODEL</td>
-                    <td>@item.BAKIYE</td>
+                    <td class="text-right">@baglanti.getStokSTR(item.BAKIYE)</td>
                     <td class="text-right">@Convert.ToDecimal(item.ListeFiyati).ToString("N")</td>
                     
 

@@ -29,5 +29,6 @@ namespace PB2B.Entity
         public string OKoD { get; set; }
         public string LOGOID { get; set; }
         public string SATICI { get; set; }
+        public string CARIISK { get; set; }
     }
 }

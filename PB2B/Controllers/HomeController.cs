@@ -33,6 +33,7 @@ namespace PB2B.Controllers
                 giris["yetki"] = model.Yetkisi.ToString();
                 Session["userTip"] = (model.Yetkisi == 1) ? "Plasiyer" : "";
                 Session["adi"] = model.Adi;
+                Session["userid"] = model.UserId.ToString(); 
                 Session["giris"] = "1";
                 Session["SipID"] = model.SipID;
                 Session["SipSTR"] = model.SipStr;

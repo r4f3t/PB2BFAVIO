@@ -16,5 +16,13 @@ namespace PB2B
         {
             return new SqlConnection(ConfigurationManager.ConnectionStrings["LKSDBDAPPER"].ConnectionString);
         }
+
+        public static string getStokSTR(double sayi) {
+            if (sayi>100)
+            {
+                return "100+";
+            }
+            return sayi.ToString();
+        }
     }
 }
