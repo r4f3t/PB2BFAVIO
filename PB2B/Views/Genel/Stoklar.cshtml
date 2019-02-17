@@ -12,11 +12,17 @@
     </div>
     <div class="panel-body">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-md-3">
                 <label></label>
-                <input type="text" name="searchparams" placeholder="Ürün Adı,Kodu,Özel Kodlar" id="TXTSearch" class="form-control" />
+                <div class="input-group">
+                    <span class="input-group-addon" style="background-color:#ab1313; color:white;">
+                        <i class="fa fa-search"></i>
+                    </span>
+                    <input type="text" name="searchparams" placeholder="Ürün Adı,Kodu,Özel Kodlar" id="TXTSearch" class="form-control" />
+                </div>
+                
             </div>
-            <div class="col-lg-3">
+            <div class="col-md-3">
                 <label>Marka</label>
                 <select id="CMBMarka" class="form-control">
                     @foreach (var item in Model.markalars)
@@ -25,7 +31,7 @@
                     }
                 </select>
             </div>
-            <div class="col-lg-3">
+            <div class="col-md-3">
                 <label>Grup</label>
                 <select id="CMBModel" class="form-control">
                     @foreach (var item in Model.modellers)
@@ -34,8 +40,13 @@
                     }
                 </select>
             </div>
-            <div class="col-lg-1">
-                <button class="btn btn-primary" onclick="UrunGetir()">
+            <div class="col-md-1" style="margin-top:16px;">
+                
+                <input type="checkbox" style="width:100%;" id="CHCKStok"> Stoktakiler
+            </div>
+            <div class="col-md-1" style="margin-top:11px;">
+                
+                <button class="btn btn-primary" style="width:100%;margin-top:10px;" onclick="UrunGetir()">
                     Ara
                 </button>
             </div>
@@ -49,10 +60,11 @@
               var searchParam = $("#TXTSearch").val();
               var CMBMARKA = $('#CMBMarka').val();
               var CMBModel = $('#CMBModel').val();
-             // alert(CMBMARKA);
+              var CHCKStok = $('#CHCKStok').val();
+              // alert(CMBMARKA);
               var url = "@Url.Action("StokListPartial","Genel")";
               $("#LBLProgress").show();
-              $("#partialTable").load(url + "?searchParams=" + searchParam + "&marka=" + CMBMARKA + "&modell=" + CMBModel + "", function () {
+              $("#partialTable").load(url + "?searchParams=" + searchParam + "&marka=" + CMBMARKA + "&modell=" + CMBModel + "&stokvar=" + CHCKStok + "", function () {
                   $("#LBLProgress").hide();
               });
           }

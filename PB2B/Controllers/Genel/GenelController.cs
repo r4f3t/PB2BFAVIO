@@ -34,7 +34,7 @@ namespace PB2B.Controllers.Genel
             return View(viewModel);
         }
 
-        public PartialViewResult StoklistPartial(string searchParams,string marka,string modell)
+        public PartialViewResult StoklistPartial(string searchParams,string marka,string modell,string stokvar)
         {
             var model = lDb.A_MNTL_STOK_2018.AsQueryable();
             if (searchParams!="")
@@ -49,6 +49,10 @@ namespace PB2B.Controllers.Genel
             if (!String.IsNullOrEmpty(modell))
             {
                 model = model.Where(x=>x.MODEL==modell);
+            }
+            if (!String.IsNullOrEmpty(stokvar))
+            {
+                model = model.Where(x => x.BAKIYE>0);
             }
             return PartialView(model.ToList());
         }
@@ -67,21 +71,22 @@ namespace PB2B.Controllers.Genel
 
             return View();
         }
-        public PartialViewResult CarilistPartial(string searchParams, string hareket, string eski)
+        public PartialViewResult CarilistPartial(string searchParams, string ayNo,string hareket, string eski)
         {
             string SATICI = Session["SATICI"].ToString();
             var query = lDb.JSrG_GenelCari_006_04.AsQueryable();
-            if (SATICI != "HEPSI")
+            if (SATICI != "Hepsi")
             {
                 query = lDb.JSrG_GenelCari_006_04.Where(x => x.Plasiyer == SATICI);
             }
-            if (hareket != "Tümü")
+            if (hareket != "Tümü" && !String.IsNullOrEmpty(ayNo))
             {
-                query = query.Where(x => ((hareket == "Hareketli") ? x.CIKISLAR > 0 : x.CIKISLAR == 0));
+                DateTime _date = DateTime.Now.AddDays(Convert.ToInt32(ayNo)*-1);
+                query = query.Where(x => ((hareket == "Hareketli") ? x.CIKISLAR > 0 : x.CIKISLAR == 0) && x.ADDDATE>_date);
             }
-            if (eski != "Tümü")
+            if (eski != "Tümü" && !String.IsNullOrEmpty(ayNo))
             {
-                DateTime _date = DateTime.Now.AddDays(-31);
+                DateTime _date = DateTime.Now.AddDays(Convert.ToInt32(ayNo)*-1);
                 query = query.Where(x => ((eski == "Yeni") ? x.ADDDATE > _date : x.ADDDATE < _date));
             }
             if (searchParams != "")

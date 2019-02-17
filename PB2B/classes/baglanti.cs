@@ -22,6 +22,10 @@ namespace PB2B
             {
                 return "100+";
             }
+            else if (sayi < 0)
+            {
+                return "0";
+            }
             return sayi.ToString();
         }
     }

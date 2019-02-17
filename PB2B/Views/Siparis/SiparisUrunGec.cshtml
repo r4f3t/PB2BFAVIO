@@ -50,8 +50,8 @@
         if (txtIsk.value != "" && txtListFiyat.value != "") {
             if (parseFloat(txtIsk.value)>@Model.ALTORAN.Replace(",",".")) {
                 alert("Tanımlı Taban Fiyatın Altına Satış Yapamazsınız !!!");
-                txtIsk.value = "@Model.ALTORAN.Replace(",", ".")";
-                 txtSonFiyat.value = "@Model.TabanFiyat.Replace(",", ".")";
+              //  txtIsk.value = "@Model.ALTORAN.Replace(",", ".")";
+               //  txtSonFiyat.value = "@Model.TabanFiyat.Replace(",", ".")";
             } else {
                 txtSonFiyat.value = parseFloat(txtListFiyat.value) * (1 - parseFloat(txtIsk.value) / 100);
             }
@@ -70,8 +70,8 @@
         if (txtIsk.value != "" && txtListFiyat.value != "") {
             if (parseFloat(txtSonFiyat.value) <@Model.TabanFiyat.Replace(",",".")) {
                 alert("Tanımlı Taban Fiyatın Altına Satış Yapamazsınız !!!");
-                txtSonFiyat.value = "@Model.TabanFiyat.Replace(",", ".")";
-                 txtIsk.value="@Model.ALTORAN.Replace(",", ".")";
+            //    txtSonFiyat.value = "@Model.TabanFiyat.Replace(",", ".")";
+            //     txtIsk.value="@Model.ALTORAN.Replace(",", ".")";
             } else {
                 txtIsk.value = (1 - (parseFloat(txtSonFiyat.value) / parseFloat(txtListFiyat.value))) * 100;
             }

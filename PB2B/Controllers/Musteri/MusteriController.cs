@@ -31,12 +31,12 @@ namespace PB2B.Controllers.Musteri
         }
         public ActionResult CariExtre()
         {
+
             List<CARIEXTRE> list = new List<CARIEXTRE>();
-            using (dDbLKSDB)
-            {
-                string CLIENTREF = Session["CLIENTREF"].ToString();
-                list = dDbLKSDB.Query<CARIEXTRE>("SELECT *, (SELECT SUM(b.TTUTAR)AS BAKIYE FROM ISRG_Hesap_Extresi_" + baglanti.GFirma + "_" + baglanti.GDonem + " AS b Where b.rank<=K.rank AND CLIENTREF=" + CLIENTREF + ")AS BAKIYE  FROM(select rank,LOGICALREF,CLIENTREF,ISLEMTARIHI,ISLEMTURU,TRANNO,SOURCEFREF, (CASE WHEN BORC_ALACAK=0 THEN TUTAR ELSE 0 END) AS ALACAK,(CASE WHEN BORC_ALACAK=1 THEN TUTAR ELSE 0 END) AS BORC,VADE,LEFT(ISLEMACIKLAMASI,20) AS ISLEMACIKLAMASI from ISRG_Hesap_Extresi_" + baglanti.GFirma + "_" + baglanti.GDonem + " Where CLIENTREF=" + CLIENTREF + " ) AS K ORDER BY rank,TRANNO").ToList();
-            }
+            
+            string CLIENTREF = Session["CLIENTREF"].ToString();
+            decimal? sayi=lDb.ISRG_Hesap_Extresi_006_04.Where(x => x.CLIENTREF.ToString() == CLIENTREF && x.ISLEMTARIHI.Value.Year < 2019).Sum(x=>x.TTUTAR);
+            list = dDbLKSDB.Query<CARIEXTRE>("SELECT *, (SELECT SUM(b.TTUTAR)AS BAKIYE FROM ISRG_Hesap_Extresi_" + baglanti.GFirma + "_" + baglanti.GDonem + " AS b Where b.rank<=K.rank AND CLIENTREF=" + CLIENTREF + ")AS BAKIYE  FROM(select rank,LOGICALREF,CLIENTREF,ISLEMTARIHI,ISLEMTURU,TRANNO,SOURCEFREF, (CASE WHEN BORC_ALACAK=0 THEN TUTAR ELSE 0 END) AS ALACAK,(CASE WHEN BORC_ALACAK=1 THEN TUTAR ELSE 0 END) AS BORC,VADE,LEFT(ISLEMACIKLAMASI,20) AS ISLEMACIKLAMASI from ISRG_Hesap_Extresi_" + baglanti.GFirma + "_" + baglanti.GDonem + " Where CLIENTREF=" + CLIENTREF + " ) AS K ORDER BY rank,TRANNO").ToList();
             return View(list);
         }
 

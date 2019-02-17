@@ -1,12 +1,13 @@
 ﻿@model PB2B.Entity.JSrG_GenelCari_006_04
 
-@{ 
+@{
     Layout = null;
 }
 <style>
-    .yazi{
-        font-size:9pt;
+    .yazi {
+        font-size: 9pt;
     }
+
     .renk {
         background-color: #AB1313;
     }
@@ -22,17 +23,19 @@
         </div>
     </div>
 </a>
-<a href="#">
-    <div class="col-md-3">
-        <div class="r3_counter_box renk" style=" border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white; ">
-            <i class="pull-left fa fa-turkish-lira icon-rounded" style="background-color:darkred;"></i>
+
+<a href="@Url.Action("Faturalar","Plasiyer")">
+    <div class="col-md-3 ">
+        <div class="r3_counter_box renk" style=" border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
+            <i class="pull-left fa fa-star icon-rounded" style="background-color:darkred;"></i>
             <div class="stats">
-                <h5><strong class="text-white yazi">@Convert.ToDecimal(Model.Bakiye).ToString("N") TL</strong></h5>
-                <span class="text-white">Toplam Bakiye</span>
+                <h5><strong class="text-white yazi">@Convert.ToDecimal(Model.YILLIKSATISTUTARI).ToString("N") TL</strong></h5>
+                <span class="text-white">Satış Toplamı</span>
             </div>
         </div>
     </div>
 </a>
+
 <a href="@Url.Action("CekSenetLine","Plasiyer")">
     <div class="col-md-3 ">
         <div class="r3_counter_box renk" style=" border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
@@ -58,14 +61,13 @@
 </a>
 
 <br /><br /> @*Alt Divler*@
-
 <a href="#">
     <div class="col-md-3 ">
         <div class="r3_counter_box renk" style=" border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
-            <i class="pull-left fa fa-bell icon-rounded" style="background-color:darkred;"></i>
+            <i class="pull-left fa fa-bullseye icon-rounded" style="background-color:darkred;"></i>
             <div class="stats">
-                <h5><strong class="text-white yazi">@Convert.ToDecimal(Model.ONCEKIBAKIYE).ToString("N")</strong></h5>
-                <span class="text-white">Önceki Bakiye</span>
+                <h5><strong class="text-white yazi">@Convert.ToDecimal(Model.GIRISLER).ToString("N") TL</strong></h5>
+                <span class="text-white">Girişler</span>
             </div>
         </div>
     </div>
@@ -84,23 +86,26 @@
 <a href="#">
     <div class="col-md-3 ">
         <div class="r3_counter_box renk" style=" border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
-            <i class="pull-left fa fa-bullseye icon-rounded" style="background-color:darkred;"></i>
+            <i class="pull-left fa fa-bell icon-rounded" style="background-color:darkred;"></i>
             <div class="stats">
-                <h5><strong class="text-white yazi">@Convert.ToDecimal(Model.GIRISLER).ToString("N") TL</strong></h5>
-                <span class="text-white">Girişler</span>
+                <h5><strong class="text-white yazi">@Convert.ToDecimal(Model.ONCEKIBAKIYE).ToString("N")</strong></h5>
+                <span class="text-white">Önceki Bakiye</span>
             </div>
         </div>
     </div>
 </a>
-<a href="@Url.Action("Faturalar","Plasiyer")">
-    <div class="col-md-3 ">
-        <div class="r3_counter_box renk" style=" border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white;">
-            <i class="pull-left fa fa-star icon-rounded" style="background-color:darkred;"></i>
+
+<a href="#">
+    <div class="col-md-3">
+        <div class="r3_counter_box renk" style=" border-bottom:solid 2px white; border-top:solid 2px white; border-left:solid 2px white; border-right:solid 2px white; ">
+            <i class="pull-left fa fa-turkish-lira icon-rounded" style="background-color:darkred;"></i>
             <div class="stats">
-                <h5><strong class="text-white yazi">@Convert.ToDecimal(Model.YILLIKSATISTUTARI).ToString("N") TL</strong></h5>
-                <span class="text-white">Satış Toplamı</span>
+                <h5><strong class="text-white yazi">@Convert.ToDecimal(Model.Bakiye).ToString("N") TL</strong></h5>
+                <span class="text-white">Son Bakiye</span>
             </div>
         </div>
     </div>
 </a>
+
+
 

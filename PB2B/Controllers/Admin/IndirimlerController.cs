@@ -45,7 +45,9 @@ namespace PB2B.Controllers.Admin
         public ActionResult EditGrupIndirim(string id)
         {
             var model = db.IND_COND.Find(Convert.ToInt32(id));
-
+            model.ORAN =(model.ORAN==0)?0:(model.ORAN - 1) * 100;
+            model.INDORAN = (model.INDORAN == 0) ? 0 : (model.INDORAN - 1) * 100;
+            model.ALTORAN = (model.ALTORAN == 0) ? 0 : (model.ALTORAN - 1) * 100;
             return View(model);
         }
         public ActionResult DeleteGrupIndirim(string id)
@@ -63,9 +65,9 @@ namespace PB2B.Controllers.Admin
             model.COND1 = _model.COND1;
             model.COND2 = _model.COND2;
             model.COND3 = _model.COND3;
-            model.ORAN = _model.ORAN;
-            model.INDORAN = _model.INDORAN;
-            model.ALTORAN = _model.ALTORAN;
+            model.ORAN = 1 + (_model.ORAN / 100);
+            model.ALTORAN = 1 + (_model.ALTORAN / 100);
+            model.INDORAN = 1 + (_model.INDORAN / 100);
             db.IND_COND.AddOrUpdate(model);
             db.SaveChanges();
             return RedirectToAction("GrupIndirimList");

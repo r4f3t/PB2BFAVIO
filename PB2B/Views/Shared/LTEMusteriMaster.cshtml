@@ -1,7 +1,7 @@
 ﻿@{
     PB2B.Entity.LOGOKAMPEntities1 db = new PB2B.Entity.LOGOKAMPEntities1();
     string clientref = Session["CLIENTREF"].ToString();
-    var model = db.Z_SipLine.Where(x => x.CLIENTREF == clientref).ToList();
+    var model = db.Z_SipLine.Where(x => x.CLIENTREF == clientref && x.Durum==0).ToList();
     string sepSayi = model.Count.ToString();
 }
 <!DOCTYPE HTML>
@@ -27,6 +27,7 @@
     <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
     <script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
     <link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/rafet.js"></script>
     <!--//Metis Menu -->
     <style>
         #chartdiv {
@@ -64,9 +65,10 @@
 
                     <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
                         <ul class="sidebar-menu">
+                            
                             <li class="treeview">
                                 <a href="~/Plasiyer/PlasiyerIndex">
-                                    <font color="white"><i class="fa fa-backward"></i> <span> Carilere Dön</span></font>
+                                    <font color="white"><i class="fa fa-list"></i> <span> Cari Listesine Dön</span></font>
                                 </a>
                             </li>
                             <li class="treeview">

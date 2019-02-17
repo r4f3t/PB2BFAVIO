@@ -11,9 +11,10 @@ namespace PB2B.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class A_MNTL_STOK_2018
     {
+      
         public string MARKA { get; set; }
         public int LOGICALREF { get; set; }
         public string URUNKODU { get; set; }

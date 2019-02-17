@@ -50,7 +50,7 @@ namespace PB2B.classes
                 SmtpClient smtp = new SmtpClient();
                 smtp.Credentials = new NetworkCredential(GFrom, "01AdanA");
                 smtp.Port = 587;
-                smtp.EnableSsl = true;
+                smtp.EnableSsl = false;
                 smtp.Host = smtpserver;
                 smtp.Send(ePosta);
                 return "1";

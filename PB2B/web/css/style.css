@@ -311,7 +311,7 @@ ul.dropdown-menu{
     color: #383838;
     padding: 0.5em 1em;
     border: 1px solid #8c8c8c;
-    background: url(../images/search-icon.png) no-repeat 160px 12px;
+ 
 	-webkit-appearance: none; /* for box shadows to show on iOS */
 }
 .sb-search-input::-webkit-input-placeholder {

@@ -12,12 +12,22 @@
     </div>
     <div class="panel-body">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-md-3">
                 <label>Cari Bilgisi</label>
-                <input type="text" name="searchparams" placeholder="Cari Adı,Kodu" id="TXTSearch" class="form-control" />
+                <div class="input-group">
+                    <span class="input-group-addon" style="background-color:#ab1313; color:white;">
+                        <i class="fa fa-search"></i>
+                    </span>
+                    <input type="text" name="searchparams" placeholder="Cari Adı,Kodu" id="TXTSearch" class="form-control" />
+                </div>
+                
             </div>
-            <div class="col-lg-2">
-                <label>Durum( 1 Aylık)</label>
+            <div class="col-md-1">
+                <label>Gün</label>
+                <input type="number" name="ayNo" id="TXTAy" class="form-control" />
+            </div>
+            <div class="col-md-2">
+                <label></label>
                 <select id="CMBHareket" name="CMBHareket" class="form-control">
                     <option selected>Tümü</option>
                     <option>Hareketli</option>
@@ -25,7 +35,7 @@
 
                 </select>
             </div>
-            <div class="col-lg-1">
+            <div class="col-md-2">
                 <label>Yeni/Eski</label>
                 <select id="CMBYeniEski" name="CMBYeniEski" class="form-control">
                     <option selected>Tümü</option>
@@ -33,8 +43,8 @@
                     <option>Eski</option>
                 </select>
             </div>
-            <div class="col-lg-1">
-                <label>#</label>
+            <div class="col-md-1" style="margin-top:21px;">
+                
                 <button class="btn btn-primary" style="width:100%;" onclick="UrunGetir()">
                     Ara
                 </button>
@@ -47,12 +57,13 @@
         <script>
           function UrunGetir() {
               var searchParam = $("#TXTSearch").val();
+              var TXTAy = $("#TXTAy").val();
               var hareket = $('#CMBHareket ').find('option:selected').text();
               var eski = $('#CMBYeniEski').find('option:selected').text();
              // alert(hareket);
               var url = "@Url.Action("CariListPartial","Genel")";
               $("#LBLProgress").show();
-              $("#partialTable").load(url + "?searchParams=" + searchParam + "&hareket=" + hareket + "&eski=" + eski + "", function () {
+              $("#partialTable").load(url + "?searchParams=" + searchParam + "&ayNo=" + TXTAy + "&hareket=" + hareket + "&eski=" + eski + "", function () {
                   $("#LBLProgress").hide();
               });
           }

@@ -20,8 +20,13 @@
                 <div class="row">
                     <div class="col-lg-3" style="padding:0px;">
                         <div class="search-box" style="width:100%;">
-
-                            <input class="sb-search-input" name="searchParam" placeholder="Ürün Adı/Kodu...." />
+                            <div class="input-group">
+                                <span class="input-group-addon" style="background-color:#ab1313; color:white;">
+                                    <i class="fa fa-search"></i>
+                                </span>
+                                <input class="sb-search-input" name="searchParam" placeholder="Ürün Adı/Kodu...." />
+                            </div>
+                            
                             <label class="input__label" for="input-31">
                                 <svg class="graphic" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
                                     <path d="m0,0l404,0l0,77l-404,0l0,-77z" />
@@ -30,8 +35,9 @@
 
                         </div>
                     </div>
-                    <div class="col-lg-1">
-                        <input id="Ara" class="btn btn-danger" type="submit" style="width:100%;margin-top:10px;" value="Ara" />
+                    <div class="col-lg-1" style="margin-top:10px;">
+                        
+                        <input id="Ara" class="btn btn-danger" type="submit" style="width:100%;" value="Ara" />
                     </div>
                     <br>
                     <div class="col-lg-2"><input type="checkbox" name="stokOlan"> Tükenmişleri Gizle</div>
@@ -62,7 +68,7 @@
                                 <td>@item.URUNADI</td>
                                 <td>@item.MARKA</td>
                                 <td>@item.MODEL</td>
-                                <td>@Convert.ToDecimal(item.BAKIYE).ToString("N")</td>
+                               <td class="text-right">@baglanti.getStokSTR(item.BAKIYE)</td>
                                 <td>@Convert.ToDecimal(item.ListeFiyati).ToString("N")</td>
                                 <td>
                                     <button type="button" onclick="poppupAc(@item.LOGICALREF)" class="btn btn-primary " data-toggle="modal" data-target="#myModal">
@@ -79,11 +85,7 @@
 
             <script>
                 window.onload = new function () {
-                    $('#tblUrunler').DataTable({
-                        "language": {
-                            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
-                        }
-                    });
+                    makeDataTable("tblUrunler");
                 }
 
             </script>

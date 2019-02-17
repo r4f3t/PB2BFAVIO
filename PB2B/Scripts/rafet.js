@@ -6,3 +6,13 @@
     }
     return color;
 }
+
+
+function makeDataTable(id) {
+    $('#' + id + '').DataTable({
+        "paging": false,
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+        }
+    });
+}

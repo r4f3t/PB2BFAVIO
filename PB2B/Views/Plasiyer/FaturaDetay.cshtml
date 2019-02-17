@@ -12,6 +12,9 @@
         FaturaDetay
     </div>
     <div class="panel-body ">
+        <div class="col-lg-1">
+            <button class="btn btn-primary" onclick="history.back()">Geri</button>
+        </div>
         <div class="col-md-12">
             @{
                 var faturaBas = (PB2B.Entity.ISRG_Faturalar_006)TempData["faturaModel"];
@@ -101,7 +104,7 @@
                     <td>@Convert.ToDecimal(netToplam * 0.18).ToString("N")</td>
                 </tr>
                 <tr style="background:#dbdbdb">
-                    <td></td>
+                    <td><button onclick="window.print()" class="btn btn-primary"><i class="glyphicon-print"></i>Yazdır</button></td>
                     <td></td>
                     <td></td>
                     <th>Genel Toplam</th>
